@@ -27,7 +27,7 @@ def test_hydrogen_and_charge_accounted_separately():
 def test_invalid_reaction_is_not_balanced():
     assert audit.inspect_reaction("C>>")["parse_status"] == "incomplete"
     assert audit.inspect_reaction("C>>")["reactants"]["elements"] == {"C": 1, "H": 4}
-    assert audit.inspect_reaction("C>O>C")['parse_status'] == "error"
+    assert audit.inspect_reaction("C>O>C")["parse_status"] == "error"
 
 
 def test_stoichiometry_is_not_deduplicated():
