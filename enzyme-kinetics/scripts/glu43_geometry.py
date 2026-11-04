@@ -3,6 +3,7 @@
 The high-force backbone C is not the side-chain carboxyl CD. Coordinates and
 orthorhombic box lengths are in nm; angles are in degrees.
 """
+
 import numpy as np
 
 
@@ -45,7 +46,9 @@ def geometry(atoms, box):
     right = (o2 - o1) - np.dot(o2 - o1, axis) * axis
     if np.linalg.norm(left) < 1e-15 or np.linalg.norm(right) < 1e-15:
         raise ValueError("degenerate improper")
-    improper = float(np.degrees(np.arctan2(np.dot(np.cross(axis, left), right), np.dot(left, right))))
+    improper = float(
+        np.degrees(np.arctan2(np.dot(np.cross(axis, left), right), np.dot(left, right)))
+    )
     return {
         "backbone_C_O_nm": float(np.linalg.norm(image(x["O"] - x["C"], box))),
         "sidechain_CD_OE1_nm": float(np.linalg.norm(o1)),

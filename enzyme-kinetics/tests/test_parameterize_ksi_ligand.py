@@ -3,7 +3,10 @@ from pathlib import Path
 
 import pytest
 
-spec = importlib.util.spec_from_file_location("parameterize_ksi_ligand", Path(__file__).resolve().parents[1] / "scripts/parameterize_ksi_ligand.py")
+spec = importlib.util.spec_from_file_location(
+    "parameterize_ksi_ligand",
+    Path(__file__).resolve().parents[1] / "scripts/parameterize_ksi_ligand.py",
+)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 

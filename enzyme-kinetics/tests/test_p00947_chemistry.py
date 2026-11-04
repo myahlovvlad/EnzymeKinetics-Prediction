@@ -3,7 +3,10 @@ from pathlib import Path
 
 import pytest
 
-spec = importlib.util.spec_from_file_location("check_p00947_chemistry", Path(__file__).resolve().parents[1] / "scripts/check_p00947_chemistry.py")
+spec = importlib.util.spec_from_file_location(
+    "check_p00947_chemistry",
+    Path(__file__).resolve().parents[1] / "scripts/check_p00947_chemistry.py",
+)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 

@@ -1,4 +1,5 @@
 """PySCF QM/point-charge electrostatic embedding smoke test; not enzyme QM/MM."""
+
 import argparse
 import json
 from pathlib import Path
@@ -7,17 +8,32 @@ from pyscf import gto, qmmm, scf, __version__
 
 
 def run():
-    mol = gto.M(atom="O 0 0 0; H 0 .757 .587; H 0 -.757 .587", unit="Angstrom", basis="sto-3g", verbose=0)
+    mol = gto.M(
+        atom="O 0 0 0; H 0 .757 .587; H 0 -.757 .587",
+        unit="Angstrom",
+        basis="sto-3g",
+        verbose=0,
+    )
     vac = scf.RHF(mol)
     vacuum = float(vac.kernel())
-    mm = qmmm.mm_charge(scf.RHF(mol), [[3., 0., 0.]], [0.5], unit="Angstrom")
+    mm = qmmm.mm_charge(scf.RHF(mol), [[3.0, 0.0, 0.0]], [0.5], unit="Angstrom")
     embedded = float(mm.kernel())
     if not vac.converged or not mm.converged:
         raise RuntimeError("SCF did not converge")
-    return {"pyscf_version": __version__, "qm_system": "water RHF/STO-3G", "mm_environment": "one fixed +0.5e point charge at (3,0,0) Å",
-            "vacuum_energy_hartree": vacuum, "embedded_energy_hartree": embedded,
-            "energy_difference_hartree": embedded - vacuum, "scf_converged": True,
-            "limitations": ["electrostatic embedding smoke test only", "not a coupled PySCF/OpenMM enzyme dynamics driver", "no QM/MM boundary, PME, MM relaxation, reaction path or free energy"]}
+    return {
+        "pyscf_version": __version__,
+        "qm_system": "water RHF/STO-3G",
+        "mm_environment": "one fixed +0.5e point charge at (3,0,0) Å",
+        "vacuum_energy_hartree": vacuum,
+        "embedded_energy_hartree": embedded,
+        "energy_difference_hartree": embedded - vacuum,
+        "scf_converged": True,
+        "limitations": [
+            "electrostatic embedding smoke test only",
+            "not a coupled PySCF/OpenMM enzyme dynamics driver",
+            "no QM/MM boundary, PME, MM relaxation, reaction path or free energy",
+        ],
+    }
 
 
 def main():

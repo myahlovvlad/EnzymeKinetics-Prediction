@@ -9,7 +9,9 @@ pytest.importorskip("openmm")
 scripts = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(scripts))
 try:
-    spec = importlib.util.spec_from_file_location("diagnose_high_force_atoms", scripts / "diagnose_high_force_atoms.py")
+    spec = importlib.util.spec_from_file_location(
+        "diagnose_high_force_atoms", scripts / "diagnose_high_force_atoms.py"
+    )
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
 finally:
@@ -17,8 +19,11 @@ finally:
 
 
 def test_summarize_categories():
-    result = module.summarize(np.array([10., 60., 70., 1.]), np.array(["protein", "protein", "water", "ligand"]))
+    result = module.summarize(
+        np.array([10.0, 60.0, 70.0, 1.0]),
+        np.array(["protein", "protein", "water", "ligand"]),
+    )
     assert result["protein"]["above_50"] == 1
-    assert result["protein"]["fraction_of_all_above_50"] == .5
+    assert result["protein"]["fraction_of_all_above_50"] == 0.5
     assert result["water"]["max"] == 70
     assert result["ion"]["max"] is None

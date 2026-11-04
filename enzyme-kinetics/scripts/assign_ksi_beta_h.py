@@ -3,6 +3,7 @@
 The beta face is defined relative to the C19 angular methyl (steroid convention).
 This geometry-dependent assignment is not experimental validation of a pose.
 """
+
 import argparse
 import hashlib
 import json
@@ -23,13 +24,21 @@ def identify_face(xyz, names, hydrogens):
     normal /= np.linalg.norm(normal)
     methyl = float(normal @ (c19 - c10))
     projections = {int(h): float(normal @ (xyz[h] - c4)) for h in hydrogens}
-    if abs(methyl) < 0.15 or len(hydrogens) != 2 or any(abs(v) < 0.15 for v in projections.values()):
+    if (
+        abs(methyl) < 0.15
+        or len(hydrogens) != 2
+        or any(abs(v) < 0.15 for v in projections.values())
+    ):
         raise ValueError("Ambiguous face geometry")
     beta = [h for h, value in projections.items() if value * methyl > 0]
     if len(beta) != 1:
         raise ValueError("Expected exactly one hydrogen on beta face")
-    return {"beta_h_index": beta[0], "alpha_h_index": next(h for h in projections if h != beta[0]),
-            "methyl_normal_projection_A": methyl, "h_normal_projections_A": projections}
+    return {
+        "beta_h_index": beta[0],
+        "alpha_h_index": next(h for h in projections if h != beta[0]),
+        "methyl_normal_projection_A": methyl,
+        "h_normal_projections_A": projections,
+    }
 
 
 def main():
@@ -39,14 +48,29 @@ def main():
     p.add_argument("--output", type=Path, required=True)
     args = p.parse_args()
     lines = args.template.read_text().splitlines()
-    block = "\n".join(line for line in lines if line.startswith("HETATM") and line[17:20] == "ASD" and line[21] == "A") + "\nEND\n"
-    mol = AllChem.AssignBondOrdersFromTemplate(Chem.MolFromSmiles(SMILES), Chem.MolFromPDBBlock(block, removeHs=True))
+    block = (
+        "\n".join(
+            line
+            for line in lines
+            if line.startswith("HETATM") and line[17:20] == "ASD" and line[21] == "A"
+        )
+        + "\nEND\n"
+    )
+    mol = AllChem.AssignBondOrdersFromTemplate(
+        Chem.MolFromSmiles(SMILES), Chem.MolFromPDBBlock(block, removeHs=True)
+    )
     Chem.AssignStereochemistryFrom3D(mol)
     if Chem.MolToSmiles(mol) != Chem.MolToSmiles(Chem.MolFromSmiles(SMILES)):
         raise ValueError("Template-generated ligand stereo mismatch")
-    names = {a.GetPDBResidueInfo().GetName().strip(): a.GetIdx() for a in mol.GetAtoms()}
+    names = {
+        a.GetPDBResidueInfo().GetName().strip(): a.GetIdx() for a in mol.GetAtoms()
+    }
     mol = Chem.AddHs(mol, addCoords=True)
-    hs = [a.GetIdx() for a in mol.GetAtomWithIdx(names["C4"]).GetNeighbors() if a.GetAtomicNum() == 1]
+    hs = [
+        a.GetIdx()
+        for a in mol.GetAtomWithIdx(names["C4"]).GetNeighbors()
+        if a.GetAtomicNum() == 1
+    ]
     files = sorted(args.pose_dir.glob("candidate-*.xyz"))
     if not files:
         raise ValueError("No candidate XYZ files")
@@ -57,16 +81,32 @@ def main():
         if int(lines[0]) != len(entries) or len(entries) != mol.GetNumAtoms():
             raise ValueError("XYZ does not match template-derived atom count")
         if [r[0] for r in entries] != [a.GetSymbol() for a in mol.GetAtoms()]:
-            raise ValueError("XYZ element sequence differs from template-derived ligand")
+            raise ValueError(
+                "XYZ element sequence differs from template-derived ligand"
+            )
         xyz = np.array([[float(x) for x in r[1:]] for r in entries])
         result = identify_face(xyz, names, hs)
-        results.append({"file": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest(), **result})
-    report = {"template_sha256": hashlib.sha256(args.template.read_bytes()).hexdigest(),
-              "rdkit_version": rdBase.rdkitVersion, "atom_names_zero_based": {k: names[k] for k in ("C3", "C4", "C5", "C10", "C19")},
-              "method": "C4-H and C10-C19 projections on normal to plane C3/C5/C10; same side as C19 = beta",
-              "limitations": ["Geometry-based model assignment; local ring plane is an approximation.",
-                              "Atom order verified by element sequence, not by coordinates or full graph of XYZ.",
-                              "Requires independent graphical or stereochemical verification before QM/MM."], "poses": results}
+        results.append(
+            {
+                "file": str(path),
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                **result,
+            }
+        )
+    report = {
+        "template_sha256": hashlib.sha256(args.template.read_bytes()).hexdigest(),
+        "rdkit_version": rdBase.rdkitVersion,
+        "atom_names_zero_based": {
+            k: names[k] for k in ("C3", "C4", "C5", "C10", "C19")
+        },
+        "method": "C4-H and C10-C19 projections on normal to plane C3/C5/C10; same side as C19 = beta",
+        "limitations": [
+            "Geometry-based model assignment; local ring plane is an approximation.",
+            "Atom order verified by element sequence, not by coordinates or full graph of XYZ.",
+            "Requires independent graphical or stereochemical verification before QM/MM.",
+        ],
+        "poses": results,
+    }
     if args.output.exists():
         raise FileExistsError("Choose new output")
     args.output.parent.mkdir(parents=True, exist_ok=True)
