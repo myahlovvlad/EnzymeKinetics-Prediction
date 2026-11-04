@@ -1,0 +1,170 @@
+{
+  "checked_at": "2026-11-04",
+  "catpred_db": {
+    "commit": "931583821ff875e873002730fbbdf1047acfde77",
+    "code_license": "MIT; underlying dataset terms require separate verification",
+    "local_release_lineage": "unverified"
+  },
+  "enzgfm": {
+    "commit": "0631099828e1b2aadbfe56751eec5f67a7bfdf0c",
+    "code_license": "root LICENSE not found; unresolved",
+    "zenodo_record": 22042585,
+    "release_license": {
+      "id": "cc-by-4.0"
+    },
+    "files": [
+      {
+        "key": "EnzGFM_1.5B.zip",
+        "size": 5778657794,
+        "checksum": "md5:9fef1be267211fa2facda0ac74b264d4"
+      },
+      {
+        "key": "EnzGFM_650M.zip",
+        "size": 7162193759,
+        "checksum": "md5:4fc54568ac2c913722895415fc64097e"
+      }
+    ]
+  },
+  "kinbench": {
+    "publication": "https://www.biorxiv.org/content/10.64898/2026.04.28.721430v1.full",
+    "repository": "https://github.com/Mxc666/EnzCast",
+    "status": "404 / repository not found",
+    "version_license": "unverified"
+  },
+  "esm": {
+    "model_id": "facebook/esm2_t6_8M_UR50D",
+    "revision": "c731040fcd8d73dceaa04b0a8e6329b345b0f5df",
+    "card": {
+      "license": "mit",
+      "widget": [
+        {
+          "text": "MQIFVKTLTGKTITLEVEPS<mask>TIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG"
+        }
+      ]
+    },
+    "files": [
+      {
+        "rfilename": ".gitattributes",
+        "size": 1438,
+        "lfs": null
+      },
+      {
+        "rfilename": "README.md",
+        "size": 1705,
+        "lfs": null
+      },
+      {
+        "rfilename": "config.json",
+        "size": 775,
+        "lfs": null
+      },
+      {
+        "rfilename": "model.safetensors",
+        "size": 31384292,
+        "lfs": {
+          "sha256": "24c5fa474c48f3b754b86efe752d5f189d2bcd88190fa2270fc92b2ef3034189",
+          "size": 31384292,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "pytorch_model.bin",
+        "size": 31406877,
+        "lfs": {
+          "sha256": "9edcf393212f3a26684cd68ca8095ec43c2c341ee0fcc3ba7a4d3a47c5dc138f",
+          "size": 31406877,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "special_tokens_map.json",
+        "size": 125,
+        "lfs": null
+      },
+      {
+        "rfilename": "tf_model.h5",
+        "size": 30256864,
+        "lfs": {
+          "sha256": "bbb600f469925d93572cb238a475914a2d0846fb8a7814a98028a7a2e21a05a3",
+          "size": 30256864,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "tokenizer_config.json",
+        "size": 95,
+        "lfs": null
+      },
+      {
+        "rfilename": "vocab.txt",
+        "size": 93,
+        "lfs": null
+      }
+    ]
+  },
+  "chemberta": {
+    "model_id": "DeepChem/ChemBERTa-77M-MLM",
+    "revision": "ed8a5374f2024ec8da53760af91a33fb8f6a15ff",
+    "card": null,
+    "files": [
+      {
+        "rfilename": ".gitattributes",
+        "size": 1175,
+        "lfs": null
+      },
+      {
+        "rfilename": "added_tokens.json",
+        "size": 25,
+        "lfs": null
+      },
+      {
+        "rfilename": "config.json",
+        "size": 631,
+        "lfs": null
+      },
+      {
+        "rfilename": "merges.txt",
+        "size": 52,
+        "lfs": null
+      },
+      {
+        "rfilename": "pytorch_model.bin",
+        "size": 13734116,
+        "lfs": {
+          "sha256": "95571af26b61ba8d56b9d61ff108b5c9afe96fd69ea3cbd1901d9421e3d2dd6d",
+          "size": 13734116,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "special_tokens_map.json",
+        "size": 420,
+        "lfs": null
+      },
+      {
+        "rfilename": "tokenizer.json",
+        "size": 8262,
+        "lfs": null
+      },
+      {
+        "rfilename": "tokenizer_config.json",
+        "size": 1271,
+        "lfs": null
+      },
+      {
+        "rfilename": "training_args.bin",
+        "size": 2274,
+        "lfs": {
+          "sha256": "c35bd60b030915e7dbf3ee5ce1474929ca5d971d823c17dcc84abe318860fc17",
+          "size": 2274,
+          "pointerSize": 129
+        }
+      },
+      {
+        "rfilename": "vocab.json",
+        "size": 6963,
+        "lfs": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "scope": "development_pilot_only",
+  "official_test_accessed": false,
+  "code_sha256": {
+    "benchmark_h1.py": "157b962bff77f07d6ae3957c94bf38c05f2a002c521de3bc1ca2e4bcbb529c2a",
+    "embeddings.py": "e92c86cc8ce3449362fabb9bfc5b7b9f3310527e7d3cdf49e835f85c792bb210",
+    "predict.py": "da7694e5ed91a7c40ab5fbd4d3966c39c301df33989d8481973936e2472424b7",
+    "__init__.py": "ab5d863bfdcaf9af4eca82be66e4c6e6438f2118ecc64d9e99a694817f63e46c",
+    "features.py": "052bf7a8d974f32f66b1cb0dd3289e0efba003cb4f65a2aa9fee1a4085afc7a7",
+    "training.py": "88de1c497a4975bf4c43578def7b0d632b2301735f03fbc6d8a05da9fbc2bfaa",
+    "models.py": "8d375b4ab01f36297f33f40bc71c03062f4e78971afb0fd992402e7bda74a19e",
+    "chemometrics.py": "fdc290e01f8820b4e31a46128a25df3a941ee641fca4f3a61d3e12e19661f0ce"
+  },
+  "output_sha256": {
+    "config.json": "dd83f92895b2909754842a12d1362c99d55b028202add879ddbc50faa29782cb",
+    "kcat/B0/11/mean.joblib": "2d566ffa5080199971d3559a51d45680d3a17a187785464ff10c6a22c93c72fe",
+    "kcat/B0/11/metadata.json": "081cef3e491ac380adb9f4414897b0ee9268bd26ab25ea09e0e6d9e9a5d65bda",
+    "kcat/B0/11/metrics.json": "1877417841774eb36094fb7af060fb050e56ea58d9277928a0641adda7f01bdc",
+    "kcat/B0/11/mlp.pt": "7e38b8184f2a9ef35a1314c9de38dd976057d6e5d09823e7778af73a59016bf4",
+    "kcat/B0/11/mlp_history.json": "a2ce9655d843e93bc2d3b25b83af51bf8a126ab5667c8ff418f0387de5f7b660",
+    "kcat/B0/11/preprocessing.joblib": "e89147a1166c23749fd8be55cb0e689501e17a677f58929a5183476dc1c093ae",
+    "kcat/B0/11/ridge.joblib": "53f720bc301fc4424726386ace72f958d1e0329531445940a59fb982130d7972",
+    "kcat/B0/11/split.csv": "43e504825d53258ee1b6acd3804b8853a4fe5ba42eb72b04332a6e76f44ed4bb",
+    "kcat/B0/11/validation-predictions.csv": "a3c7c68f900b5ada5ad6e2c17e1713a94b5a9c2b72ddbbabbe1497b056818c1e",
+    "kcat/B0/33/mean.joblib": "2d566ffa5080199971d3559a51d45680d3a17a187785464ff10c6a22c93c72fe",
+    "kcat/B0/33/metadata.json": "63e2ec3c4416df0a67d550d942efa5830afe6c46a1c53d0878b2b6a310d3a8e6",
+    "kcat/B0/33/metrics.json": "3976ea7fe4065875f99b5caf575348799e0a881f09ddd7c55f033b94e9ba9b16",
+    "kcat/B0/33/mlp.pt": "dde72e960bc8637c95dca3cd976fcd8c0d03e6303cf8017c0a9165cc19765970",
+    "kcat/B0/33/mlp_history.json": "710e8ec431dce06277e59b124d1d563b756cf599fbc03befce3785d781190682",
+    "kcat/B0/33/preprocessing.joblib": "e89147a1166c23749fd8be55cb0e689501e17a677f58929a5183476dc1c093ae",
+    "kcat/B0/33/ridge.joblib": "53f720bc301fc4424726386ace72f958d1e0329531445940a59fb982130d7972",
+    "kcat/B0/33/split.csv": "43e504825d53258ee1b6acd3804b8853a4fe5ba42eb72b04332a6e76f44ed4bb",
+    "kcat/B0/33/validation-predictions.csv": "7a72b517e39b8a7521429731845bed6eea522e235921a0fee44d91fbcd0e7f31",
+    "kcat/B0/71/mean.joblib": "2d566ffa5080199971d3559a51d45680d3a17a187785464ff10c6a22c93c72fe",
+    "kcat/B0/71/metadata.json": "87c79fc8ee72ceea784d9c76932199135dd53b46f5c39abcf62c3e6663c4ed6d",
+    "kcat/B0/71/metrics.json": "5a48f4058bba269ae66bdf8c808f3c33ad06f53e846e72c47f9723b3533cc76c",
+    "kcat/B0/71/mlp.pt": "d7ef85a09231d63497891b375f37b972ad3bc6118dd4383f312075a758f048d2",
+    "kcat/B0/71/mlp_history.json": "1bdb1e3338d53b8ad8461efaf4e6d0e004450d52a3dfb2d4632e8dd33071bb11",
+    "kcat/B0/71/preprocessing.joblib": "e89147a1166c23749fd8be55cb0e689501e17a677f58929a5183476dc1c093ae",
+    "kcat/B0/71/ridge.joblib": "53f720bc301fc4424726386ace72f958d1e0329531445940a59fb982130d7972",
+    "kcat/B0/71/split.csv": "43e504825d53258ee1b6acd3804b8853a4fe5ba42eb72b04332a6e76f44ed4bb",
+    "kcat/B0/71/validation-predictions.csv": "a816382b6601114e4fa1559b5d08147bc1a20c8fd2c12753250695995615eadc",
+    "kcat/B0-development-predictions.csv": "0c678fd825b3ca79fe426db0d1a19ab2ded018a7fa76292b0df72bb9b1babe2f",
+    "kcat/B0-reproducibility/mean.joblib": "2d566ffa5080199971d3559a51d45680d3a17a187785464ff10c6a22c93c72fe",
+    "kcat/B0-reproducibility/metadata.json": "82765e69a338c83d9e2e737ab716c3c7885da905b68acdb4f5f2660a4bb2d943",
+    "kcat/B0-reproducibility/metrics.json": "bf82cb1a8dc882fcce5959b81c883f6ca327a6e87daf686eb67b68a8447fc756",
+    "kcat/B0-reproducibility/mlp.pt": "7e38b8184f2a9ef35a1314c9de38dd976057d6e5d09823e7778af73a59016bf4",
+    "kcat/B0-reproducibility/mlp_history.json": "a2ce9655d843e93bc2d3b25b83af51bf8a126ab5667c8ff418f0387de5f7b660",
+    "kcat/B0-reproducibility/preprocessing.joblib": "e89147a1166c23749fd8be55cb0e689501e17a677f58929a5183476dc1c093ae",
+    "kcat/B0-reproducibility/ridge.joblib": "53f720bc301fc4424726386ace72f958d1e0329531445940a59fb982130d7972",
+    "kcat/B0-reproducibility/split.csv": "43e504825d53258ee1b6acd3804b8853a4fe5ba42eb72b04332a6e76f44ed4bb",
+    "kcat/B0-reproducibility/validation-predictions.csv": "a3c7c68f900b5ada5ad6e2c17e1713a94b5a9c2b72ddbbabbe1497b056818c1e",
+    "kcat/B1/11/mean.joblib": "23fb1decb69ea786843169d828db6e8fc32c36e40bb6bcfbfbacbf4f91f71dfe",
+    "kcat/B1/11/metadata.json": "836348062a5c8545c9750355dde78ab42152487d53c958bef10be7d4ee370c6a",
+    "kcat/B1/11/metrics.json": "4045ab3e75065e316836726e8fafc20b82963010401501c942b4204ebb2a8821",
+    "kcat/B1/11/mlp.pt": "4a5b70c4a27f64d2cdf253c7b627f23e20c340cfe85093d787d6b46a40fb3387",
+    "kcat/B1/11/mlp_history.json": "2559b13d73ebb71bc13228ab4f401893d9d56c0ac76518b4f2ceecb6bbea4bd7",
+    "kcat/B1/11/preprocessing.joblib": "a96263112e971f63ffa5de309114eccdbd4e3bcde6c4374043dc6bdcdaf079a7",
+    "kcat/B1/11/ridge.joblib": "ba8f3376b68740ac4aab1efb7a474842764f83b56fe89d3fa4d5caef52738503",
+    "kcat/B1/11/split.csv": "43e504825d53258ee1b6acd3804b8853a4fe5ba42eb72b04332a6e76f44ed4bb",
+    "kcat/B1/11/validation-predictions.csv": "76afb82cde5233905ae7b59bd37becb3b03f216cfc98280144e8a7cd6efd02a5",
+    "kcat/B1/33/mean.joblib": "23fb1decb69ea786843169d828db6e8fc32c36e40bb6bcfbfbacbf4f91f71dfe",
+    "kcat/B1/33/metadata.json": "07abe00bbd564623bbde3eff5cd699fbe800fe88b364b2d4566c1f3b7711b0b4",
+    "kcat/B1/33/metrics.json": "08649b2a034d5125c4e6b88dab8e85b3ac5798d331dd1223c5242bf834e82cc6",
+    "kcat/B1/33/mlp.pt": "a7fcf198f43ac7b66df5beec241835340702d8ac8795af4e2b832ac150c3046f",
+    "kcat/B1/33/mlp_history.json": "2a000c6b7a6d40eff667b5d251c405b8b5a45ff99e060a7373c47348bcd4a965",
+    "kcat/B1/33/preprocessing.joblib": "a96263112e971f63ffa5de309114eccdbd4e3bcde6c4374043dc6bdcdaf079a7",
+    "kcat/B1/33/ridge.joblib": "ba8f3376b68740ac4aab1efb7a474842764f83b56fe89d3fa4d5caef52738503",
+    "kcat/B1/33/split.csv": "43e504825d53258ee1b6acd3804b8853a4fe5ba42eb72b04332a6e76f44ed4bb",
+    "kcat/B1/33/validation-predictions.csv": "94bb13b564c164bd9a785d0969aa56ce16176b80c30428a4e1494f8fac0fdc15",
+    "kcat/B1/71/mean.joblib": "23fb1decb69ea786843169d828db6e8fc32c36e40bb6bcfbfbacbf4f91f71dfe",
+    "kcat/B1/71/metadata.json": "a8cce8b9242a5869a1867b568587f13db57fb8c5111eb53729333d95fc43e8f5",
+    "kcat/B1/71/metrics.json": "3a90e4a98d783edbec6e6db0ca7e9f5de3b85754a53de620eb78f489c9e4a578",
+    "kcat/B1/71/mlp.pt": "95be791966f4e47c096d0a2169aaee920f7adb9cb27928d5685780e7aaff46e2",
+    "kcat/B1/71/mlp_history.json": "f51fec30b4572c173b8e25d095b7adb1823e99d0a9a5c5a349b2e60b7707bfb2",
+    "kcat/B1/71/preprocessing.joblib": "a96263112e971f63ffa5de309114eccdbd4e3bcde6c4374043dc6bdcdaf079a7",
+    "kcat/B1/71/ridge.joblib": "ba8f3376b68740ac4aab1efb7a474842764f83b56fe89d3fa4d5caef52738503",
+    "kcat/B1/71/split.csv": "43e504825d53258ee1b6acd3804b8853a4fe5ba42eb72b04332a6e76f44ed4bb",
+    "kcat/B1/71/validation-predictions.csv": "c5de1a7e91eb1e4365efbe922f03c27493316df5ab2a266802128fb7d9a73ab5",
+    "kcat/B1-development-predictions.csv": "50ad024a5d1e30e19c57ae84b569bdc4388a72c4df5b4ec8fa27796a3af11842",
+    "kcat/audit.json": "918be42a72edb2ab00a9470ac6a12892713e19f747d5e0da828322d4c0060d5d",
+    "kcat/esm2.pt": "567c49f2d5e8e55f96d6589372360b00881b55d52a6dfa8b882c27422639d590",
+    "kcat/esm2.pt.meta.json": "13056a44f6dea052c25f71eb958e4036909406831d16dc6d212b66d5e25f99dc",
+    "kcat/partition.csv": "8f0d9d09dc71e523c0564a5d96a94fc3f72420e5318bf72fd29d55ebab39c9b0",
+    "kcat/prepared/Baseline/kcat/kcat-random_trainval.csv": "9b66c9e632ff62ecabbc0a16b81f7b549948b1c8e234773b34fa44f2159e565d",
+    "kcat/reproducibility.json": "96fef1d7bb966da730dc8134b53052f1aa75ea062c9a9c2f446db2d9e254594d",
+    "km/B0/11/mean.joblib": "31d2acde26afc4d109830374ee7a1be1c6419ca54fcb16e33559ad5b8d246ad1",
+    "km/B0/11/metadata.json": "657f601a856240c30fae28f4ac4fefc6c04b3467991f91ab65a8ac1a306864a3",
+    "km/B0/11/metrics.json": "b65ba0af19e7642155bc3f6baf897a025d5246144617e1178b8ec0ff9d1db8e7",
+    "km/B0/11/mlp.pt": "ac65a5becbfd9bedbb339b23234bf59ca9cb94f23a666d2a15574741b39c53db",
+    "km/B0/11/mlp_history.json": "1a01e5337271c4057c65ce9b9479bf3530c142f5617badcd3d09156f78cb28f9",
+    "km/B0/11/preprocessing.joblib": "9789e05bf175bd13ff16998ea323b27a7638031528c7ef8f9f510d92b076638e",
+    "km/B0/11/ridge.joblib": "da63f6d967d76abd9855f0b7767416e1fcd7da421ca673f6c1891edf574c5768",
+    "km/B0/11/split.csv": "bad7a2b869e0cef34fc646936646fc7648e5dd93f87f24295832b62c102bd61e",
+    "km/B0/11/validation-predictions.csv": "dd7b6147a9a171479eddc71f32bec009b0288968db88817966b342ab9795048b",
+    "km/B0/33/mean.joblib": "31d2acde26afc4d109830374ee7a1be1c6419ca54fcb16e33559ad5b8d246ad1",
+    "km/B0/33/metadata.json": "4a3ed8e55a6e517b32b8f7580ac6274e3bd287b1aeaad3e6b78a4e1966363e3d",
+    "km/B0/33/metrics.json": "fa2d05089e9892d172b217f179090dad742cfa96ece731099bc459d14b6e4264",
+    "km/B0/33/mlp.pt": "5e65debd46ad0c3c5dfb78081a59f5664029be328dd7df6871b2eef81fff95fb",
+    "km/B0/33/mlp_history.json": "d78e8f3a4751df46b96eadd4808f262bc0c2bf3d645a50e67a2ac33ae2d5bb25",
+    "km/B0/33/preprocessing.joblib": "9789e05bf175bd13ff16998ea323b27a7638031528c7ef8f9f510d92b076638e",
+    "km/B0/33/ridge.joblib": "da63f6d967d76abd9855f0b7767416e1fcd7da421ca673f6c1891edf574c5768",
+    "km/B0/33/split.csv": "bad7a2b869e0cef34fc646936646fc7648e5dd93f87f24295832b62c102bd61e",
+    "km/B0/33/validation-predictions.csv": "a7b1ee6aee97dcf99d4ab10be7815fb3bce880797c2c4f9317c365853bd97ec2",
+    "km/B0/71/mean.joblib": "31d2acde26afc4d109830374ee7a1be1c6419ca54fcb16e33559ad5b8d246ad1",
+    "km/B0/71/metadata.json": "7954e1808ed8d0625a7c1cac4b99f4877fcab95428918b859a458b36fcae08a1",
+    "km/B0/71/metrics.json": "5d60e36e1fbc45d3700c957b91e6fc7dfe4b5c4dc7ff47dab814133947cc228f",
+    "km/B0/71/mlp.pt": "152ee9fb00ae876c8def792a59a35282728eb3a6e9ca41062ee1b7cf029b4587",
+    "km/B0/71/mlp_history.json": "a159a671ce2e4479e86c76880501743584ea5fe3145307a075ae90c2cdf87476",
+    "km/B0/71/preprocessing.joblib": "9789e05bf175bd13ff16998ea323b27a7638031528c7ef8f9f510d92b076638e",
+    "km/B0/71/ridge.joblib": "da63f6d967d76abd9855f0b7767416e1fcd7da421ca673f6c1891edf574c5768",
+    "km/B0/71/split.csv": "bad7a2b869e0cef34fc646936646fc7648e5dd93f87f24295832b62c102bd61e",
+    "km/B0/71/validation-predictions.csv": "86d31286bcde32bdcbeb8df0785a096997dcfb67acade8f63a71b95f9fea58ea",
+    "km/B0-development-predictions.csv": "74cbfdd14ca70c65e1e553e5349ca3e380bc5dc7ff83cc65d15d12e0348246bd",
+    "km/B0-reproducibility/mean.joblib": "31d2acde26afc4d109830374ee7a1be1c6419ca54fcb16e33559ad5b8d246ad1",
+    "km/B0-reproducibility/metadata.json": "9e59be0906a23133f5de08c8f3ec0ac9de1af54af3e3bc1a3e97e84e42a0ee06",
+    "km/B0-reproducibility/metrics.json": "95e1929a97762202b6bc048cab2b2cd2f3b3ebc4e4b9b958621c44dde3908531",
+    "km/B0-reproducibility/mlp.pt": "ac65a5becbfd9bedbb339b23234bf59ca9cb94f23a666d2a15574741b39c53db",
+    "km/B0-reproducibility/mlp_history.json": "1a01e5337271c4057c65ce9b9479bf3530c142f5617badcd3d09156f78cb28f9",
+    "km/B0-reproducibility/preprocessing.joblib": "9789e05bf175bd13ff16998ea323b27a7638031528c7ef8f9f510d92b076638e",
+    "km/B0-reproducibility/ridge.joblib": "da63f6d967d76abd9855f0b7767416e1fcd7da421ca673f6c1891edf574c5768",
+    "km/B0-reproducibility/split.csv": "bad7a2b869e0cef34fc646936646fc7648e5dd93f87f24295832b62c102bd61e",
+    "km/B0-reproducibility/validation-predictions.csv": "dd7b6147a9a171479eddc71f32bec009b0288968db88817966b342ab9795048b",
+    "km/B1/11/mean.joblib": "81169752ee793e488afa5e223d92eb4375f10836a781bb2f451bf0d5ebeefdb9",
+    "km/B1/11/metadata.json": "9f52616f465ab89c0eb824202eec54889d3b46363d28dead5a39109bd83baf3b",
+    "km/B1/11/metrics.json": "237b26fe4c823b4cbb1b393cfc5724550f70821ba35ab6dc6759aecc00436354",
+    "km/B1/11/mlp.pt": "7701263c126ee8f2c91678821b1d833289e48d967b35bf8627d312d23bd94529",
+    "km/B1/11/mlp_history.json": "7bbc941e5fdf89d38ec2adf8d134ca09c997c5751eeaab8ea0a019dc1b2c5735",
+    "km/B1/11/preprocessing.joblib": "05a50efbc23695c127adfbaadf7b09a6588ebd9651c3617d29e16eda9d10c4e0",
+    "km/B1/11/ridge.joblib": "59c95a24252edbbeebd5d96109f7d324e561f409dcb6b77457ba2483f2984841",
+    "km/B1/11/split.csv": "bad7a2b869e0cef34fc646936646fc7648e5dd93f87f24295832b62c102bd61e",
+    "km/B1/11/validation-predictions.csv": "2fcf782ee587b57c884514edbf600410987efe6dcd183a1a089e87adde45928c",
+    "km/B1/33/mean.joblib": "81169752ee793e488afa5e223d92eb4375f10836a781bb2f451bf0d5ebeefdb9",
+    "km/B1/33/metadata.json": "f1557c5ff2c26408baab71c8c78c9bc397d0b7c21d467d105b7f24fc988e900b",
+    "km/B1/33/metrics.json": "81bfddaabebcafa43b920bea28bdb7cd70f534a8b70992ab8f4d0a7bc7383b68",
+    "km/B1/33/mlp.pt": "722f1d40a817fff4efc2f56da4e8e6a9bdca96a798731617115621e13e2e725b",
+    "km/B1/33/mlp_history.json": "66e1df3c126455ab95aa334832f057d04ab50078ea9786f48a12c6ed1610b823",
+    "km/B1/33/preprocessing.joblib": "05a50efbc23695c127adfbaadf7b09a6588ebd9651c3617d29e16eda9d10c4e0",
+    "km/B1/33/ridge.joblib": "59c95a24252edbbeebd5d96109f7d324e561f409dcb6b77457ba2483f2984841",
+    "km/B1/33/split.csv": "bad7a2b869e0cef34fc646936646fc7648e5dd93f87f24295832b62c102bd61e",
+    "km/B1/33/validation-predictions.csv": "e31fe377581b5b68ce11138b7945231c6ec80eb2ec1092792d954ff635e78475",
+    "km/B1/71/mean.joblib": "81169752ee793e488afa5e223d92eb4375f10836a781bb2f451bf0d5ebeefdb9",
+    "km/B1/71/metadata.json": "10071aca3f0f0dc3e9b49d768a9305c383859bd946de8ab42daa34c9d1d6e5bb",
+    "km/B1/71/metrics.json": "d69cfcf785c91c65aefff05a23f5ce63a01d9c5effa2167c040f6b99117426d6",
+    "km/B1/71/mlp.pt": "a8b940b55bf6fadb4aafc9d760094d39e035bd8a6b23d38a99e6c0105a24baac",
+    "km/B1/71/mlp_history.json": "b9a722d376386bf4f35b1d48c53f05784178fb6ad56064539383b5f51f7d7f4e",
+    "km/B1/71/preprocessing.joblib": "05a50efbc23695c127adfbaadf7b09a6588ebd9651c3617d29e16eda9d10c4e0",
+    "km/B1/71/ridge.joblib": "59c95a24252edbbeebd5d96109f7d324e561f409dcb6b77457ba2483f2984841",
+    "km/B1/71/split.csv": "bad7a2b869e0cef34fc646936646fc7648e5dd93f87f24295832b62c102bd61e",
+    "km/B1/71/validation-predictions.csv": "a7820c750c364dd6c204b2be9a02cfb2055a189d76ce1766c6966b0b5f2d0fde",
+    "km/B1-development-predictions.csv": "9cc7f91d9ca45806a3e340811eb8c9ca9e590710aa04674bbbec17fc04e33416",
+    "km/audit.json": "333889db15dc333d4ea93c6a8ce9bcabe0fbcbf9cfcd7c0eeaaa229df14ef22a",
+    "km/esm2.pt": "2d46f29b6651f826f33cfb0655250335be93597b66b713badf6b2dc45d7a26e0",
+    "km/esm2.pt.meta.json": "802201f491f8e35f33a543f65bc2896cc5e03e606d5feb64fc8c6d7ef93b4462",
+    "km/partition.csv": "201f57af73fc9324c4a5d06505d302713231bbadf8ffddcf247905c9cb9d2555",
+    "km/prepared/Baseline/km/km-random_trainval.csv": "3d72b22f71e9a8790d52a89e9173e2367118c96657eb8fc95abb63104423f639",
+    "km/reproducibility.json": "96fef1d7bb966da730dc8134b53052f1aa75ea062c9a9c2f446db2d9e254594d",
+    "results.json": "6ee57b1cac00b902310407b88f1aea19c704e83a8fe408e68bc53ed93055d145"
+  },
+  "elapsed_seconds": 48.83927700101049,
+  "peak_rss_scope": "process lifetime high-water mark, not per-case allocation",
+  "scientific_status": "exploratory_not_validated",
+  "local_output_root": "enzyme-kinetics/outputs/benchmarks/h1-pilot-v1",
+  "local_manifest_sha256": "8571e336c75684a083602aab0099cf2a3f8f9247e751c66e23d808ad63b40277",
+  "config": {
+    "targets": [
+      "kcat",
+      "km"
+    ],
+    "variants": [
+      "B0",
+      "B1"
+    ],
+    "encoder": "facebook/esm2_t6_8M_UR50D",
+    "revision": "c731040fcd8d73dceaa04b0a8e6329b345b0f5df",
+    "max_rows": 192,
+    "max_length": 256,
+    "group_by": "sequence_40cluster",
+    "split_seed": 42,
+    "seeds": [
+      11,
+      33,
+      71
+    ],
+    "heads": [
+      "mean",
+      "ridge",
+      "mlp"
+    ],
+    "epochs": 20,
+    "threads": 2,
+    "bootstrap_draws": 500
+  },
+  "acceptance": {
+    "status": "READY_FOR_PR_development_only",
+    "pilot_v1_outputs_unchanged": true,
+    "v1_source_archive": "enzyme-kinetics/outputs/benchmarks/h1-acceptance-v1/source-v1",
+    "v1_source_sha256": {
+      "embeddings.py": "e92c86cc8ce3449362fabb9bfc5b7b9f3310527e7d3cdf49e835f85c792bb210",
+      "training.py": "88de1c497a4975bf4c43578def7b0d632b2301735f03fbc6d8a05da9fbc2bfaa",
+      "benchmark_h1.py": "157b962bff77f07d6ae3957c94bf38c05f2a002c521de3bc1ca2e4bcbb529c2a"
+    },
+    "current_source_sha256": {
+      "enzyme-kinetics/src/enzymekinetics_prediction/learning/benchmark_h1.py": "58c8bc94fea1e2975627f90459f3fc35568fc1904c5931f5bd7fb2a500376339",
+      "enzyme-kinetics/src/enzymekinetics_prediction/learning/embeddings.py": "58ffd4fae3c653edc8472e0f47551dab5eb2d4122c36e5eaa8d5481a39310bd6",
+      "enzyme-kinetics/src/enzymekinetics_prediction/learning/training.py": "930140bff1f299e70d50b385a13a4b6c3b64d50427bdd7c6fa33ecc8efb1f7b8",
+      "enzyme-kinetics/tests/test_benchmark_h1.py": "7ccf7056e008d7d8f2b03fdf627f4a517237b9216d516771dc351c3c8865d3e8"
+    },
+    "changed_since_v1_review": [
+      "docs/benchmarks/h1/PROTOCOL.md",
+      "docs/benchmarks/h1/README.md",
+      "docs/benchmarks/h1/evidence.json",
+      "docs/benchmarks/h1/validation.json",
+      "enzyme-kinetics/src/enzymekinetics_prediction/learning/benchmark_h1.py",
+      "enzyme-kinetics/src/enzymekinetics_prediction/learning/embeddings.py",
+      "enzyme-kinetics/src/enzymekinetics_prediction/learning/training.py",
+      "enzyme-kinetics/tests/test_benchmark_h1.py"
+    ],
+    "scientific_checks": {
+      "kcat": {
+        "source_assignments_match": true,
+        "selected_sequences_with_conflicting_source_clusters": 0,
+        "full_source_sequences_with_conflicting_clusters": 0,
+        "missing_or_negative_selected_group_rows": 0,
+        "partitions_identical_across_arms_seeds": true,
+        "preprocessing": {
+          "sequence": "identical fitted common-block parameters",
+          "substrate": "identical fitted common-block parameters",
+          "conditions": "identical fitted common-block parameters",
+          "geometry": "identical fitted common-block parameters",
+          "EC": "identical fitted common-block parameters",
+          "titration": "identical fitted common-block parameters"
+        },
+        "statistics": {
+          "B0": {
+            "SSE": 71.42871467305142,
+            "SST": 48.92067631885756,
+            "calibration_group_residual_q50_q90_max": [
+              1.06364230556003,
+              2.9310330591983433,
+              4.707261047273626
+            ],
+            "evaluation_group_residual_q50_q90_max": [
+              0.8618771958817314,
+              2.2342497932906706,
+              3.2798793025716817
+            ],
+            "radius": 3.0192369990294923,
+            "cluster_covered": 35,
+            "cluster_n": 36,
+            "calibration_y_mean_std": [
+              1.059890275586934,
+              1.63618566619023
+            ],
+            "evaluation_y_mean_std": [
+              0.5185171703202652,
+              1.1498610529321376
+            ],
+            "CSV_serialization_max_error": 5.927276602868403e-08,
+            "CSV_float32_error_bound": 2.4025897005230945e-07,
+            "recomputed_metric_max_error": 0.0
+          },
+          "B1": {
+            "SSE": 54.7879094278828,
+            "SST": 48.92067631885756,
+            "calibration_group_residual_q50_q90_max": [
+              0.9934845709809148,
+              2.7345043646473117,
+              4.210998437314977
+            ],
+            "evaluation_group_residual_q50_q90_max": [
+              0.7859146702900814,
+              2.1631795000296368,
+              2.9244859505017184
+            ],
+            "radius": 3.6690012773309295,
+            "cluster_covered": 36,
+            "cluster_n": 36,
+            "calibration_y_mean_std": [
+              1.059890275586934,
+              1.63618566619023
+            ],
+            "evaluation_y_mean_std": [
+              0.5185171703202652,
+              1.1498610529321376
+            ],
+            "CSV_serialization_max_error": 4.036102296822719e-08,
+            "CSV_float32_error_bound": 1.5110141760033002e-07,
+            "recomputed_metric_max_error": 0.0
+          }
+        },
+        "paired_bootstrap_reproduced": true
+      },
+      "km": {
+        "source_assignments_match": true,
+        "selected_sequences_with_conflicting_source_clusters": 0,
+        "full_source_sequences_with_conflicting_clusters": 0,
+        "missing_or_negative_selected_group_rows": 0,
+        "partitions_identical_across_arms_seeds": true,
+        "preprocessing": {
+          "sequence": "identical fitted common-block parameters",
+          "substrate": "identical fitted common-block parameters",
+          "conditions": "identical fitted common-block parameters",
+          "geometry": "identical fitted common-block parameters",
+          "EC": "identical fitted common-block parameters",
+          "titration": "identical fitted common-block parameters"
+        },
+        "statistics": {
+          "B0": {
+            "SSE": 71.0896270769144,
+            "SST": 76.44782398402707,
+            "calibration_group_residual_q50_q90_max": [
+              0.7985803551227684,
+              1.51397999277607,
+              2.39321562531785
+            ],
+            "evaluation_group_residual_q50_q90_max": [
+              0.7827277388648075,
+              2.2149472244848463,
+              2.965211033821106
+            ],
+            "radius": 1.6330097137239927,
+            "cluster_covered": 24,
+            "cluster_n": 36,
+            "calibration_y_mean_std": [
+              -0.8375769547792413,
+              1.0583532078630606
+            ],
+            "evaluation_y_mean_std": [
+              -0.7779435881174491,
+              1.3491427964948624
+            ],
+            "CSV_serialization_max_error": 4.852447510472757e-08,
+            "CSV_float32_error_bound": 1.2625187650883163e-07,
+            "recomputed_metric_max_error": 0.0
+          },
+          "B1": {
+            "SSE": 74.42333326581885,
+            "SST": 76.44782398402707,
+            "calibration_group_residual_q50_q90_max": [
+              0.7713599236274327,
+              1.6022214494331002,
+              2.4105940747578525
+            ],
+            "evaluation_group_residual_q50_q90_max": [
+              0.8398533668593449,
+              2.2678983815778944,
+              2.9448137283325195
+            ],
+            "radius": 1.8309131680277342,
+            "cluster_covered": 25,
+            "cluster_n": 36,
+            "calibration_y_mean_std": [
+              -0.8375769547792413,
+              1.0583532078630606
+            ],
+            "evaluation_y_mean_std": [
+              -0.7779435881174491,
+              1.3491427964948624
+            ],
+            "CSV_serialization_max_error": 3.943939219652748e-08,
+            "CSV_float32_error_bound": 1.25788005789218e-07,
+            "recomputed_metric_max_error": 0.0
+          }
+        },
+        "paired_bootstrap_reproduced": true
+      }
+    },
+    "strict_cache_smoke": {
+      "scope": "two short sequences; frozen inference only; no fitting or downloads",
+      "path": "/tmp/enzyme-h1-cache-smoke-ywhfmwk6/esm.pt",
+      "cache_key": "4f5b88ad647895589f897353a9cbafbdb05789b1740ef5e909d0307805036b52",
+      "source_sha256": {
+        "model.safetensors": "24c5fa474c48f3b754b86efe752d5f189d2bcd88190fa2270fc92b2ef3034189",
+        "config.json": "facb9355e8252149f6f99dff5fd1e32e890c3c655362b261d0c81cd6b5839c85",
+        "vocab.txt": "0b82cc0a7c7cf9e567b1e5892d793285b9fbae822c964ca48696f7db44598e03",
+        "tokenizer_config.json": "7e9161ecdb548ec45a41cbc6b24aa4476fdd418461f491c4207baa99419a29ad",
+        "special_tokens_map.json": "3aedcd4211c0d43aec4e607ff60a63255f3174ead795e997350f09a5f8cd9ee1"
+      },
+      "frozen": true,
+      "dimension": 320,
+      "sequence_count": 2
+    },
+    "legacy_v1_cache_policy": "readable through old API; not upgraded or accepted as a new strict cache",
+    "new_H1_training": "not run",
+    "H1_1_H1_2": "protocol only; not implemented or executed",
+    "v1_base": "181c45ec0682adcdcd7b50da745267337cf1784a"
+  }
+}
