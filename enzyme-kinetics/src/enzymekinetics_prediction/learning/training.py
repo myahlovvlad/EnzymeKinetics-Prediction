@@ -124,7 +124,14 @@ def load_table(path):
     return frame, dropped
 
 
-def read_embeddings(path):
+def read_embeddings(path, expected_identity=None, expected_dimension=None):
+    strict_cache_key = None
+    if expected_identity is not None:
+        from .embeddings import validate_embedding_cache
+
+        strict_cache_key = validate_embedding_cache(
+            path, expected_identity, expected_dimension
+        )
     if not path.is_file():
         return {}, {"status": "absent", "path": str(path)}
     # Never silently retry with unrestricted pickle loading.
@@ -157,6 +164,11 @@ def read_embeddings(path):
         "sha256": sha256(path),
         "entries": len(raw),
         "dimension": len(next(iter(vectors.values()))),
+        **(
+            {"strict_cache_key": strict_cache_key}
+            if strict_cache_key is not None
+            else {}
+        ),
         "duplicate_uniprot_representations": collisions,
         "id_policy": "parse AF-/ESMFold- filename; prefer AF when both exist",
     }
@@ -271,14 +283,22 @@ def run(args):
         args.data_dir / "Baseline" / args.target / f"{args.target}-random_test.csv"
     )
     frame, dropped_train = load_table(train_path)
-    test, dropped_test = load_table(test_path)
+    development_only = getattr(args, "development_only", False)
+    if (
+        development_only
+        and getattr(args, "split_scheme", "provided-test") != "provided-test"
+    ):
+        raise ValueError("Development-only mode cannot repartition the official test")
+    test, dropped_test = (None, 0) if development_only else load_table(test_path)
+    split_seed = getattr(args, "split_seed", None)
+    split_seed = args.seed if split_seed is None else split_seed
     group_by = getattr(args, "group_by", "sequence")
     ec_level = getattr(args, "ec_level", 2)
     split_scheme = getattr(args, "split_scheme", "provided-test")
     if split_scheme == "grouped-three-way":
         combined = pd.concat([frame, test], ignore_index=True)
         remain_ids, test_ids = grouped_split(
-            combined, args.seed, 0.2, group_by, ec_level
+            combined, split_seed, 0.2, group_by, ec_level
         )
         frame, test = (
             combined.iloc[remain_ids].reset_index(drop=True),
@@ -286,18 +306,17 @@ def run(args):
         )
     train_ids, validation_ids = grouped_split(
         frame,
-        args.seed + 1 if split_scheme == "grouped-three-way" else args.seed,
+        split_seed + 1 if split_scheme == "grouped-three-way" else split_seed,
         args.validation_fraction,
         group_by,
         ec_level,
     )
     fit_frame, val_frame = frame.iloc[train_ids], frame.iloc[validation_ids]
+    partitions = [("train", fit_frame), ("validation", val_frame)]
+    if not development_only:
+        partitions.append(("test", test))
     split_frame = pd.concat(
-        [
-            fit_frame.assign(partition="train"),
-            val_frame.assign(partition="validation"),
-            test.assign(partition="test"),
-        ]
+        [records.assign(partition=name) for name, records in partitions]
     )
     split_frame["split_group"] = split_groups(split_frame, group_by, ec_level)
     split_frame[
@@ -312,7 +331,9 @@ def run(args):
     ].to_csv(output / "split.csv", index=False)
     embeddings, embedding_info = read_embeddings(
         getattr(args, "embedding_path", None)
-        or args.data_dir / "CatPred-DB/data/catpred_progres_embeds_dict.pt"
+        or args.data_dir / "CatPred-DB/data/catpred_progres_embeds_dict.pt",
+        getattr(args, "embedding_cache_identity", None),
+        getattr(args, "embedding_dimension", None),
     )
     builder = FeatureBuilder(
         args.data_dir, embeddings, getattr(args, "physical_table", None)
@@ -320,11 +341,7 @@ def run(args):
     print("Building train, validation and test features", flush=True)
     matrices, geometries, coverage = {}, {}, {}
     physical_coverage = {}
-    for name, records in [
-        ("train", fit_frame),
-        ("validation", val_frame),
-        ("test", test),
-    ]:
+    for name, records in partitions:
         matrices[name] = builder.transform(records)
         geometries[name] = builder.last_geometry_.copy()
         coverage[name] = dict(
@@ -352,7 +369,7 @@ def run(args):
     g, gv = geometries["train"], geometries["validation"]
     y = fit_frame.log10_value.to_numpy(dtype=np.float32)
     yv = val_frame.log10_value.to_numpy(dtype=np.float32)
-    results, fitted, specs = {}, {}, {}
+    results, fitted, specs, validation_predictions = {}, {}, {}, {}
     for name in args.models:
         t0 = time.monotonic()
         print(f"Training {name}", flush=True)
@@ -441,6 +458,7 @@ def run(args):
             }
             joblib.dump(model, output / f"{name}.joblib")
         fitted[name], specs[name] = model, spec
+        validation_predictions[name] = pred
         results[name] = {
             "validation": metrics(yv, pred),
             "training_seconds": time.monotonic() - t0,
@@ -450,6 +468,49 @@ def run(args):
             flush=True,
         )
     selected = min(results, key=lambda name: results[name]["validation"]["mae"])
+    if development_only:
+        # A separate opt-in research boundary: never open/hash the official test.
+        builder.last_geometry_ = None
+        builder.last_flags_ = None
+        joblib.dump(
+            {"builder": builder, "preprocessing": preprocessing},
+            output / "preprocessing.joblib",
+        )
+        predictions = val_frame[
+            ["source_dataset", "source_record", "log10_value"]
+        ].copy()
+        for name, values in validation_predictions.items():
+            predictions[name] = values
+        predictions.to_csv(output / "validation-predictions.csv", index=False)
+        write_json(
+            output / "metadata.json",
+            {
+                "target": args.target,
+                "selected_model": selected,
+                "models": specs,
+                "evaluation_scope": "development_only",
+                "official_test_accessed": False,
+                "seed": args.seed,
+                "split_seed": split_seed,
+                "group_by": group_by,
+                "trainval_sha256": sha256(train_path),
+                "code_sha256_at_start": code_hashes,
+                "coverage": coverage,
+                "embeddings": embedding_info,
+                "feature_blocks": builder.feature_blocks_,
+                "rows": {"train": len(y), "validation": len(yv)},
+                "versions": {
+                    p: importlib.metadata.version(p)
+                    for p in ["torch", "numpy", "pandas", "rdkit", "scikit-learn"]
+                },
+                "elapsed_seconds": time.monotonic() - started,
+                "limitations": [
+                    "Development validation; not an official test estimate"
+                ],
+            },
+        )
+        write_json(output / "metrics.json", results)
+        return output
     # Selection is frozen before any test targets are evaluated.
     print(
         f"Selected by validation: {selected}; evaluating frozen models on test",
@@ -604,6 +665,14 @@ def main():
     )
     parser.add_argument("--physical-table", action="append", type=Path)
     parser.add_argument("--embedding-path", type=Path)
+    parser.add_argument(
+        "--development-only",
+        action="store_true",
+        help="Train/select using trainval only; do not open the official test",
+    )
+    parser.add_argument(
+        "--split-seed", type=int, help="Fix partitions independently of the model seed"
+    )
     parser.add_argument("--data-dir", type=Path, default=DATA_DIR)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--seed", type=int, default=42)

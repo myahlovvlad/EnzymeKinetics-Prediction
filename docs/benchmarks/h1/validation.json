@@ -1,0 +1,48 @@
+{
+  "pytest": "87 passed, 1 skipped, 4 deselected in 7.40s",
+  "new_h1_tests": "8 cases: original6 + strict legacy compatibility + frozen encoder/cache tampering",
+  "ruff_check": "passed",
+  "ruff_format": "124 files already formatted",
+  "build": "wheel/sdist, uv build --offline, passed",
+  "syntax": "four Python files compiled",
+  "cli": {
+    "enzyme-train": 0,
+    "enzyme-predict": 0,
+    "enzyme-physics": 0,
+    "enzyme-features": 0,
+    "enzyme-embed": 0,
+    "enzyme-cycle": 0,
+    "enzyme-trace": 0,
+    "enzyme-research": 0
+  },
+  "environment": "existing original repository venv; no dependency installation",
+  "excluded": [
+    "test_physics.py::test_native_openmm_prepared_system_in_unicode_workspace",
+    "test_research.py::test_prepared_checkpoint_continues_without_new_minimization",
+    "test_lowT_quench.py::test_shared_md_loop_stops_on_first_failing_window",
+    "test_qmmm_embedding_smoke.py::test_embedding_converges_and_changes_energy"
+  ],
+  "reason": "MD/QM/MM excluded by task; optional imageio skip",
+  "remote_CI": "not run; no commit/push authorized",
+  "previous_v1_validation": {
+    "pytest": "85 passed, 1 skipped, 4 deselected in 7.86s",
+    "new_h1_tests": "6 passed",
+    "ruff_check": "passed",
+    "ruff_format": "124 files already formatted",
+    "build": "wheel/sdist, uv build --offline, passed",
+    "syntax": "four Python files compiled",
+    "cli": "all eight registered --help exit 0",
+    "environment": "existing original repository venv; no dependency installation",
+    "excluded": [
+      "test_physics.py::test_native_openmm_prepared_system_in_unicode_workspace",
+      "test_research.py::test_prepared_checkpoint_continues_without_new_minimization",
+      "test_lowT_quench.py::test_shared_md_loop_stops_on_first_failing_window",
+      "test_qmmm_embedding_smoke.py::test_embedding_converges_and_changes_energy"
+    ],
+    "reason": "MD/QM/MM excluded by task; optional imageio skip",
+    "remote_CI": "not run; no commit/push authorized"
+  },
+  "strict_cache_smoke": "2 short sequences, offline cached ESM-2, frozen inference only, passed",
+  "scientific_replay": "reload predictions, metrics, bootstrap; no head or foundation fit",
+  "staging_scope": "exact18 paths from pr-files.txt; no commit/push/merge"
+}

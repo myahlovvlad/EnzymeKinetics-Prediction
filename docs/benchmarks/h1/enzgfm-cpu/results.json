@@ -1,0 +1,389 @@
+{
+  "scope": "H1-E4-v1 aggregate evidence; no accuracy evaluation of EnzGFM",
+  "date": "2026-11-04",
+  "source_commit": "0631099828e1b2aadbfe56751eec5f67a7bfdf0c",
+  "runtime": {
+    "python": "3.10.14",
+    "torch": "2.1.2+cpu",
+    "transformers": "4.40.1",
+    "safetensors": "0.4.3",
+    "threads": 2
+  },
+  "evidence": {
+    "baseline-execution": {
+      "status": "PASS",
+      "seconds": 48.694881979958154,
+      "peak_rss_mib": 792.4375,
+      "network_attempts": [],
+      "official_test_attempts": []
+    },
+    "baseline-comparison": {
+      "status": "PASS",
+      "identical_partition_and_prediction_files": {
+        "kcat/partition.csv": true,
+        "kcat/B0-development-predictions.csv": true,
+        "kcat/B1-development-predictions.csv": true,
+        "km/partition.csv": true,
+        "km/B0-development-predictions.csv": true,
+        "km/B1-development-predictions.csv": true
+      },
+      "ensemble_metrics": {
+        "kcat": {
+          "B0": {
+            "mae": 1.1038978421376568,
+            "rmse": 1.3894264291333898,
+            "r2": -0.46009254261919597,
+            "spearman": -0.12530377592991435,
+            "empirical_interval_coverage": 0.972972972972973,
+            "interval_width_log10": 6.0384739980589845
+          },
+          "B1": {
+            "mae": 0.9324450297303359,
+            "rmse": 1.2168624856004469,
+            "r2": -0.11993360579856871,
+            "spearman": -0.0410171300584204,
+            "empirical_interval_coverage": 1.0,
+            "interval_width_log10": 7.338002554661859
+          }
+        },
+        "km": {
+          "B0": {
+            "mae": 0.9790710530056598,
+            "rmse": 1.3010035236301098,
+            "r2": 0.0700895935014737,
+            "spearman": 0.5603500673129878,
+            "empirical_interval_coverage": 0.6904761904761905,
+            "interval_width_log10": 3.2660194274479855
+          },
+          "B1": {
+            "mae": 1.0026373583187993,
+            "rmse": 1.3311589406891422,
+            "r2": 0.026481992720044034,
+            "spearman": 0.3452048137025781,
+            "empirical_interval_coverage": 0.7380952380952381,
+            "interval_width_log10": 3.6618263360554684
+          }
+        }
+      },
+      "source_hashes_equal": true
+    },
+    "preprocessing-comparison": {
+      "status": "PASS",
+      "raw_pickle_bytes_equal": false,
+      "reason": "builder data_dir and unavailable geometry paths point to the new run; all fitted preprocessing and feature state equal",
+      "cases": {
+        "kcat/B0/11/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "kcat/B0/33/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "kcat/B0/71/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "kcat/B1/11/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "kcat/B1/33/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "kcat/B1/71/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "km/B0/11/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "km/B0/33/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "km/B0/71/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "km/B1/11/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "km/B1/33/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        },
+        "km/B1/71/preprocessing.joblib": {
+          "fitted_preprocessing_equal": true,
+          "builder_differing_attributes": [
+            "data_dir",
+            "geometry_provenance_"
+          ],
+          "geometry_paths_only_changed": true
+        }
+      }
+    },
+    "full-smoke-result": {
+      "status": "PASS",
+      "sequence_sha256": "13d77a3f77692b54067315685cf8d9d515073194398d855c45dccc4e73401f11",
+      "residues": 19,
+      "tokens": 21,
+      "dtype": "float32",
+      "threads": 2,
+      "hidden_shape": [
+        1,
+        21,
+        2880
+      ],
+      "embedding_shape": [
+        1,
+        2880
+      ],
+      "weights_verified": 387,
+      "encoder_keys_loaded": 386,
+      "excluded_keys": [
+        "lm_head.weight"
+      ],
+      "scalar_count_including_lm_head": 1556343088,
+      "missing": [],
+      "unexpected": [],
+      "shape_mismatches": [],
+      "load_and_weight_validation_seconds": 9.070216314983554,
+      "inference_seconds": 1.1322460509836674,
+      "child_compute_seconds_excluding_import": 10.204340805998072,
+      "peak_rss_mib": 6339.53515625,
+      "network_attempts": [],
+      "embedding_values_sha256": "b7a887ba9ea405ceb7591416bfd1fc7f847ff8b80cbfd8cc52cff6ff40fdab15",
+      "embedding_file_sha256": "a5f0407d7b363c537a8e7b3820f9ab8ebb224e7d53e70bc6ab8e599d0cbe6da7",
+      "full_forward_calls": 1,
+      "reproducibility": "not rerun; one full forward authorized",
+      "pooling": "residue mean excluding special tokens; batch 1 unpadded",
+      "config_overrides": {
+        "use_mamba_kernels": false,
+        "use_cache": false,
+        "output_hidden_states": false,
+        "output_attentions": false,
+        "attn_implementation": "eager"
+      }
+    },
+    "full-smoke": {
+      "status": "PASS",
+      "exit_code": 0,
+      "wall_seconds": 12.522221149003599,
+      "sampled_peak_rss_bytes": 6599708672,
+      "sampled_cpu_seconds": 19.54,
+      "rss_limit_bytes": 12884901888,
+      "timeout_seconds": 300,
+      "automatic_retries": 0
+    },
+    "cohort-budget-inputs": {
+      "kcat": {
+        "unique_sequences": 192,
+        "length_min": 9,
+        "length_median": 203.0,
+        "length_mean": 191.71875,
+        "length_max": 256,
+        "sum_tokens": 37194,
+        "length_le64": 7,
+        "partition_counts": {
+          "calibration": 36,
+          "development_evaluation": 37,
+          "train": 85,
+          "validation": 34
+        }
+      },
+      "km": {
+        "unique_sequences": 192,
+        "length_min": 9,
+        "length_median": 208.0,
+        "length_mean": 190.94270833333334,
+        "length_max": 255,
+        "sum_tokens": 37045,
+        "length_le64": 11,
+        "partition_counts": {
+          "calibration": 38,
+          "development_evaluation": 42,
+          "train": 83,
+          "validation": 29
+        }
+      },
+      "combined_unique_sequences": 271,
+      "combined_unique_tokens": 52123
+    },
+    "scaling-estimates": {
+      "scope": "Planning sensitivity only; extrapolated from ONE 19-residue sequence; not a measured throughput curve",
+      "seconds_per_token_linear_proxy": 0.05391647861826988,
+      "current_271_unique_sequences_linear_minutes": 46.838143583668014,
+      "current_384_no_cross_target_dedup_linear_minutes": 66.71175760236228,
+      "1024_per_target_2048_unique_if_mean_194_tokens_linear_hours": 5.950462209106123,
+      "current_embedding_cache_payload_bytes": 3121920,
+      "max_2048_embedding_cache_payload_bytes": 23592960,
+      "warm_single_short_embedding_per_second": 0.883200254159619,
+      "caveat": "length-dependent attention/SSM cost, cold I/O, allocator behavior and sustained CPU behavior unmeasured; coordinator caps max_rows and max_length at 256",
+      "mass_encoding_executed": false
+    },
+    "feature-api-check": {
+      "status": "PASS",
+      "embedding_dim": 2880,
+      "feature_matrix_shape": [
+        1,
+        3178
+      ],
+      "feature_blocks": {
+        "sequence": [
+          0,
+          22
+        ],
+        "substrate": [
+          22,
+          285
+        ],
+        "conditions": [
+          285,
+          289
+        ],
+        "embedding": [
+          289,
+          3170
+        ],
+        "geometry": [
+          3170,
+          3174
+        ],
+        "EC": [
+          3174,
+          3175
+        ],
+        "titration": [
+          3175,
+          3178
+        ]
+      },
+      "network_attempts": [],
+      "scope": "one label-free training record with cached embedding; no EnzGFM forward or regression fit",
+      "limitation": "new feature dimension requires a freshly train-fitted preprocessing/head; old ESM checkpoints cannot accept it directly"
+    },
+    "checkpoint-preparation": {
+      "status": "PASS",
+      "archive_sha256": "004bcaff1e142343107a47d7232383ffc72062488106bad5f771e8dc4da115eb",
+      "files": {
+        "config.json": {
+          "sha256": "d4ef9fc34fc59702d1b9e2aa05222e3c40f1e90a65c57d598703482cf7691f43",
+          "bytes": 1146
+        },
+        "model.safetensors.index.json": {
+          "sha256": "ba2721f6b6e9ed0542b33c98a680de512c5eb9054913f091631f86d2873bd67c",
+          "bytes": 30564
+        },
+        "model-00001-of-00002.safetensors": {
+          "sha256": "b51fcdf9653aa03f90cae5e5aaf67f521b47b34d57f85c22b5ec7a133f431e8e",
+          "bytes": 4877272896
+        },
+        "model-00002-of-00002.safetensors": {
+          "sha256": "4df84e0bf132e423d150e66c70cfb8dd7d9efb914d9f7ae49c087eca2128c16a",
+          "bytes": 1348141448
+        }
+      },
+      "memory": {
+        "MemTotal": 33546137600,
+        "MemAvailable": 22417444864
+      },
+      "disk_free_bytes": 302524325888,
+      "source_commit": "0631099828e1b2aadbfe56751eec5f67a7bfdf0c",
+      "seconds": 73.01285487599671,
+      "training_args_bin_read": false,
+      "shard_order": [
+        "model-00001-of-00002.safetensors",
+        "model-00002-of-00002.safetensors"
+      ]
+    },
+    "checkpoint-after": {
+      "unchanged": true,
+      "files_sha256": {
+        "config.json": "d4ef9fc34fc59702d1b9e2aa05222e3c40f1e90a65c57d598703482cf7691f43",
+        "model.safetensors.index.json": "ba2721f6b6e9ed0542b33c98a680de512c5eb9054913f091631f86d2873bd67c",
+        "model-00001-of-00002.safetensors": "b51fcdf9653aa03f90cae5e5aaf67f521b47b34d57f85c22b5ec7a133f431e8e",
+        "model-00002-of-00002.safetensors": "4df84e0bf132e423d150e66c70cfb8dd7d9efb914d9f7ae49c087eca2128c16a"
+      }
+    },
+    "historical-integrity": {
+      "status": "PASS",
+      "output_files_verified_against_historical_manifest": 144
+    },
+    "acceptance": {
+      "final_status": "READY_FOR_MATCHED_BENCHMARK",
+      "scope": "development-only; mass inference requires separate authorization",
+      "independent_scientific_benchmark_status": "BLOCKED_BY_DATA",
+      "baseline_status": "PASS",
+      "physics_tests": {
+        "passed": 18,
+        "MD_or_QMMM_executed": false
+      },
+      "enzgfm_runtime_status": "PASS",
+      "full_smoke_attempts": 1,
+      "full_forward_calls": 1,
+      "full_smoke_reproducibility": "NOT MEASURED; no repeat authorized",
+      "feature_builder_contract": "PASS one training record, cached embedding; adapter not integrated",
+      "staged_H1_files_unchanged": 18,
+      "index_unchanged": true,
+      "staged_patch_sha256": "9319289143882859f32efd2b17bad92def9c247e3fbf243a2ba547d55cd60561",
+      "author_source_unchanged": true,
+      "official_test_accessed": false,
+      "mass_enzgfm_encoding_executed": false,
+      "commit_push_merge_executed": false,
+      "limitations": [
+        "single short smoke sequence does not establish long-sequence scaling or reproducibility",
+        "data release/license/assay units and cluster identity provenance unresolved",
+        "Km empirical coverage below nominal 90%",
+        "C1 tests do not prove physical convergence"
+      ]
+    }
+  }
+}

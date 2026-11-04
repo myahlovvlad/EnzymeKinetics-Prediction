@@ -1,0 +1,71 @@
+{
+  "pretraining_overlap": "UNKNOWN: complete training membership not available",
+  "sequence_identity": "provided cluster IDs only; not independently recomputed",
+  "scaffold_empty": "acyclic/invalid molecules excluded from scaffold-set counts",
+  "train:validation": {
+    "sequence": 0,
+    "sequence_40cluster": 0,
+    "pair": 0,
+    "ec": 4,
+    "scaffold": 7
+  },
+  "train:calibration": {
+    "sequence": 0,
+    "sequence_40cluster": 0,
+    "pair": 0,
+    "ec": 4,
+    "scaffold": 6
+  },
+  "train:development_evaluation": {
+    "sequence": 0,
+    "sequence_40cluster": 0,
+    "pair": 0,
+    "ec": 5,
+    "scaffold": 7
+  },
+  "validation:calibration": {
+    "sequence": 0,
+    "sequence_40cluster": 0,
+    "pair": 0,
+    "ec": 3,
+    "scaffold": 6
+  },
+  "validation:development_evaluation": {
+    "sequence": 0,
+    "sequence_40cluster": 0,
+    "pair": 0,
+    "ec": 1,
+    "scaffold": 5
+  },
+  "calibration:development_evaluation": {
+    "sequence": 0,
+    "sequence_40cluster": 0,
+    "pair": 0,
+    "ec": 3,
+    "scaffold": 4
+  },
+  "train": {
+    "rows": 85,
+    "clusters": 78,
+    "missing_ph": 4,
+    "missing_temperature": 5
+  },
+  "validation": {
+    "rows": 34,
+    "clusters": 27,
+    "missing_ph": 3,
+    "missing_temperature": 3
+  },
+  "calibration": {
+    "rows": 36,
+    "clusters": 35,
+    "missing_ph": 1,
+    "missing_temperature": 1
+  },
+  "development_evaluation": {
+    "rows": 37,
+    "clusters": 36,
+    "missing_ph": 4,
+    "missing_temperature": 2
+  }
+}
