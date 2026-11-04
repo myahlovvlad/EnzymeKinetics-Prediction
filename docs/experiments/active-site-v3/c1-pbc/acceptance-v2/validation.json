@@ -1,0 +1,186 @@
+{
+  "scope": "isolated C1 on main 181c45e, no Harness or architecture overlays",
+  "checks": {
+    "import": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-c",
+        "import enzymekinetics_prediction.physics.geometry as g; print(g.__file__)"
+      ],
+      "exit_code": 0,
+      "seconds": 0.17,
+      "output": "/tmp/enzyme-c1-isolated-pzfy73v0/enzyme-kinetics/src/enzymekinetics_prediction/physics/geometry.py\n"
+    },
+    "ruff": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "enzyme-kinetics"
+      ],
+      "exit_code": 0,
+      "seconds": 0.059,
+      "output": "All checks passed!\n"
+    },
+    "format": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "enzyme-kinetics"
+      ],
+      "exit_code": 0,
+      "seconds": 0.063,
+      "output": "127 files already formatted\n"
+    },
+    "syntax": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "enzyme-kinetics/scripts/diagnose_dimer_rmsd.py",
+        "enzyme-kinetics/scripts/diagnostics/reassess_c1_replicas.py",
+        "enzyme-kinetics/scripts/glu43_geometry.py",
+        "enzyme-kinetics/scripts/pbc_clash_audit.py",
+        "enzyme-kinetics/src/enzymekinetics_prediction/physics/dynamics.py",
+        "enzyme-kinetics/src/enzymekinetics_prediction/physics/geometry.py",
+        "enzyme-kinetics/src/enzymekinetics_prediction/physics/trajectory.py",
+        "enzyme-kinetics/src/enzymekinetics_prediction/research/ensemble.py",
+        "enzyme-kinetics/src/enzymekinetics_prediction/research/statistics.py",
+        "enzyme-kinetics/tests/test_periodic_geometry.py",
+        "enzyme-kinetics/tests/test_reassess_c1_replicas.py",
+        "enzyme-kinetics/tests/test_trajectory_structure.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.096,
+      "output": ""
+    },
+    "pytest": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-ra",
+        "--deselect=enzyme-kinetics/tests/test_physics.py::test_native_openmm_prepared_system_in_unicode_workspace",
+        "--deselect=enzyme-kinetics/tests/test_research.py::test_prepared_checkpoint_continues_without_new_minimization",
+        "--deselect=enzyme-kinetics/tests/test_lowT_quench.py::test_shared_md_loop_stops_on_first_failing_window",
+        "--deselect=enzyme-kinetics/tests/test_qmmm_embedding_smoke.py::test_embedding_converges_and_changes_energy"
+      ],
+      "exit_code": 0,
+      "seconds": 9.312,
+      "output": "........................................................................ [ 75%]\n........................                                                 [100%]\n=========================== short test summary info ============================\nSKIPPED [1] enzyme-kinetics/tests/test_render_ksi_preview.py:6: could not import 'imageio': No module named 'imageio'\n96 passed, 1 skipped, 4 deselected in 7.60s\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\n"
+    },
+    "dependencies": {
+      "command": [
+        "uv",
+        "pip",
+        "check",
+        "--python",
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python"
+      ],
+      "exit_code": 0,
+      "output": "Using Python 3.13.16 environment at: /home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv\nChecked 92 packages in 2ms\nAll installed packages are compatible\n"
+    },
+    "build": {
+      "command": [
+        "uv",
+        "build",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "output": "Building source distribution...\nBuilding wheel from source distribution...\nSuccessfully built dist/enzymekinetics_prediction-0.3.0.tar.gz\nSuccessfully built dist/enzymekinetics_prediction-0.3.0-py3-none-any.whl\n"
+    },
+    "enzyme-train": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-c",
+        "from enzymekinetics_prediction.learning.training import main; main()",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output": "usage: -c [-h] [--target {kcat,km,ki}]\n          [--models {mean,ridge,pls,hist,mlp,radial,mbpls,opls,ec_mbpls} [{mean,ridge,pls,hist,mlp,radial,mbpls,opls,ec_mbpls} ...]]\n          [--group-by {sequence,ec,sequence_40cluster,sequence_60cluster}]\n          [--ec-level {1,2,3,4}]\n          [--split-scheme {provided-test,grouped-three-way}]\n          [--physical-table PHYSICAL_TABLE] [--embedding-path EMBEDDING_PATH]\n          [--data-dir DATA_DIR] [--output OUTPUT] [--seed SEED]\n          [--epochs EPOCHS] [--patience PATIENCE] [--batch-size BATCH_SIZE]\n          [--threads THREADS] [--validation-fraction VALIDATION_FRACTION]\n\nTrain, select on grouped validation, then evaluate frozen models once on test.\n\noptions:\n  -h, --help            show this help message and exit\n  --target {kcat,km,ki}\n  --models {mean,ridge,pls,hist,mlp,radial,mbpls,opls,ec_mbpls} [{mean,ridge,pls,hist,mlp,radial,mbpls,opls,ec_mbpls} ...]\n  --group-by {sequence,ec,sequence_40cluster,sequence_60cluster}\n  --ec-level {1,2,3,4}\n  --split-scheme {provided-test,grouped-three-way}\n  --physical-table PHYSICAL_TABLE\n  --embedding-path EMBEDDING_PATH\n  --data-dir DATA_DIR\n  --output OUTPUT\n  --seed SEED\n  --epochs EPOCHS\n  --patience PATIENCE\n  --batch-size BATCH_SIZE\n  --threads THREADS\n  --validation-fraction VALIDATION_FRACTION\n"
+    },
+    "enzyme-predict": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-c",
+        "from enzymekinetics_prediction.learning.predict import main; main()",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output": "usage: -c [-h] --run RUN --input INPUT --output OUTPUT [--model MODEL]\n          [--data-dir DATA_DIR]\n\nLoad a trusted local training run and predict log10 kinetics from CSV.\n\noptions:\n  -h, --help           show this help message and exit\n  --run RUN\n  --input INPUT\n  --output OUTPUT\n  --model MODEL\n  --data-dir DATA_DIR\n"
+    },
+    "enzyme-physics": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-c",
+        "from enzymekinetics_prediction.physics.pipeline import main; main()",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output": "usage: -c [-h] --config CONFIG --output OUTPUT\n\nRun the physical research workflow from a validated YAML/JSON configuration.\n\noptions:\n  -h, --help       show this help message and exit\n  --config CONFIG\n  --output OUTPUT\n"
+    },
+    "enzyme-features": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-c",
+        "from enzymekinetics_prediction.physics.featurize import main; main()",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output": "usage: -c [-h] {pockets,quantum} ...\n\nBatch physical feature extraction independent of response labels.\n\npositional arguments:\n  {pockets,quantum}\n\noptions:\n  -h, --help         show this help message and exit\n"
+    },
+    "enzyme-embed": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-c",
+        "from enzymekinetics_prediction.learning.embeddings import main; main()",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output": "usage: -c [-h] --input INPUT --output OUTPUT [--model-id MODEL_ID]\n          [--revision REVISION] [--batch-size BATCH_SIZE] [--threads THREADS]\n\nGenerate actual ESM-2 residue-mean embeddings with a recorded model revision.\n\noptions:\n  -h, --help            show this help message and exit\n  --input INPUT\n  --output OUTPUT\n  --model-id MODEL_ID\n  --revision REVISION\n  --batch-size BATCH_SIZE\n  --threads THREADS\n"
+    },
+    "enzyme-cycle": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-c",
+        "from enzymekinetics_prediction.physics.reaction import main; main()",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output": "usage: -c [-h] --config CONFIG --output OUTPUT\n\nMass-action E+S <-> ES <-> EP <-> E+P with explicit conservation laws. Rate\nconstants are inputs, not inferred from molecular descriptors. Activities are\napproximated by ideal dilute concentrations. This is a progress-curve\nsimulation of a stated kinetic mechanism, not an atomistic bond-breaking\nmodel.\n\noptions:\n  -h, --help       show this help message and exit\n  --config CONFIG\n  --output OUTPUT\n"
+    },
+    "enzyme-trace": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-c",
+        "from enzymekinetics_prediction.physics.trajectory import main; main()",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output": "usage: -c [-h] --trajectory TRAJECTORY --topology TOPOLOGY --system SYSTEM\n          --output OUTPUT --pair PAIR PAIR\n          [--source-selection SOURCE_SELECTION] --label LABEL\n          [--prepared-nonperiodic] [--temperature-K TEMPERATURE_K]\n          --ionic-strength-M IONIC_STRENGTH_M --dielectric DIELECTRIC\n\nAll-atom trajectory distances and projected electric fields along an explicit\npair. The field model is deliberately the nonperiodic, homogeneous screened\nCoulomb approximation. It is not the PME force field used to generate the\ntrajectory, APBS, a bond-breaking trajectory, or a quantum electric field.\n\noptions:\n  -h, --help            show this help message and exit\n  --trajectory TRAJECTORY\n  --topology TOPOLOGY\n  --system SYSTEM\n  --output OUTPUT\n  --pair PAIR PAIR\n  --source-selection SOURCE_SELECTION\n  --label LABEL\n  --prepared-nonperiodic\n                        Assert that periodic images were prepared explicitly\n                        for the nonperiodic field model\n  --temperature-K TEMPERATURE_K\n  --ionic-strength-M IONIC_STRENGTH_M\n  --dielectric DIELECTRIC\n"
+    },
+    "enzyme-research": {
+      "command": [
+        "/home/vladmyahlov/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/GitHub/EnzymeKinetics-Prediction/.venv/bin/python",
+        "-c",
+        "from enzymekinetics_prediction.research.cli import main; main()",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output": "usage: -c [-h] --output OUTPUT [--registration REGISTRATION]\n          --stage {static,refine,prepare,replicas,torsions,surface,reanalyze}\n          [--threads THREADS] [--workers WORKERS]\n          [--equilibration-steps EQUILIBRATION_STEPS]\n          [--production-steps PRODUCTION_STEPS]\n\nRun registered active-site experiments with explicit stages and a resource\nbudget.\n\noptions:\n  -h, --help            show this help message and exit\n  --output OUTPUT\n  --registration REGISTRATION\n  --stage {static,refine,prepare,replicas,torsions,surface,reanalyze}\n  --threads THREADS\n  --workers WORKERS\n  --equilibration-steps EQUILIBRATION_STEPS\n  --production-steps PRODUCTION_STEPS\n"
+    }
+  },
+  "github_actions": "not run; no commit or push authorized",
+  "excluded_tests": {
+    "test_native_openmm_prepared_system_in_unicode_workspace": "run_md",
+    "test_prepared_checkpoint_continues_without_new_minimization": "run_md/checkpoint continuation",
+    "test_shared_md_loop_stops_on_first_failing_window": "Integrator.step MD",
+    "test_embedding_converges_and_changes_energy": "QM/MM SCF"
+  },
+  "skipped": "optional imageio unavailable; environment unchanged"
+}

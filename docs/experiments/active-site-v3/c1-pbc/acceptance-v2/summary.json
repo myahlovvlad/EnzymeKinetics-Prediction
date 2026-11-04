@@ -1,0 +1,142 @@
+{
+  "method": "orthorhombic-bonded-assembly-kabsch-v1",
+  "annotation_protocol": "P00947 H3; existing KSI roles, independent trajectories are experimental units",
+  "replicas": {
+    "replica-101": {
+      "frames": 50,
+      "structural_method": "orthorhombic-bonded-assembly-kabsch-v1",
+      "analysis_output": "enzyme-kinetics/outputs/experiments/active-site-v3/c1-acceptance-v2/replica-101",
+      "mdtraj_version": "1.11.2",
+      "numpy_version": "2.5.4",
+      "topology_sha256": "db4d3c954e51ea7067811b4774aea5fa52102399407998749c911ba1a641d10b",
+      "state_sha256": "529837ae8a07efd17a390a0cf5abc79fddf02797e7e7694b911ae99e6b3f4e2b",
+      "analysis_code_sha256": {
+        "ensemble.py": "99f52bb42ed6962019f14ae030fde16bf1b76a9818a0c943d012155dc5a164c3",
+        "statistics.py": "c20dcbb308da60bb6b08cc1c5d65a3904605baf8c85333e2b7b86734a1d06a3c",
+        "geometry.py": "7397416ce9a0e454248899f420d81c2f73cd4161029936c156e716241d709385",
+        "trajectory.py": "6a6e37de7518c6fd1d572f481520ab55e09b022152ca76651604d2a38e617d8b",
+        "sites.py": "fe5d5496ce79b29f533b5e9e4819db7e5bc890e803c1e8d686377cb71f0711af"
+      },
+      "rmsd_autocorrelation": {
+        "tau_integrated_frames": 10.38171205235147,
+        "effective_samples": 4.816161317889273,
+        "status": "exploratory_short_series_estimate"
+      },
+      "temperature_mean_K": 299.391908973178,
+      "temperature_second_half_K": 299.0562219776484,
+      "rmsd_first_half_mean_nm": 0.053592304846636726,
+      "rmsd_second_half_mean_nm": 0.07074729125919822,
+      "catalytic_minus_scaffold_rmsf_nm": -0.0019477171419989767,
+      "positioning_minus_scaffold_rmsf_nm": -0.0006574577017610037,
+      "trajectory_sha256": "2a8b5fdf51804727b726803e48c58edea2e232325477e9a42e5277d1bad5d618",
+      "limitations": [
+        "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+        "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+        "DCCM is correlation, not causal influence or a force constant",
+        "Bonded reconstruction and compact nearest-image assembly; orthorhombic cells only",
+        "Replica-level significance requires a separate consistent reanalysis of the complete series"
+      ]
+    },
+    "replica-202": {
+      "frames": 50,
+      "structural_method": "orthorhombic-bonded-assembly-kabsch-v1",
+      "analysis_output": "enzyme-kinetics/outputs/experiments/active-site-v3/c1-acceptance-v2/replica-202",
+      "mdtraj_version": "1.11.2",
+      "numpy_version": "2.5.4",
+      "topology_sha256": "0a7a9713527043fc67b45f0b19801e5420aacbe8a7b5edb49826a49d96bd64a9",
+      "state_sha256": "c8e5a54fd6ea61437671cb5039b4c47038c366e187dd6c8148df9dcde1fb119c",
+      "analysis_code_sha256": {
+        "ensemble.py": "99f52bb42ed6962019f14ae030fde16bf1b76a9818a0c943d012155dc5a164c3",
+        "statistics.py": "c20dcbb308da60bb6b08cc1c5d65a3904605baf8c85333e2b7b86734a1d06a3c",
+        "geometry.py": "7397416ce9a0e454248899f420d81c2f73cd4161029936c156e716241d709385",
+        "trajectory.py": "6a6e37de7518c6fd1d572f481520ab55e09b022152ca76651604d2a38e617d8b",
+        "sites.py": "fe5d5496ce79b29f533b5e9e4819db7e5bc890e803c1e8d686377cb71f0711af"
+      },
+      "rmsd_autocorrelation": {
+        "tau_integrated_frames": 7.420537510755627,
+        "effective_samples": 6.738056364182242,
+        "status": "exploratory_short_series_estimate"
+      },
+      "temperature_mean_K": 298.3873236609648,
+      "temperature_second_half_K": 298.0391677901816,
+      "rmsd_first_half_mean_nm": 0.05696193160727426,
+      "rmsd_second_half_mean_nm": 0.06686490700312185,
+      "catalytic_minus_scaffold_rmsf_nm": -0.004907353230993679,
+      "positioning_minus_scaffold_rmsf_nm": -0.002611789995902253,
+      "trajectory_sha256": "f7f8f2a933ea229df33ff6f6bd8dc75979e5281e591c50f1355a6d24c4887ad6",
+      "limitations": [
+        "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+        "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+        "DCCM is correlation, not causal influence or a force constant",
+        "Bonded reconstruction and compact nearest-image assembly; orthorhombic cells only",
+        "Replica-level significance requires a separate consistent reanalysis of the complete series"
+      ]
+    },
+    "replica-303": {
+      "frames": 50,
+      "structural_method": "orthorhombic-bonded-assembly-kabsch-v1",
+      "analysis_output": "enzyme-kinetics/outputs/experiments/active-site-v3/c1-acceptance-v2/replica-303",
+      "mdtraj_version": "1.11.2",
+      "numpy_version": "2.5.4",
+      "topology_sha256": "06469a912444b7dd6bf8ae6549db274623e41c6bd78b605a3bbeed2ef19d2283",
+      "state_sha256": "3bc9fce7c62f9a61d34b99b7010407c5a3d5e70aea22288cc0d6614b21583fd1",
+      "analysis_code_sha256": {
+        "ensemble.py": "99f52bb42ed6962019f14ae030fde16bf1b76a9818a0c943d012155dc5a164c3",
+        "statistics.py": "c20dcbb308da60bb6b08cc1c5d65a3904605baf8c85333e2b7b86734a1d06a3c",
+        "geometry.py": "7397416ce9a0e454248899f420d81c2f73cd4161029936c156e716241d709385",
+        "trajectory.py": "6a6e37de7518c6fd1d572f481520ab55e09b022152ca76651604d2a38e617d8b",
+        "sites.py": "fe5d5496ce79b29f533b5e9e4819db7e5bc890e803c1e8d686377cb71f0711af"
+      },
+      "rmsd_autocorrelation": {
+        "tau_integrated_frames": 10.645044666086841,
+        "effective_samples": 4.697021155701753,
+        "status": "exploratory_short_series_estimate"
+      },
+      "temperature_mean_K": 298.92090510785346,
+      "temperature_second_half_K": 298.60053272612015,
+      "rmsd_first_half_mean_nm": 0.054998312176530645,
+      "rmsd_second_half_mean_nm": 0.07295177981898573,
+      "catalytic_minus_scaffold_rmsf_nm": -0.0029742790267074035,
+      "positioning_minus_scaffold_rmsf_nm": 0.0010873972773984691,
+      "trajectory_sha256": "894ce934da6f52b7df8b9c8f5497746dffdc9936127161459c0d2cb9a7ec1da7",
+      "limitations": [
+        "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+        "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+        "DCCM is correlation, not causal influence or a force constant",
+        "Bonded reconstruction and compact nearest-image assembly; orthorhombic cells only",
+        "Replica-level significance requires a separate consistent reanalysis of the complete series"
+      ]
+    }
+  },
+  "tests": {
+    "catalytic_minus_scaffold_rmsf_nm": {
+      "n_replicates": 3,
+      "mean_difference": -0.0032764497999000198,
+      "p_two_sided_exact": 0.25,
+      "assumption": "Independent replicate differences exchangeable under sign reversal; not frames/atoms",
+      "differences_nm": [
+        -0.0019477171419989767,
+        -0.004907353230993679,
+        -0.0029742790267074035
+      ],
+      "q_bh": 0.5
+    },
+    "positioning_minus_scaffold_rmsf_nm": {
+      "n_replicates": 3,
+      "mean_difference": -0.0007272834734215958,
+      "p_two_sided_exact": 0.75,
+      "assumption": "Independent replicate differences exchangeable under sign reversal; not frames/atoms",
+      "differences_nm": [
+        -0.0006574577017610037,
+        -0.002611789995902253,
+        0.0010873972773984691
+      ],
+      "q_bh": 0.75
+    }
+  },
+  "limitations": [
+    "n=3 in the registered study: minimum two-sided exact p is .25; no significance at .05",
+    "Exploratory short-series ACF/ESS; shared starting structure; independence/exchangeability are assumptions",
+    "No equilibrium, catalytic mechanism, causal coupling or absence-of-effect claim"
+  ]
+}

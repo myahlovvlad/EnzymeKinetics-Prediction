@@ -9,14 +9,15 @@ from pathlib import Path
 import numpy as np
 from scipy.spatial import cKDTree
 
+from enzymekinetics_prediction.physics.geometry import minimum_image as periodic_image
+
 
 def minimum_image(delta, box):
+    """Compatibility result: canonical displacement plus applied lattice shift."""
     delta = np.asarray(delta, dtype=float)
-    box = np.asarray(box, dtype=float)
-    if box.shape != (3,) or not np.isfinite(box).all() or (box <= 0).any():
-        raise ValueError("positive orthorhombic lengths required")
-    shift = -np.rint(delta / box).astype(int)
-    return delta + shift * box, shift
+    wrapped = periodic_image(delta, box)
+    shift = np.rint((wrapped - delta) / np.asarray(box, dtype=float)).astype(int)
+    return wrapped, shift
 
 
 def classify_pair(a, b, ei, ej, same_molecule, bonded):

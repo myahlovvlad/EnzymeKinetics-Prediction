@@ -71,15 +71,32 @@ Km модели остаётся в единицах исходного дата
 Неудачные расчёты сохраняются в списке failures; отсутствующие значения —
 NaN/None с индикаторами пропусков, а не нулевые физические величины.
 
+## Структурные метрики и PBC
+
+`physics/geometry.py` задаёт общий контракт реконструкции и RMSD/RMSF/Rg/DCCM;
+`physics/trajectory.py:protein_structure` применяет его к полному графу связей
+белка до CA-выборки. Physics, research и диагностика димера используют один
+алгоритм. Поддерживаются осевые прямоугольные ячейки; косые отвергаются.
+Восстанавливаются целые молекулы и компактная ближайшая сборка, не диффузия.
+Вес CA одинаковый, референс RMSD — кадр 0; RMSF/DCCM — временное среднее
+после proper Kabsch fit. Подробный контракт и пересчёт реплик:
+[C1](experiments/active-site-v3/c1-pbc/README.md).
+Без metadata PBC массив координат считается уже целым/согласованным;
+`ensemble_observables` не угадывает ячейку по координатам.
+
 ## Траектория атомов и поле вдоль выбранной пары
+
+Пример требует заранее подготовленного `prepared.dcd` с согласованными
+непериодическими образами источников и probe-атомов. Сам CLI не выполняет
+такую подготовку и не считает периодическую сумму поля.
 
 ```sh
 uv run --locked --extra physics enzyme-trace \
-  --trajectory enzyme-kinetics/outputs/physical/my-p00947-run/md/trajectory.dcd \
+  --trajectory enzyme-kinetics/outputs/physical/my-p00947-trace-input/prepared.dcd \
   --topology enzyme-kinetics/outputs/physical/my-p00947-run/md/topology.pdb \
   --system enzyme-kinetics/outputs/physical/my-p00947-run/md/system.xml \
   --pair 4 21 --source-selection protein \
-  --label 'Проверка CA-пары, не каталитическая связь' \
+  --label 'Проверка CA-пары, не каталитическая связь' --prepared-nonperiodic \
   --ionic-strength-M 0.15 --dielectric 78.5 \
   --output enzyme-kinetics/outputs/physical/my-p00947-trace
 ```
@@ -96,6 +113,9 @@ uv run --locked --extra physics enzyme-trace \
 Поле анализа — непериодическое однородное screened Coulomb; оно отличается от
 PME, которым могла генерироваться траектория. Минимальные периодические образы
 не суммируются. Для пересечений границ нужна отдельная подготовка траектории.
+Периодический OpenMM System без явного --prepared-nonperiodic отвергается;
+этот флаг подтверждает сделанную пользователем подготовку, а не выполняет её.
+Служебная ячейка в DCD непериодического System сама по себе не означает PBC.
 Нельзя трактовать этот анализ как квантовую реакцию или APBS по кадрам.
 
 ## Протекание обратимой реакции
