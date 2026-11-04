@@ -1,0 +1,13 @@
+{
+  "baseline": "181c45ec0682adcdcd7b50da745267337cf1784a",
+  "function": "ensemble_observables",
+  "seed_range": [
+    0,
+    99
+  ],
+  "fixtures": 100,
+  "units_identical": true,
+  "max_absolute_error": 6.661338147750939e-16,
+  "tolerance": 1e-12,
+  "simulation": false
+}

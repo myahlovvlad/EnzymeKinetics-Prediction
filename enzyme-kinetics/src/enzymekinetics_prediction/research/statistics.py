@@ -40,18 +40,21 @@ def benjamini_hochberg(pvalues):
     return result
 
 
-def autocorrelation_diagnostics(values):
+def autocorrelation_diagnostics(values, *, include_acf=False):
     x = np.asarray(values, float)
     if x.ndim != 1 or len(x) < 4 or not np.isfinite(x).all():
         raise ValueError("Need >=4 finite sequential samples")
     x = x - x.mean()
     variance = x @ x
     if variance < 1e-25:
-        return {
+        result = {
             "tau_integrated_frames": None,
             "effective_samples": None,
             "status": "constant_or_numerically_unresolved",
         }
+        if include_acf:
+            result["acf"] = None
+        return result
     # Initial-positive paired sequence, conservative truncation for short paths.
     fft = np.fft.rfft(x, n=2 * len(x))
     acf = np.fft.irfft(fft * fft.conjugate())[: len(x)] / variance
@@ -62,8 +65,11 @@ def autocorrelation_diagnostics(values):
             break
         total += pair
     tau = max(1.0, 1 + 2 * total)
-    return {
+    result = {
         "tau_integrated_frames": float(tau),
         "effective_samples": float(len(x) / tau),
         "status": "exploratory_short_series_estimate",
     }
+    if include_acf:
+        result["acf"] = acf.tolist()
+    return result

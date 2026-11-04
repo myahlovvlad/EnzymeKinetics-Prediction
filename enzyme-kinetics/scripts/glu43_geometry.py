@@ -6,15 +6,12 @@ orthorhombic box lengths are in nm; angles are in degrees.
 
 import numpy as np
 
+from enzymekinetics_prediction.physics.geometry import minimum_image
+
 
 def image(v, box):
-    v = np.asarray(v, dtype=float)
-    box = np.asarray(box, dtype=float)
-    if box.shape != (3,) or not np.isfinite(box).all() or np.any(box <= 0):
-        raise ValueError("box must contain positive finite orthorhombic lengths")
-    if not np.isfinite(v).all():
-        raise ValueError("nonfinite displacement")
-    return v - box * np.rint(v / box)
+    """Compatibility wrapper for the canonical orthorhombic minimum image."""
+    return minimum_image(v, box)
 
 
 def angle(a, b):

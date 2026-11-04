@@ -8,7 +8,8 @@ import pandas as pd
 
 from enzymekinetics_prediction.physics.artifacts import write_json, digest_file
 from enzymekinetics_prediction.physics.dynamics import MDSettings, run_md
-from enzymekinetics_prediction.physics.trajectory import load_dcd
+from enzymekinetics_prediction.physics.trajectory import load_dcd, protein_structure
+from enzymekinetics_prediction.physics.geometry import STRUCTURAL_METHOD
 from enzymekinetics_prediction.physics.sites import KSI_ROLES, KSI_BINDING_CANDIDATES
 from .journal import Journal
 from .statistics import (
@@ -18,23 +19,56 @@ from .statistics import (
 )
 
 
-def analyze_replica(directory):
+def replica_sampling_statistics(rmsd_nm, state):
+    """Sampling diagnostics, separate from structural coordinate processing."""
+    rmsd = np.asarray(rmsd_nm, dtype=float)
+    if rmsd.ndim != 1 or len(rmsd) < 2 or not np.isfinite(rmsd).all():
+        raise ValueError("Need at least two finite RMSD observations")
+    temperatures = state["Temperature (K)"]
+    if not len(temperatures) or not np.isfinite(temperatures).all():
+        raise ValueError("Need finite recorded temperatures")
+    mid = len(rmsd) // 2
+    return {
+        "rmsd_autocorrelation": autocorrelation_diagnostics(rmsd),
+        "temperature_mean_K": float(temperatures.mean()),
+        "temperature_second_half_K": float(
+            temperatures.iloc[len(temperatures) // 2 :].mean()
+        ),
+        "rmsd_first_half_mean_nm": float(rmsd[:mid].mean()),
+        "rmsd_second_half_mean_nm": float(rmsd[mid:].mean()),
+    }
+
+
+def analyze_replica(directory, output=None):
     import mdtraj as md
     from scipy.stats import circmean, circstd
 
     directory = Path(directory)
     traj = load_dcd(directory / "trajectory.dcd", directory / "topology.pdb")
-    ca = traj.topology.select("protein and name CA")
-    aligned = traj.atom_slice(ca)
-    aligned.superpose(aligned, 0, parallel=False)
-    xyz = aligned.xyz.astype(float)
-    fluct = xyz - xyz.mean(axis=0)
-    rmsf = np.sqrt(np.mean(np.sum(fluct**2, axis=-1), axis=0))
-    covariance = np.einsum("tix,tjx->ij", fluct, fluct) / len(xyz)
-    denom = np.sqrt(np.diag(covariance)[:, None] * np.diag(covariance)[None, :])
-    dccm = np.divide(
-        covariance, denom, out=np.zeros_like(covariance), where=denom > 1e-15
+    original = directory
+    targets = (
+        "analysis.json",
+        "residue-rmsf.csv",
+        "sidechain-torsions.csv",
+        "site-dccm.csv",
+        "structure.npz",
     )
+    if output is None:
+        output = (
+            directory / "analysis-c1"
+            if any((directory / p).exists() for p in targets)
+            else directory
+        )
+    output = Path(output)
+    if output == directory:
+        if any((output / name).exists() for name in targets):
+            raise FileExistsError("Historical analysis must not be overwritten")
+    elif output.exists() and any(output.iterdir()):
+        raise FileExistsError(output)
+    traj, metrics = protein_structure(traj)
+    aligned = traj.atom_slice(traj.topology.select("name CA"))
+    xyz = metrics["aligned_nm"]
+    rmsf, dccm = metrics["rmsf_nm"], metrics["dccm"]
     rows = []
     for i, atom in enumerate(aligned.topology.atoms):
         r = atom.residue
@@ -51,7 +85,6 @@ def analyze_replica(directory):
             }
         )
     frame = pd.DataFrame(rows)
-    frame.to_csv(directory / "residue-rmsf.csv", index=False)
     torsions = []
     for label, function in [("chi1", md.compute_chi1), ("chi2", md.compute_chi2)]:
         indices, angles = function(traj)
@@ -83,7 +116,6 @@ def analyze_replica(directory):
                     },
                 }
             )
-    pd.DataFrame(torsions).to_csv(directory / "sidechain-torsions.csv", index=False)
     pairs = []
     for i, a in enumerate(rows):
         if a["resid"] not in (set(KSI_ROLES) | KSI_BINDING_CANDIDATES):
@@ -100,18 +132,24 @@ def analyze_replica(directory):
                     "dccm": float(dccm[i, j]),
                 }
             )
-    pd.DataFrame(pairs).to_csv(directory / "site-dccm.csv", index=False)
-    rmsd = np.sqrt(np.mean(np.sum((xyz - xyz[0]) ** 2, axis=-1), axis=1))
-    state = pd.read_csv(directory / "state.csv")
+    state = pd.read_csv(original / "state.csv")
     result = {
         "frames": len(xyz),
-        "rmsd_autocorrelation": autocorrelation_diagnostics(rmsd),
-        "temperature_mean_K": float(state["Temperature (K)"].mean()),
-        "temperature_second_half_K": float(
-            state["Temperature (K)"].iloc[len(state) // 2 :].mean()
-        ),
-        "rmsd_first_half_mean_nm": float(rmsd[: len(rmsd) // 2].mean()),
-        "rmsd_second_half_mean_nm": float(rmsd[len(rmsd) // 2 :].mean()),
+        "structural_method": STRUCTURAL_METHOD,
+        "analysis_output": str(output),
+        "mdtraj_version": md.__version__,
+        "numpy_version": np.__version__,
+        "topology_sha256": digest_file(original / "topology.pdb"),
+        "state_sha256": digest_file(original / "state.csv"),
+        "analysis_code_sha256": {
+            "ensemble.py": digest_file(__file__),
+            "statistics.py": digest_file(Path(__file__).with_name("statistics.py")),
+            **{
+                name: digest_file(Path(__file__).parents[1] / "physics" / name)
+                for name in ("geometry.py", "trajectory.py", "sites.py")
+            },
+        },
+        **replica_sampling_statistics(metrics["rmsd_nm"], state),
         "catalytic_minus_scaffold_rmsf_nm": float(
             frame[frame.catalytic].rmsf_nm.mean()
             - frame[~frame.catalytic & ~frame.positioning].rmsf_nm.mean()
@@ -120,14 +158,24 @@ def analyze_replica(directory):
             frame[frame.positioning].rmsf_nm.mean()
             - frame[~frame.catalytic & ~frame.positioning].rmsf_nm.mean()
         ),
-        "trajectory_sha256": digest_file(directory / "trajectory.dcd"),
+        "trajectory_sha256": digest_file(original / "trajectory.dcd"),
         "limitations": [
             "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
             "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
             "DCCM is correlation, not causal influence or a force constant",
+            "Bonded reconstruction and compact nearest-image assembly; orthorhombic cells only",
+            "Replica-level significance requires a separate consistent reanalysis of the complete series",
         ],
     }
-    write_json(directory / "analysis.json", result)
+    output.mkdir(parents=True, exist_ok=True)
+    frame.to_csv(output / "residue-rmsf.csv", index=False)
+    pd.DataFrame(torsions).to_csv(output / "sidechain-torsions.csv", index=False)
+    pd.DataFrame(pairs).to_csv(output / "site-dccm.csv", index=False)
+    np.savez_compressed(
+        output / "structure.npz",
+        **{k: metrics[k] for k in ("rmsd_nm", "rmsf_nm", "dccm", "radius_gyration_nm")},
+    )
+    write_json(output / "analysis.json", result)
     return result
 
 

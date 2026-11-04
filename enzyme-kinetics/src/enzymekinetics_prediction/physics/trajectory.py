@@ -14,6 +14,7 @@ import pandas as pd
 
 from .artifacts import artifact, digest_file, write_json
 from .electrostatics import screened_coulomb
+from .geometry import make_whole, orthorhombic_lengths, structural_metrics
 
 
 def load_dcd(path, topology):
@@ -26,6 +27,45 @@ def load_dcd(path, topology):
         dcd.symlink_to(path)
         pdb.symlink_to(Path(topology).resolve())
         return md.load_dcd(str(dcd), top=str(pdb))
+
+
+def protein_structure(traj, *, periodic=None):
+    """Return whole protein coordinates and canonical CA structural metrics.
+
+    Reconstruct full bonded molecules before selecting CA. Every protein chain
+    must lie in one connected bond graph; incomplete topologies fail explicitly.
+    periodic=False is reserved for a known nonperiodic System, since DCD may
+    contain default box vectors even for such systems.
+    """
+    protein = traj.atom_slice(traj.topology.select("protein"))
+    if not protein.n_atoms:
+        raise ValueError("No protein atoms for structural analysis")
+    boxes = protein.unitcell_vectors
+    if periodic is None:
+        periodic = boxes is not None
+    if periodic:
+        if boxes is None:
+            raise ValueError(
+                "Periodic structural analysis requires per-frame box vectors"
+            )
+        orthorhombic_lengths(boxes)
+        molecules = list(protein.topology.find_molecules())
+        membership = {a.index: i for i, group in enumerate(molecules) for a in group}
+        for chain in protein.topology.chains:
+            components = {membership[a.index] for a in chain.atoms}
+            if len(components) > 1:
+                raise ValueError("Incomplete protein bond topology: disconnected chain")
+        bonds = [(a.index, b.index) for a, b in protein.topology.bonds]
+        whole, _, _ = make_whole(protein.xyz, boxes, bonds)
+        # MDTraj storage is float32; metrics retain the double reconstruction.
+    else:
+        whole = protein.xyz.astype(float)
+    ca = protein.topology.select("name CA")
+    if not len(ca):
+        raise ValueError("No protein CA atoms for structural analysis")
+    metrics = structural_metrics(whole[:, ca])
+    protein.xyz = whole
+    return protein, metrics
 
 
 def projected_fields(
@@ -100,6 +140,8 @@ def analyze_trajectory(
     source_selection,
     label,
     output,
+    *,
+    prepared_nonperiodic=False,
     **conditions,
 ):
     import openmm as mm
@@ -110,6 +152,12 @@ def analyze_trajectory(
         raise ValueError("Choose a new trace output directory")
     traj = load_dcd(trajectory, topology)
     system = mm.XmlSerializer.deserialize(Path(system_xml).read_text())
+    if system.usesPeriodicBoundaryConditions() and not prepared_nonperiodic:
+        raise ValueError(
+            "Periodic input requires explicitly prepared nonperiodic coordinates; "
+            "use prepared_nonperiodic=True only after image preparation. "
+            "The field model is not a periodic sum."
+        )
     if system.getNumParticles() != traj.n_atoms:
         raise ValueError(
             "System and trajectory atom counts differ; original atom order is required"
@@ -148,6 +196,7 @@ def analyze_trajectory(
             "source_selection": source_selection,
             "excluded_probe_atoms": list(pair),
             "source_atom_count": len(sources),
+            "prepared_nonperiodic": prepared_nonperiodic,
             **conditions,
         },
         {
@@ -186,6 +235,11 @@ def main():
     parser.add_argument("--pair", nargs=2, type=int, required=True)
     parser.add_argument("--source-selection", default="protein")
     parser.add_argument("--label", required=True)
+    parser.add_argument(
+        "--prepared-nonperiodic",
+        action="store_true",
+        help="Assert that periodic images were prepared explicitly for the nonperiodic field model",
+    )
     parser.add_argument("--temperature-K", type=float, default=298.15)
     parser.add_argument("--ionic-strength-M", type=float, required=True)
     parser.add_argument("--dielectric", type=float, required=True)
@@ -198,6 +252,7 @@ def main():
         args.source_selection,
         args.label,
         args.output,
+        prepared_nonperiodic=args.prepared_nonperiodic,
         temperature_K=args.temperature_K,
         ionic_strength_M=args.ionic_strength_M,
         dielectric=args.dielectric,

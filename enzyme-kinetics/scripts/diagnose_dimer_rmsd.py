@@ -14,19 +14,18 @@ import mdtraj as md
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-from enzymekinetics_prediction.physics.trajectory import load_dcd  # noqa: E402
+from enzymekinetics_prediction.physics.trajectory import load_dcd, protein_structure  # noqa: E402
+from enzymekinetics_prediction.physics.geometry import (  # noqa: E402
+    reconstruct_assembly,
+    structural_metrics,
+    STRUCTURAL_METHOD,
+)
 
 
 def reconstruct_pair(xyz, box, chain_a, chain_b):
-    out = np.array(xyz, dtype=float, copy=True)
-    box = np.asarray(box, dtype=float)
-    if box.shape != (len(out), 3) or np.any(box <= 0):
-        raise ValueError("Expected positive orthorhombic box lengths for every frame")
-    a = out[:, chain_a, :].mean(axis=1)
-    b = out[:, chain_b, :].mean(axis=1)
-    shifts = np.round((b - a) / box) * box
-    out[:, chain_b, :] -= shifts[:, None, :]
-    return out, shifts
+    """Compatibility wrapper: input chains must already be whole."""
+    fixed, applied = reconstruct_assembly(xyz, box, [chain_a, chain_b])
+    return fixed, -applied[:, 1]
 
 
 def main():
@@ -49,13 +48,16 @@ def main():
         [x.index for x in ca.topology.atoms if x.residue.chain.index == chains[1]]
     )
     raw = ca.xyz.copy()
-    fixed, shifts = reconstruct_pair(raw, ca.unitcell_lengths, a, b)
+    protein, canonical = protein_structure(traj)
+    fixed = protein.xyz[:, protein.topology.select("name CA")]
+    # Retain legacy diagnostic shift convention: subtracted from chain B.
+    _, shifts = reconstruct_pair(raw, ca.unitcell_lengths, a, b)
 
     def rmsd(xyz, select=None):
-        tmp = md.Trajectory(xyz.astype(np.float32), ca.topology)
-        return md.rmsd(tmp, tmp, 0, atom_indices=select, parallel=False).astype(float)
+        selected = xyz if select is None else xyz[:, select]
+        return structural_metrics(selected)["rmsd_nm"]
 
-    original, corrected = rmsd(raw), rmsd(fixed)
+    original, corrected = rmsd(raw), canonical["rmsd_nm"]
     separate_a, separate_b = rmsd(raw, a), rmsd(raw, b)
     mid = len(original) // 2
     result = {
@@ -64,6 +66,7 @@ def main():
             for p in (args.trajectory, args.topology)
         },
         "mdtraj_version": md.__version__,
+        "structural_method": STRUCTURAL_METHOD,
         "frames": len(raw),
         "ca_per_chain": [len(a), len(b)],
         "box_lengths_first_nm": ca.unitcell_lengths[0].tolist(),
@@ -92,10 +95,12 @@ def main():
         ).tolist(),
         "shifts_nm": shifts.tolist(),
         "limitations": [
-            "Assumes each chain whole and minimum-image dimer; no physical stability claim.",
+            "Bonded chains are reconstructed before compact minimum-image assembly; no stability claim.",
             "Only CA-based alignment and displacement examined.",
         ],
     }
+    if args.output.exists():
+        raise FileExistsError(args.output)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))

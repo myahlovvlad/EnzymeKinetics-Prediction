@@ -9,6 +9,7 @@ import numpy as np
 
 from .artifacts import artifact, digest_file, package_version, write_json
 from .kinetics import positive
+from .geometry import STRUCTURAL_METHOD, structural_metrics
 
 
 @dataclass(frozen=True)
@@ -52,6 +53,7 @@ class MDSettings:
 
 
 def ensemble_observables(coordinates_nm, distance_pairs=(), productive_upper_nm=None):
+    """Summaries for whole, coherently imaged coordinates (no PBC guessing)."""
     xyz = np.asarray(coordinates_nm, dtype=float)
     if (
         xyz.ndim != 3
@@ -60,29 +62,11 @@ def ensemble_observables(coordinates_nm, distance_pairs=(), productive_upper_nm=
         or not np.isfinite(xyz).all()
     ):
         raise ValueError("Expected finite [frames>=2, atoms, 3] coordinates in nm")
-    reference = xyz[0] - xyz[0].mean(axis=0)
-    aligned = []
-    for frame in xyz:
-        centered = frame - frame.mean(axis=0)
-        u, _, vt = np.linalg.svd(centered.T @ reference)
-        if np.linalg.det(u @ vt) < 0:
-            u[:, -1] *= -1
-        aligned.append(centered @ u @ vt)
-    aligned = np.asarray(aligned)
-    rmsd = np.sqrt(np.mean(np.sum((aligned - reference) ** 2, axis=2), axis=1))
-    rg = np.sqrt(
-        np.mean(np.sum((xyz - xyz.mean(axis=1, keepdims=True)) ** 2, axis=2), axis=1)
-    )
-    fluctuations = aligned - aligned.mean(axis=0)
-    covariance = np.einsum("tix,tjx->ij", fluctuations, fluctuations) / len(xyz)
-    normalization = np.sqrt(np.diag(covariance)[:, None] * np.diag(covariance)[None, :])
-    dccm = np.divide(
-        covariance,
-        normalization,
-        out=np.zeros_like(covariance),
-        where=normalization > 1e-15,
-    )
-    off_diagonal = dccm[~np.eye(len(reference), dtype=bool)]
+    metrics = structural_metrics(xyz)
+    rmsd = metrics["rmsd_nm"]
+    rg = metrics["radius_gyration_nm"]
+    dccm = metrics["dccm"]
+    off_diagonal = dccm[~np.eye(xyz.shape[1], dtype=bool)]
     values = {
         "rmsd_mean_nm": float(rmsd.mean()),
         "rmsd_std_nm": float(rmsd.std()),
@@ -265,9 +249,16 @@ def run_md(
     ca_indices = trajectory.topology.select("protein and name CA")
     if not len(ca_indices):
         raise ValueError("No protein CA atoms for ensemble observables")
-    # CA indices used for distances below are relative to this CA selection.
+    from .trajectory import protein_structure
+
+    prepared, structure = protein_structure(
+        trajectory, periodic=system.usesPeriodicBoundaryConditions()
+    )
+    # Preserve the existing CA-relative distance-pair indexing.
     values, units = ensemble_observables(
-        trajectory.xyz[:, ca_indices], distance_pairs, productive_upper_nm
+        structure["coordinates_nm"],
+        distance_pairs,
+        productive_upper_nm,
     )
     values.update(
         production_time_ps=settings.production_steps * settings.step_fs / 1000,
@@ -284,6 +275,8 @@ def run_md(
             "mdtraj_version": package_version("mdtraj"),
             "trajectory_sha256": digest_file(trajectory_path),
             "observable_selection": "protein CA",
+            "structural_method": STRUCTURAL_METHOD,
+            "periodic_analysis": system.usesPeriodicBoundaryConditions(),
             "distance_pairs_CA_indices": list(distance_pairs),
             "productive_upper_nm": productive_upper_nm,
         },
