@@ -1,0 +1,11 @@
+{
+  "relative_field_change_129_to_193": 0.17264935295630707,
+  "meets_10percent_criterion": false,
+  "potential_V": -0.9001701155104753,
+  "field_V_per_A": [
+    -0.08046745891377273,
+    0.030400771833354864,
+    0.18258219304487713
+  ],
+  "limitation": "Single probe/condition grid check; does not validate entire factorial or dielectric assumptions"
+}

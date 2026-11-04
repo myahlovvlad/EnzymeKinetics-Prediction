@@ -1,0 +1,148 @@
+{
+  "target": "kcat",
+  "selected_model": "mlp",
+  "feature_version": 3,
+  "feature_blocks": {
+    "sequence": [
+      0,
+      22
+    ],
+    "substrate": [
+      22,
+      285
+    ],
+    "conditions": [
+      285,
+      289
+    ],
+    "embedding": [
+      289,
+      418
+    ],
+    "geometry": [
+      418,
+      422
+    ],
+    "EC": [
+      422,
+      491
+    ],
+    "titration": [
+      491,
+      494
+    ],
+    "pocket_0": [
+      494,
+      509
+    ],
+    "qm_1": [
+      509,
+      517
+    ]
+  },
+  "seed": 42,
+  "rows": {
+    "train": 16731,
+    "validation": 4104,
+    "test": 2316
+  },
+  "group_by": "sequence",
+  "split_scheme": "provided-test",
+  "versions": {
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "rdkit": "2026.9.1",
+    "scikit-learn": "1.9.1"
+  },
+  "coverage": {
+    "train": {
+      "invalid_smiles_fraction": 0.008307931013405323,
+      "missing_embedding_fraction": 0.0,
+      "missing_structure_fraction": 0.4976988732814789
+    },
+    "validation": {
+      "invalid_smiles_fraction": 0.01145224180072546,
+      "missing_embedding_fraction": 0.0,
+      "missing_structure_fraction": 0.4724658727645874
+    },
+    "test": {
+      "invalid_smiles_fraction": 0.0056131258606910706,
+      "missing_embedding_fraction": 0.0,
+      "missing_structure_fraction": 0.4835923910140991
+    }
+  },
+  "physical_coverage": {
+    "train": {
+      "enzyme-kinetics/data/physical/pockets.csv": 0.23345884884346424,
+      "enzyme-kinetics/data/physical/quantum.csv": 0.016974478512940094
+    },
+    "validation": {
+      "enzyme-kinetics/data/physical/pockets.csv": 0.26193957115009747,
+      "enzyme-kinetics/data/physical/quantum.csv": 0.016812865497076057
+    },
+    "test": {
+      "enzyme-kinetics/data/physical/pockets.csv": 0.2594991364421416,
+      "enzyme-kinetics/data/physical/quantum.csv": 0.01770293609671847
+    }
+  },
+  "code_sha256_at_start": {
+    "__init__.py": "aac32244ca6b3e46806c83dac92fad81ec8b0c93de1c0cd09d0b74df04aec2df",
+    "paths.py": "fbb6aaec4c8de56e753e630377cc3b4e599cd9ccf369c2c371b1d89004852902",
+    "experiments/core_chemistry.py": "52ca24151e734ab154b008e057d515dea0c0dec81910f6681c4e8666600db1b4",
+    "experiments/core_physics.py": "bc89eae0c353fcd9912e6a191524642da1e0598cd6b7208186274a2a12a50e52",
+    "experiments/kinetics_estimator.py": "2d569077a62cb9c9691f8ef967b6ab2944dcf04f1ef19c0bde083de5dafedf11",
+    "experiments/__init__.py": "964027ae397be2dce68845a12883ee46fb18912ea50f480d202ee5ee6f053587",
+    "experiments/physics_engine.py": "fad3e78e93f6f6168ab2464068361334f3554311d1027b8c7a4fdfabb59ce0c4",
+    "experiments/core_structure.py": "5df8fa2c57b73caa7f94eb9d9b867fa850d7268b221c7e0f5233fe7926330197",
+    "experiments/equations.py": "ed9efb778512b7de715fe90326b6857c7d4009a10e8ca70c62f578f72396add3",
+    "physics/conditions.py": "150edef15ab71baae370f5998bb1a5c6545aa18cd2e22b16d62380609b569312",
+    "physics/artifacts.py": "82f191edf8fbabc9954d114ec0202a95d3bc524b78a156b41fee4ee1561d2d97",
+    "physics/trajectory.py": "d12eafa560d0e490c0220d41dbd6d6b8fb662169576f0a9ace6a0d6fc0588133",
+    "physics/tables.py": "20c72eaf3af8c6b0f1b8ad3d87c97a6622e72f95404dc82d8f28a6ba55d76fb7",
+    "physics/__init__.py": "4fe1bc6c207cf2d199ad95db0a74c34febeeec11c17a3890d43f06705a72000d",
+    "physics/electrostatics.py": "642c3792977bb892902671e1939aa068cd9fdd0a3fd87b430e78d8af2a1e016c",
+    "physics/quantum.py": "363f1422155a22472a3a456675138a999fb3886b37fc73c8d9d7ac76bf8647b0",
+    "physics/pipeline.py": "b139b4650af835db28025fad9aaa977555185b19c6a9407f4f4f86d45228430b",
+    "physics/dynamics.py": "46d896b110b2e6a5874a8fe64873e2fe0efc0f3e580e99aa8dc2fe583905f147",
+    "physics/reaction.py": "72cb153464a7d79fbee978ba7f8e26c73e2284244856cd4bab3b166147b09525",
+    "physics/kinetics.py": "4f8a087965e2fef4c4376c9080b52f7bd6c7977e969dc66d1d4dd5fcb4f39bb2",
+    "physics/featurize.py": "992147587f8d16b98e507c4169bdd0347a8d0dad58ffb12019089e7a007f2932",
+    "physics/mechanism.py": "265bce50048a1ce1cc3c9a0a95ee9e552a2d5787ec614716ceec86c2148bfdad",
+    "physics/structure.py": "a37529bee2dc68520468fc54eb605c7fae9d82459d9d0f316118590661bb2087",
+    "physics/sites.py": "f8e45b0e1dfc5fd5718db8852a54994c33083c4171019f2074a3f8cead86c0bb",
+    "research/statistics.py": "062f20244cfbe16c68ed66efbb965a77f7fe4329ad8a7c1c0c6a352fa3600755",
+    "research/__init__.py": "b31e04153afe204cf575daba017e1fa8b5ccfd140282c0933f6365d97490e25d",
+    "research/conditions_study.py": "7b212d66220d8946346dfa6ca935d41a356928576a4f3202ea79dbfda9e4ca30",
+    "research/torsions.py": "efb3ca37d3c31a5613797492a7288f3880d118019d7bcbd4bbe1ebf972d80f26",
+    "research/proton_surface.py": "8af6f0fa88345228aad3d0fc8f1f7b14e9b168dcd9f44d730a974d5a74ed7176",
+    "research/ensemble.py": "01b86cf282095f1da72321f824986e218c30c2bd2fa56207acfb845c1d23fe68",
+    "research/performance.py": "a934bc9b6277852fb41d5a4663dc6227c84d9487b1ccbe6ad469f81ffa5e0338",
+    "research/journal.py": "11bfc42f5085229fb10d9cac60ee3c70108df1d164b717c5ebd36324bfce365a",
+    "learning/embeddings.py": "1f8cff964c5690a28f0c65e1c545232dd2fc9c263f82f05d2eaecae6b73f54ee",
+    "learning/predict.py": "da7694e5ed91a7c40ab5fbd4d3966c39c301df33989d8481973936e2472424b7",
+    "learning/__init__.py": "ab5d863bfdcaf9af4eca82be66e4c6e6438f2118ecc64d9e99a694817f63e46c",
+    "learning/features.py": "052bf7a8d974f32f66b1cb0dd3289e0efba003cb4f65a2aa9fee1a4085afc7a7",
+    "learning/training.py": "1bc3a2e15aa097993a1928dac79b9a10bb0d61233912c2eaddbdaaa8c8ec8251",
+    "learning/models.py": "8d375b4ab01f36297f33f40bc71c03062f4e78971afb0fd992402e7bda74a19e",
+    "learning/chemometrics.py": "fdc290e01f8820b4e31a46128a25df3a941ee641fca4f3a61d3e12e19661f0ce"
+  },
+  "trainval_sha256": "99d6a214242dc709a5ab50475116386e1a204215565acf35888dce3621d8f44b",
+  "test_sha256": "c531ef2d38b1eb7c02f956d7f9ce5e47c58123eca0bb36d965cecd13dcc6cae2",
+  "test_group_overlap_rows": 1965,
+  "limitations": [
+    "Single-seed exploratory benchmark",
+    "Exact-sequence novelty is not sequence-cluster OOD",
+    "Radial geometry is not a molecular interaction graph or a QM barrier",
+    "No empirical claim of reaction-mechanism simulation",
+    "Products and target-derived barriers excluded"
+  ],
+  "portable_subset": true,
+  "local_artifact_checksums": {
+    "metadata.json": "0c41f75b5a4799aba8a246b4676dd731fb61e1e367a294a4a960c82d0d629ee5",
+    "metrics.json": "4ef762194c2378a184a8fafaa7e38399d642dbac265d89ae50357760f04167b9",
+    "predictions.csv": "cdba937d732c2a67213840b636d3e2f38e6b2723b882496bc98992c158a946ce",
+    "preprocessing.joblib": "7b2966b8244d480f6ed6114fb9b337cec10dd487c551fee8e489f3a9bdf310b8",
+    "mlp.pt": "5d91a69fd1970540fea446d9ea833df581501793d87f64a9806e5e6499b330d9"
+  }
+}

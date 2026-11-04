@@ -1,0 +1,50 @@
+{
+  "values": [
+    {
+      "temperature_K": 288.15,
+      "dielectric": 81.94549625,
+      "potential_V": [
+        -1.009423643413804
+      ],
+      "field_V_per_A": [
+        [
+          -0.08349905000393738,
+          -0.013494088820408921,
+          0.10063043663970378
+        ]
+      ]
+    },
+    {
+      "temperature_K": 298.15,
+      "dielectric": 78.30334375,
+      "potential_V": [
+        -1.0146102004482132
+      ],
+      "field_V_per_A": [
+        [
+          -0.08495799027142976,
+          -0.01380397144156696,
+          0.09950063978385297
+        ]
+      ]
+    },
+    {
+      "temperature_K": 310.15,
+      "dielectric": 74.15220547,
+      "potential_V": [
+        -1.0209700104821182
+      ],
+      "field_V_per_A": [
+        [
+          -0.08674463467179283,
+          -0.014187748144806634,
+          0.09811753504885604
+        ]
+      ]
+    }
+  ],
+  "limitations": [
+    "Secondary exploratory analysis after primary factorial; not a preregistered confirmatory test",
+    "Pure water epsilon; no fitted buffer/salt dielectric decrement or ionization enthalpy"
+  ]
+}

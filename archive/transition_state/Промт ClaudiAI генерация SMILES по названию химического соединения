@@ -1,0 +1,46 @@
+Напиши скрипт кода на языке python, который осуществляет следующее действия
+На вход программы подаётся уравнение реакции, например Adenosine-5'-triphosphate + alpha-D-Glucose <=> Adenosine-5'-diphosphate + alpha-D-Glucose 6-phosphate. Скрипт кода выполняет следующие действия:
+1. Разбить строку уравнения реакции на реагенты и продукты 
+2. Название каждого химического соединения по отдельности коныертировать в формулу линейной нотации SMILES. Нотации SMILES химических соединений брать из базы данных PubChem, в соответствующем разделе базы данных
+ 
+За основу решения данной задачи можете взять следующий скрипт кода на python
+При редактировании данного кода пожалуйста учитывай, что при записи уравнения реакции у формул реагентов и продуктов могут стоять коэффициенты, а также количество реагентов, вступающие в уравнение реакции и продуктов, которые образуются в результате протекания реакции может быть неопределённым (думаю лучше здесь написать функцию).
+Также после приведения кода, укажи в качестве замечаний правила и нотации написаия уравнения химической реакции, который подают на вход данной программы
+
+import rdkit
+from rdkit import Chem
+from rdkit.Chem import MolFromSmiles
+import pyscf
+from pyscf import gto, scf, grad, hessian
+import numpy as np
+
+# Ввод уравнения реакции
+reaction_equation = "Adenosine-5'-triphosphate + alpha-D-Glucose <=> Adenosine-5'-diphosphate + alpha-D-Glucose 6-phosphate"
+
+# Разбить на реагенты и продукты
+reactants, products = reaction_equation.split("=>")
+reactants = reactants.strip().split("+")
+products = products.strip().split("+")
+
+# Конвертировать названия в SMILES
+
+r1_name = reactants[0]
+r1_smiles = Chem.MolToSmiles(MolFromSmiles(r1_name))
+
+r2_name = reactants[1]
+r2_smiles = Chem.MolToSmiles(MolFromSmiles(r2_name))
+
+p1_name = products[0]
+p1_smiles = Chem.MolToSmiles(MolFromSmiles(p1_name))
+
+p2_name = products[1] 
+p2_smiles = Chem.MolToSmiles(MolFromSmiles(p2_name))
+
+
+
+Adenosine-5'-triphosphate + alpha-D-Glucose <=> Adenosine-5'-diphosphate + alpha-D-Glucose 6-phosphate"
+
+C1=NC(=C2C(=N1)N(C=N2)C3C(C(C(O3)COP(=O)(O)OP(=O)(O)OP(=O)(O)O)O)O)N
+C(C1C(C(C(C(O1)O)O)O)O)O.O
+C(C1C(C(C(C(O1)O)O)O)O)OP(=O)(O)O
+C1=NC(=C2C(=N1)N(C=N2)C3C(C(C(O3)COP(=O)(O)OP(=O)(O)O)O)O)N

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "backend": "OpenMM",
+  "status": "complete",
+  "inputs": {
+    "pdb": "/home/vladmyahlov/Документы/GitHub/EnzymeKinetics-Prediction/enzyme-kinetics/outputs/experiments/active-site-v3/8CHO-wt-dimer.pdb",
+    "pdb_sha256": "2a7379e2297a97b6ebef3c81d49c2f5bcd636be5cac40080bbba83dc91b5ee13"
+  },
+  "settings": {
+    "temperature_K": 298.15,
+    "ph": 7.0,
+    "ionic_strength_M": 0.15,
+    "step_fs": 2.0,
+    "equilibration_steps": 0,
+    "production_steps": 4,
+    "report_interval": 2,
+    "seed": 42,
+    "threads": 24,
+    "padding_nm": 1.0,
+    "protonation_variants": {
+      "A:99": "ASH",
+      "B:99": "ASH"
+    },
+    "parameterization": "amber14-all.xml + amber14/tip3pfb.xml; standard residues only",
+    "openmm_version": "8.6.1",
+    "mdtraj_version": "1.11.2",
+    "trajectory_sha256": "412d4994b834c6d5c246a959e0c9635f83d7433c636a099a6b389a70f1629f8b",
+    "observable_selection": "protein CA",
+    "distance_pairs_CA_indices": [],
+    "productive_upper_nm": null
+  },
+  "cache_key": "bbe8f662a7fba95d9711d2c2fbd1eee0d643723fcec7b8ed7475ce07ea940fbe",
+  "values": {
+    "rmsd_mean_nm": 0.0009530729138606999,
+    "rmsd_std_nm": 0.000953072913860047,
+    "radius_gyration_mean_nm": 1.8606687930592944,
+    "dccm_abs_offdiagonal_mean": 0.4980565554528881,
+    "production_time_ps": 0.008,
+    "frames": 2
+  },
+  "units": {
+    "rmsd_mean_nm": "nm",
+    "rmsd_std_nm": "nm",
+    "radius_gyration_mean_nm": "nm",
+    "dccm_abs_offdiagonal_mean": "dimensionless",
+    "production_time_ps": "ps",
+    "frames": "count"
+  },
+  "limitations": [
+    "Classical fixed-topology MD does not simulate the chemical reaction",
+    "Default preparation is an apo standard-residue protein; ES ligands require a supplied parameterized System",
+    "Hydrogen assignment at nominal pH is not constant-pH sampling or a validated catalytic protonation state",
+    "Reported moments and DCCM do not establish convergence; short runs are backend checks"
+  ]
+}

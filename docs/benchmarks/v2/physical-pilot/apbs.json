@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "backend": "APBS",
+  "status": "complete",
+  "inputs": {
+    "pqr_sha256": "9609e9b3058f995dc36a9a86b91cf3fc8517110e43143b47fdf22612ef6f71a6",
+    "dx_sha256": "5c4d3fc9dfec582a4785e39a13b33100758655392bca3120a191ff217555dc1c",
+    "executable_sha256": "c9060942967d9db1b8933e3969ca963020f45974cb5e0ab19b5609f59d0c2675"
+  },
+  "settings": {
+    "temperature_K": 298.15,
+    "ionic_strength_M": 0.15,
+    "grid": [
+      65,
+      65,
+      65
+    ],
+    "dielectric_solvent": 78.5,
+    "dielectric_protein": 2.0,
+    "query_A": [
+      [
+        -3.8591,
+        -0.4237,
+        6.9228
+      ]
+    ]
+  },
+  "cache_key": "fc048dd6b1a8b51b94022942bd7a5cf891180303f49ddc46f6b0d9bd99e51ad9",
+  "values": {
+    "potential_V": [
+      -0.1704674868143526
+    ],
+    "field_V_per_A": [
+      [
+        0.009362151662193282,
+        0.013079342972954811,
+        -0.013314100686811197
+      ]
+    ]
+  },
+  "units": {
+    "potential_V": "Volt",
+    "field_V_per_A": "Volt/Angstrom"
+  },
+  "limitations": [
+    "Linear Poisson-Boltzmann with specified dielectric boundary and ion assumptions; grid convergence requires separate checks"
+  ]
+}

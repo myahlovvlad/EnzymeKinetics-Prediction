@@ -1,0 +1,24 @@
+{
+  "runs": 27,
+  "checks_at_extremes": [
+    {
+      "ph": 5,
+      "temperature_K": 288.15,
+      "ionic_strength_M": 0,
+      "relative_change_97_to_129": 0.006715533043333425,
+      "passes_10percent": true
+    },
+    {
+      "ph": 9,
+      "temperature_K": 310.15,
+      "ionic_strength_M": 0.3,
+      "relative_change_97_to_129": 0.007422172909040062,
+      "passes_10percent": true
+    }
+  ],
+  "all_checked_conditions_pass": true,
+  "limitations": [
+    "Grid checks at three conditions, not experimental validation of pKa or dielectric model",
+    "Empirical fixed protonation and apo structure, not ES or constant-pH sampling"
+  ]
+}

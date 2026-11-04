@@ -1,0 +1,38 @@
+[
+  {
+    "run": "kcat-v1",
+    "records": 8,
+    "max_absolute_error": {
+      "mean": 7.330321905030246e-10,
+      "ridge": 3.542938231682058e-08,
+      "pls": 0.0,
+      "hist": 0.0,
+      "mlp": 6.552625122085987e-07,
+      "radial": 1.849479674964627e-07
+    },
+    "status": "passed"
+  },
+  {
+    "run": "kcat-physical-v2",
+    "records": 8,
+    "max_absolute_error": {
+      "mean": 7.330321905030246e-10,
+      "ridge": 4.5506286516783234e-08,
+      "mbpls": 0.0,
+      "opls": 0.0,
+      "ec_mbpls": 8.881784197001252e-16,
+      "mlp": 2.4976196288939434e-07
+    },
+    "status": "passed"
+  },
+  {
+    "run": "kcat-titration-validated-v3",
+    "records": 8,
+    "max_absolute_error": {
+      "mean": 7.330321905030246e-10,
+      "ridge": 4.986267088114005e-08,
+      "mlp": 2.420858764562439e-07
+    },
+    "status": "passed"
+  }
+]

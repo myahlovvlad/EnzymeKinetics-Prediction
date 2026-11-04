@@ -1,0 +1,14 @@
+{
+  "provenance": "Synthetic numerical example for software validation only; these are not measured P00947 rate constants",
+  "rates": {
+    "kon_substrate_M_inv_s": 10000000,
+    "koff_substrate_s": 200,
+    "chemistry_forward_s": 100,
+    "chemistry_reverse_s": 30,
+    "kon_product_M_inv_s": 1000000,
+    "release_product_s": 10
+  },
+  "initial_M": [0.000001, 0, 0, 0.0001, 0],
+  "duration_s": 30,
+  "frames": 301
+}

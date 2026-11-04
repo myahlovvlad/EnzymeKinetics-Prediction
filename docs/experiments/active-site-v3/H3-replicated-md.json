@@ -1,0 +1,81 @@
+{
+  "replicates": [
+    {
+      "frames": 50,
+      "rmsd_autocorrelation": {
+        "tau_integrated_frames": 8.7265669941764,
+        "effective_samples": 5.729629994632147,
+        "status": "exploratory_short_series_estimate"
+      },
+      "temperature_mean_K": 299.391908973178,
+      "temperature_second_half_K": 299.0562219776484,
+      "rmsd_first_half_mean_nm": 0.053592308024724186,
+      "rmsd_second_half_mean_nm": 1.2327589151552425,
+      "catalytic_minus_scaffold_rmsf_nm": 0.00953084544669447,
+      "positioning_minus_scaffold_rmsf_nm": 0.11007280511743733,
+      "trajectory_sha256": "2a8b5fdf51804727b726803e48c58edea2e232325477e9a42e5277d1bad5d618",
+      "limitations": [
+        "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+        "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+        "DCCM is correlation, not causal influence or a force constant"
+      ]
+    },
+    {
+      "frames": 50,
+      "rmsd_autocorrelation": {
+        "tau_integrated_frames": 7.4205363116668925,
+        "effective_samples": 6.738057452988648,
+        "status": "exploratory_short_series_estimate"
+      },
+      "temperature_mean_K": 298.3873236609648,
+      "temperature_second_half_K": 298.0391677901816,
+      "rmsd_first_half_mean_nm": 0.05696193037178087,
+      "rmsd_second_half_mean_nm": 0.066864903554444,
+      "catalytic_minus_scaffold_rmsf_nm": -0.004907350384280168,
+      "positioning_minus_scaffold_rmsf_nm": -0.0026117902055804165,
+      "trajectory_sha256": "f7f8f2a933ea229df33ff6f6bd8dc75979e5281e591c50f1355a6d24c4887ad6",
+      "limitations": [
+        "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+        "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+        "DCCM is correlation, not causal influence or a force constant"
+      ]
+    },
+    {
+      "frames": 50,
+      "rmsd_autocorrelation": {
+        "tau_integrated_frames": 10.645038861300591,
+        "effective_samples": 4.697023717007934,
+        "status": "exploratory_short_series_estimate"
+      },
+      "temperature_mean_K": 298.92090510785346,
+      "temperature_second_half_K": 298.60053272612015,
+      "rmsd_first_half_mean_nm": 0.05499831796408314,
+      "rmsd_second_half_mean_nm": 0.07295177040946844,
+      "catalytic_minus_scaffold_rmsf_nm": -0.002974266440926625,
+      "positioning_minus_scaffold_rmsf_nm": 0.0010873854499567695,
+      "trajectory_sha256": "894ce934da6f52b7df8b9c8f5497746dffdc9936127161459c0d2cb9a7ec1da7",
+      "limitations": [
+        "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+        "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+        "DCCM is correlation, not causal influence or a force constant"
+      ]
+    }
+  ],
+  "tests": {
+    "catalytic_minus_scaffold_rmsf_nm": {
+      "n_replicates": 3,
+      "mean_difference": 0.0005497428738292254,
+      "p_two_sided_exact": 1.0,
+      "assumption": "Independent replicate differences exchangeable under sign reversal; not frames/atoms",
+      "q_bh": 1.0
+    },
+    "positioning_minus_scaffold_rmsf_nm": {
+      "n_replicates": 3,
+      "mean_difference": 0.03618280012060456,
+      "p_two_sided_exact": 0.75,
+      "assumption": "Independent replicate differences exchangeable under sign reversal; not frames/atoms",
+      "q_bh": 1.0
+    }
+  },
+  "conclusion": "Exploratory pilot: n=3 cannot reject a two-sided exact sign-flip test at alpha=.05; no convergence claim"
+}

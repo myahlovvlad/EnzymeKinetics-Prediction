@@ -1,0 +1,70 @@
+{
+  "target": "km",
+  "target_column": "log10_value",
+  "target_scale": "log10",
+  "target_unit": "dataset-native concentration unit; verify assay provenance",
+  "seed": 42,
+  "threads": 4,
+  "selected_model": "mlp",
+  "selection_metric": "validation MAE, exact-sequence-group split",
+  "rows": {
+    "train": 29557,
+    "validation": 7499,
+    "test": 4118
+  },
+  "coverage": {
+    "train": {
+      "invalid_smiles_fraction": 0.00646209018304944,
+      "missing_embedding_fraction": 3.3832933695521206e-05,
+      "missing_structure_fraction": 0.5665324330329895
+    },
+    "validation": {
+      "invalid_smiles_fraction": 0.006934257689863443,
+      "missing_embedding_fraction": 0.0,
+      "missing_structure_fraction": 0.5592745542526245
+    },
+    "test": {
+      "invalid_smiles_fraction": 0.005585235543549061,
+      "missing_embedding_fraction": 0.0,
+      "missing_structure_fraction": 0.5750364065170288
+    }
+  },
+  "versions": {
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "rdkit": "2026.9.1",
+    "scikit-learn": "1.9.1"
+  },
+  "feature_version": 1,
+  "trainval_sha256": "d94608500a0fa049e0082f1eeb4b12603f56ee5b4a540f1772666557d8a524ec",
+  "test_sha256": "8a50007517aeb8b687ea310817c9661ff8bf0100091f66e3703bad581e661011",
+  "elapsed_seconds": 84.4446703249996,
+  "limitations": [
+    "Single-seed exploratory benchmark",
+    "Exact-sequence novelty is not sequence-cluster OOD",
+    "Radial geometry is not a molecular interaction graph or a QM barrier",
+    "No empirical claim of reaction-mechanism simulation",
+    "Products and target-derived barriers excluded"
+  ],
+  "embedding_info": {
+    "status": "loaded",
+    "sha256": "9c04a52c2b0fb7f66f5dd7b05e63cd3b36cd7b9f8ed4f0bcac9612de089d47d0",
+    "entries": 13376,
+    "dimension": 128,
+    "duplicate_uniprot_representations": 1,
+    "id_policy": "parse AF-/ESMFold- filename; prefer AF when both exist"
+  },
+  "canonical_pair_overlap_test_rows": 5,
+  "neural_epochs": {
+    "mlp": {
+      "best_epoch": 13,
+      "epochs_run": 28
+    },
+    "radial": {
+      "best_epoch": 13,
+      "epochs_run": 28
+    }
+  },
+  "code_provenance": "v1 run completed before source commits; data hashes, split, weights and versions preserved"
+}

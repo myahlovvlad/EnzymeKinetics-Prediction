@@ -1,0 +1,270 @@
+{
+  "replicas_exported": [
+    "replica-101",
+    "replica-202",
+    "replica-303"
+  ],
+  "primary_grid": {
+    "runs": 27,
+    "probe_A": [
+      22.33100128173828,
+      78.08949279785156,
+      13.656000137329102
+    ],
+    "grid_comparison": [
+      {
+        "grid": 65,
+        "potential_V": -1.0143409974020945,
+        "field_V_per_A": [
+          -0.08487916123312987,
+          -0.01378677305081843,
+          0.09956148458125148
+        ]
+      },
+      {
+        "grid": 97,
+        "potential_V": -0.9454952285113156,
+        "field_V_per_A": [
+          -0.11268598928922147,
+          0.01701908900920236,
+          0.14301712099572744
+        ]
+      },
+      {
+        "grid": 129,
+        "potential_V": -0.9261305787116519,
+        "field_V_per_A": [
+          -0.09021657742959155,
+          0.015241374154205461,
+          0.15275968079807214
+        ]
+      }
+    ],
+    "relative_field_difference_97_to_129": 0.13790019940891649,
+    "grid_converged_at_10percent": false,
+    "site_pka_predictions": [
+      {
+        "resname": "ASP",
+        "resid": 38,
+        "chain": "A",
+        "pka_predicted": 6.31,
+        "model_pka": 3.8,
+        "deprotonated_fraction_ph7": 0.8304449113532373
+      },
+      {
+        "resname": "ASP",
+        "resid": 99,
+        "chain": "A",
+        "pka_predicted": 9.03,
+        "model_pka": 3.8,
+        "deprotonated_fraction_ph7": 0.009246251963854724
+      },
+      {
+        "resname": "TYR",
+        "resid": 14,
+        "chain": "A",
+        "pka_predicted": 18.39,
+        "model_pka": 10.0,
+        "deprotonated_fraction_ph7": 4.073802778024526e-12
+      }
+    ],
+    "folded_pi": 5.83,
+    "limitations": [
+      "Deterministic sensitivity, not statistical replicates; no p-values",
+      "No ligand at probe and no inferred activation barrier",
+      "pKa not temperature corrected; static protonation at nominal pH, not constant-pH ensemble",
+      "Dielectric solvent fixed to 78.5; temperature-dependent solvent response not fitted"
+    ]
+  },
+  "torsion_coupling": {
+    "max_abs_coupling_kj_mol": 4.568886011838913,
+    "reference_energy_kj_mol": -767667.0502987935,
+    "limitations": [
+      "Conditional fixed-environment potential; no relaxation, not PMF or free energy",
+      "Large clash energies are retained and indicate inaccessible frozen configurations, not physical barriers",
+      "Only side-chain chi1 scanned; biochemical mutations and constant-pH coupling are not simulated"
+    ]
+  },
+  "mechanism": {
+    "mechanism": {
+      "system": "Comamonas testosteroni P00947; author residue numbering",
+      "states": [
+        {
+          "id": "E_S",
+          "kind": "separated",
+          "description": "Free enzyme and Delta5 steroid"
+        },
+        {
+          "id": "ES",
+          "kind": "minimum",
+          "description": "Bound Delta5 steroid; Asp38 base, Tyr14/Asp99 oxyanion donors"
+        },
+        {
+          "id": "TS1",
+          "kind": "saddle_index_1",
+          "description": "C4-beta H abstraction by Asp38; C4-H breaking and Asp38 O-H formation"
+        },
+        {
+          "id": "EI",
+          "kind": "minimum",
+          "description": "Dienolate intermediate; Asp38 protonated; charge stabilized by Tyr14/Asp99"
+        },
+        {
+          "id": "TS2",
+          "kind": "saddle_index_1",
+          "description": "Asp38-H donation to C6; conjugated Delta4 product formation"
+        },
+        {
+          "id": "EP",
+          "kind": "minimum",
+          "description": "Bound Delta4 steroid; Asp38 returns to base state"
+        },
+        {
+          "id": "E_P",
+          "kind": "separated",
+          "description": "Product released, enzyme regenerated"
+        }
+      ],
+      "edges": [
+        [
+          "E_S",
+          "ES"
+        ],
+        [
+          "ES",
+          "TS1"
+        ],
+        [
+          "TS1",
+          "EI"
+        ],
+        [
+          "EI",
+          "TS2"
+        ],
+        [
+          "TS2",
+          "EP"
+        ],
+        [
+          "EP",
+          "E_P"
+        ]
+      ],
+      "coordinates": {
+        "q1": "r(C4,H_transfer)-r(O_Asp38,H_transfer)",
+        "q2": "r(O_Asp38,H_transfer)-r(C6,H_transfer)",
+        "additional": "O3--Tyr14/Asp99 distances, closure, solvent polarization and protonation microstates"
+      },
+      "required_checks": [
+        "Same atoms, total charge and spin along each path",
+        "Converged gradient for full unfrozen degrees of freedom",
+        "Exactly one relevant imaginary mode at each full TS; minima have no negative internal modes",
+        "Forward/backward path connectivity to specified minima, not Hessian index alone",
+        "Thermal/solvent/ensemble free-energy corrections before rate predictions"
+      ],
+      "source": "https://pubs.acs.org/doi/10.1021/jacs.6b04796",
+      "computed_full_TS": false
+    },
+    "pose_trial": "1OHS 5SD transformed to target Delta5 bond orders and aligned onto WT 8CHO",
+    "pose_stereochemistry": "canonical stereo-SMILES exactly matched the requested substrate",
+    "pose_CA_alignment_rmsd_A": 0.8107881052,
+    "C4_to_Asp38_oxygen_A": 6.979,
+    "pose_status": "rejected before electronic surface scan",
+    "reason": "Donor--acceptor separation exceeds declared 4 A preflight limit; saturated analog has O17 near Asp99, not the required O3 catalytic orientation",
+    "full_TS_validated": false,
+    "barrier_or_kcat_inferred": false
+  },
+  "replica_tests": {
+    "replicates": [
+      {
+        "frames": 50,
+        "rmsd_autocorrelation": {
+          "tau_integrated_frames": 8.7265669941764,
+          "effective_samples": 5.729629994632147,
+          "status": "exploratory_short_series_estimate"
+        },
+        "temperature_mean_K": 299.391908973178,
+        "temperature_second_half_K": 299.0562219776484,
+        "rmsd_first_half_mean_nm": 0.053592308024724186,
+        "rmsd_second_half_mean_nm": 1.2327589151552425,
+        "catalytic_minus_scaffold_rmsf_nm": 0.00953084544669447,
+        "positioning_minus_scaffold_rmsf_nm": 0.11007280511743733,
+        "trajectory_sha256": "2a8b5fdf51804727b726803e48c58edea2e232325477e9a42e5277d1bad5d618",
+        "limitations": [
+          "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+          "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+          "DCCM is correlation, not causal influence or a force constant"
+        ]
+      },
+      {
+        "frames": 50,
+        "rmsd_autocorrelation": {
+          "tau_integrated_frames": 7.4205363116668925,
+          "effective_samples": 6.738057452988648,
+          "status": "exploratory_short_series_estimate"
+        },
+        "temperature_mean_K": 298.3873236609648,
+        "temperature_second_half_K": 298.0391677901816,
+        "rmsd_first_half_mean_nm": 0.05696193037178087,
+        "rmsd_second_half_mean_nm": 0.066864903554444,
+        "catalytic_minus_scaffold_rmsf_nm": -0.004907350384280168,
+        "positioning_minus_scaffold_rmsf_nm": -0.0026117902055804165,
+        "trajectory_sha256": "f7f8f2a933ea229df33ff6f6bd8dc75979e5281e591c50f1355a6d24c4887ad6",
+        "limitations": [
+          "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+          "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+          "DCCM is correlation, not causal influence or a force constant"
+        ]
+      },
+      {
+        "frames": 50,
+        "rmsd_autocorrelation": {
+          "tau_integrated_frames": 10.645038861300591,
+          "effective_samples": 4.697023717007934,
+          "status": "exploratory_short_series_estimate"
+        },
+        "temperature_mean_K": 298.92090510785346,
+        "temperature_second_half_K": 298.60053272612015,
+        "rmsd_first_half_mean_nm": 0.05499831796408314,
+        "rmsd_second_half_mean_nm": 0.07295177040946844,
+        "catalytic_minus_scaffold_rmsf_nm": -0.002974266440926625,
+        "positioning_minus_scaffold_rmsf_nm": 0.0010873854499567695,
+        "trajectory_sha256": "894ce934da6f52b7df8b9c8f5497746dffdc9936127161459c0d2cb9a7ec1da7",
+        "limitations": [
+          "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+          "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+          "DCCM is correlation, not causal influence or a force constant"
+        ]
+      }
+    ],
+    "tests": {
+      "catalytic_minus_scaffold_rmsf_nm": {
+        "n_replicates": 3,
+        "mean_difference": 0.0005497428738292254,
+        "p_two_sided_exact": 1.0,
+        "assumption": "Independent replicate differences exchangeable under sign reversal; not frames/atoms",
+        "q_bh": 1.0
+      },
+      "positioning_minus_scaffold_rmsf_nm": {
+        "n_replicates": 3,
+        "mean_difference": 0.03618280012060456,
+        "p_two_sided_exact": 0.75,
+        "assumption": "Independent replicate differences exchangeable under sign reversal; not frames/atoms",
+        "q_bh": 1.0
+      }
+    },
+    "conclusion": "Exploratory pilot: n=3 cannot reject a two-sided exact sign-flip test at alpha=.05; no convergence claim"
+  },
+  "grid_refinement": {
+    "relative_field_change_129_to_193": 0.17264935295630707,
+    "meets_10percent_criterion": false,
+    "potential_V": -0.9001701155104753,
+    "field_V_per_A": [
+      -0.08046745891377273,
+      0.030400771833354864,
+      0.18258219304487713
+    ],
+    "limitation": "Single probe/condition grid check; does not validate entire factorial or dielectric assumptions"
+  }
+}

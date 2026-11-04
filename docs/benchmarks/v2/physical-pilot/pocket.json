@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "backend": "P2Rank",
+  "status": "complete",
+  "inputs": {
+    "predictions": "/home/vladmyahlov/Документы/GitHub/EnzymeKinetics-Prediction/enzyme-kinetics/outputs/backend_checks/p00947-integrated-v4-apbs/p2rank/P00947.pdb_predictions.csv",
+    "predictions_sha256": "677490542d0904e24d2014c74eb175cfd4d6496599f050cce768cc143fb46470",
+    "protein_id": "P00947",
+    "pdb": "/home/vladmyahlov/Документы/GitHub/EnzymeKinetics-Prediction/enzyme-kinetics/data/alphafold_pdb/P00947.pdb",
+    "pdb_sha256": "614b421e41bbf9a3416e7bafdd3ceb2c9cc19be2f41055c168391d96c2b1e99d"
+  },
+  "settings": {
+    "selected_rank": 1
+  },
+  "cache_key": "7646cf120b841d6638fb2dbfd2e38e4d25bd38691931d92cf210155721951df9",
+  "values": {
+    "score": 18.33,
+    "residue_count": 17,
+    "radius_gyration_A": 8.889959145324365,
+    "freq_HIS": 0.0,
+    "freq_ASP": 0.11764705882352941,
+    "freq_GLU": 0.0,
+    "freq_SER": 0.058823529411764705,
+    "freq_CYS": 0.0,
+    "freq_TYR": 0.11764705882352941,
+    "freq_LYS": 0.0,
+    "freq_ARG": 0.0,
+    "charge_proxy": -0.11764705882352941,
+    "hydrophobic_fraction": 0.7058823529411765,
+    "residue_mapping_fraction": 1.0,
+    "center_A": [
+      -3.8591,
+      -0.4237,
+      6.9228
+    ]
+  },
+  "units": {
+    "score": "P2Rank_score",
+    "residue_count": "count",
+    "radius_gyration_A": "Angstrom",
+    "freq_HIS": "fraction",
+    "freq_ASP": "fraction",
+    "freq_GLU": "fraction",
+    "freq_SER": "fraction",
+    "freq_CYS": "fraction",
+    "freq_TYR": "fraction",
+    "freq_LYS": "fraction",
+    "freq_ARG": "fraction",
+    "charge_proxy": "residue_type_proxy",
+    "hydrophobic_fraction": "fraction",
+    "residue_mapping_fraction": "fraction",
+    "center_A": "Angstrom"
+  },
+  "limitations": [
+    "Predicted binding pocket is not automatically a verified catalytic site",
+    "Charge proxy counts residue types and is not an electrostatics calculation"
+  ]
+}

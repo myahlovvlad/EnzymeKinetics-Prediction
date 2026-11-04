@@ -1,0 +1,79 @@
+[project]
+name = "enzymekinetics-prediction"
+version = "0.3.0"
+description = "Research prototypes for structure-based enzyme kinetics and quantum chemistry"
+readme = "README.md"
+authors = [{ name = "Vlad Myahlov", email = "myahlov@gmail.com" }]
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "biopython>=1.83",
+    "joblib>=1.3",
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pillow>=10",
+    "plotly>=5.22",
+    "pyscf>=2.6",
+    "pyyaml>=6.0",
+    "rdkit>=2024.3",
+    "requests>=2.31",
+    "scikit-learn>=1.4",
+    "scipy>=1.12",
+    "streamlit>=1.35",
+    "sympy>=1.12",
+    "tabulate>=0.9",
+    "threadpoolctl>=3.2",
+    "torch>=2.3",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+notebooks = ["jupyterlab>=4.2", "ipykernel>=6.29"]
+embeddings = ["transformers>=4.45", "safetensors>=0.4"]
+physics = [
+    "ase>=3.24",
+    "jdk4py>=21,<22",
+    "mdtraj>=1.10",
+    "openmm>=8.2",
+    "pdb2pqr>=3.6",
+    "tblite>=0.5",
+]
+
+[project.scripts]
+enzyme-train = "enzymekinetics_prediction.learning.training:main"
+enzyme-predict = "enzymekinetics_prediction.learning.predict:main"
+enzyme-physics = "enzymekinetics_prediction.physics.pipeline:main"
+enzyme-features = "enzymekinetics_prediction.physics.featurize:main"
+enzyme-embed = "enzymekinetics_prediction.learning.embeddings:main"
+enzyme-cycle = "enzymekinetics_prediction.physics.reaction:main"
+enzyme-trace = "enzymekinetics_prediction.physics.trajectory:main"
+enzyme-research = "enzymekinetics_prediction.research.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.11"]
+
+[tool.uv.build-backend]
+module-root = "enzyme-kinetics/src"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.pytest.ini_options]
+testpaths = ["enzyme-kinetics/tests"]
+addopts = "--import-mode=importlib"
+
+[tool.ruff]
+target-version = "py313"
+extend-exclude = ["archive", "enzyme-kinetics/vendor", "enzyme-kinetics/data", "enzyme-kinetics/outputs"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14"]
+build-backend = "uv_build"

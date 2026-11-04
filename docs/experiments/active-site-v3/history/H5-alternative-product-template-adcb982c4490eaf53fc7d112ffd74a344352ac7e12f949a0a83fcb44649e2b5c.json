@@ -1,0 +1,21 @@
+{
+  "status": "geometric_preflight_passed",
+  "preparation": {
+    "CA_alignment_rmsd_A": 0.29924014187093007,
+    "source_analog": "ASD in 3NHX-asymmetric.pdb; template ligand is not the target Delta5 substrate",
+    "target_SMILES": "C[C@]12CCC(=O)CC1=CC[C@@H]1[C@@H]2CC[C@]2(C)C(=O)CC[C@@H]12",
+    "C4_index": 13,
+    "C6_index": 15,
+    "Asp38_oxygen_index": 66,
+    "transferred_proton_index": 40,
+    "charge_e": -1,
+    "fragments": [
+      "substrate",
+      "p-cresol Tyr14 cap",
+      "acetate Asp38 cap",
+      "acetic acid Asp99 cap"
+    ]
+  },
+  "atoms": 78,
+  "full_ES_validated": false
+}

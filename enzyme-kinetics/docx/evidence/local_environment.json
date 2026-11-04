@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-01",
+  "scope": "resources visible to current execution environment; not a benchmark",
+  "cpu_model": "Intel Xeon E5-2673 v3 @ 2.40GHz",
+  "logical_cpus": 24,
+  "cores_reported": 12,
+  "ram_total_GiB_approx": 31,
+  "ram_available_GiB_at_inspection_approx": 24,
+  "project_filesystem_free_GiB_approx": 296,
+  "nvidia_smi_in_path": false,
+  "dev_nvidia0_present": false,
+  "gpu_compute_status": "unconfirmed",
+  "commands": [
+    "lscpu",
+    "free -h",
+    "df -h .",
+    "command -v nvidia-smi",
+    "ls /dev/dri /dev/nvidia0"
+  ],
+  "python_environment": {
+    "executable": "../.venv/bin/python from enzyme-kinetics",
+    "version": "3.13.16",
+    "base": "system /usr/bin/python3.13",
+    "profiles_installed": [
+      "base",
+      "chemistry",
+      "quantum",
+      "dashboard",
+      "dev"
+    ],
+    "profiles_not_installed": [
+      "ml",
+      "notebooks"
+    ],
+    "optional_executables_not_in_path": [
+      "java",
+      "xtb",
+      "apbs",
+      "pdb2pqr",
+      "vina"
+    ]
+  }
+}

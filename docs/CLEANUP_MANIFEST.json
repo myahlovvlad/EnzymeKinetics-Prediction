@@ -1,0 +1,573 @@
+{
+  "date": "2026-11-01",
+  "changes": [
+    {
+      "action": "move",
+      "from": "src/enzymekinetics_prediction",
+      "to": "enzyme-kinetics/src/enzymekinetics_prediction"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/experiments/app.py",
+      "to": "enzyme-kinetics/apps/catalysis.py",
+      "bytes": 4257,
+      "sha256_before": "7ae4f4b5a962cd69e0736b1b4fd3295a98a1af182a4a99f82d8ca5fbeb99c677"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/experiments/core_chemistry.py",
+      "to": "enzyme-kinetics/src/enzymekinetics_prediction/experiments/core_chemistry.py",
+      "bytes": 2876,
+      "sha256_before": "9aa316e7454644f42b260dbd89db7b4eae554e7af8c0b6c5c8a5cc5645e1b704"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/experiments/core_physics.py",
+      "to": "enzyme-kinetics/src/enzymekinetics_prediction/experiments/core_physics.py",
+      "bytes": 2115,
+      "sha256_before": "693f18959818aa41fba754dc8fe66c8ddd4ccefbf15c13708c94804042f0455d"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/experiments/core_structure.py",
+      "to": "enzyme-kinetics/src/enzymekinetics_prediction/experiments/core_structure.py",
+      "bytes": 2035,
+      "sha256_before": "ec2a20a7a406dd3d31d3218addbe02566cce66f5d84076c7569b9c69fa4c5e10"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/experiments/equations.py",
+      "to": "enzyme-kinetics/src/enzymekinetics_prediction/experiments/equations.py",
+      "bytes": 1612,
+      "sha256_before": "db2243c4a93e298bdc8d15538af06b8c40c513b15c373709443a8825abfb1b3d"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/experiments/kinetics_estimator.py",
+      "to": "enzyme-kinetics/src/enzymekinetics_prediction/experiments/kinetics_estimator.py",
+      "bytes": 4262,
+      "sha256_before": "7f71c4e5b7977539e0bb3b2121ede4975afba63fac97ab21cb955c5c898bce39"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/experiments/physics_engine.py",
+      "to": "enzyme-kinetics/src/enzymekinetics_prediction/experiments/physics_engine.py",
+      "bytes": 6372,
+      "sha256_before": "df3fe41582a5ba427ebbc1978a7aa518a8acb5ba8b3d09ccf6246c4f11861549"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/main.py",
+      "to": "enzyme-kinetics/scripts/demos/graph_network.py",
+      "bytes": 18572,
+      "sha256_before": "1851fd57d1d659290b470508b1e05dd9cf9187f4b8d517b2aa00e410cf691378"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/audit_enzyme_data.py",
+      "to": "enzyme-kinetics/scripts/data/audit_enzyme_data.py",
+      "bytes": 28778,
+      "sha256_before": "2680b26e49abb210d295427eb01fa6548a596d073b516efa651ee262662e9d7d"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/download_alphafold_pdbs.py",
+      "to": "enzyme-kinetics/scripts/data/download_alphafold_pdbs.py",
+      "bytes": 16689,
+      "sha256_before": "0e3a6cc71fb1ab7d1bbb6d6101b2f4321e871c85d9514554fb88d2403c63d077"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/generate_report.py",
+      "to": "enzyme-kinetics/scripts/diagnostics/generate_report.py",
+      "bytes": 4830,
+      "sha256_before": "9d284eeaac1fed9b27048f5abae34b20a3d1d786b0723f4c7aa41cb4bb38ae2f"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/download_from_gcs.py",
+      "to": "enzyme-kinetics/scripts/data/download_from_gcs.py",
+      "bytes": 2146,
+      "sha256_before": "dcd66840ffb780bf69f7a459b11f0577cc701558d511b1b12488a69f5c21a9a8"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/download_missing_cif.py",
+      "to": "enzyme-kinetics/scripts/data/download_missing_cif.py",
+      "bytes": 1531,
+      "sha256_before": "d19e6a2d2d8ed9905b46e002349b078a7108758bea37ef146200bd9c21bb57ec"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/download_missing_ebi.py",
+      "to": "enzyme-kinetics/scripts/data/download_missing_ebi.py",
+      "bytes": 1468,
+      "sha256_before": "81d0eac9643a3349b11d0a5479e16286021c43f3226f178104cc1617a790beee"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/extract_struct_features.py",
+      "to": "enzyme-kinetics/scripts/structure/extract_struct_features.py",
+      "bytes": 2276,
+      "sha256_before": "3cab9d359f158bbf4f482023a5507ca8df9f975df3063b0d4592199bb10eccbe"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/extract_struct_features_advanced.py",
+      "to": "enzyme-kinetics/scripts/structure/extract_struct_features_advanced.py",
+      "bytes": 4671,
+      "sha256_before": "de051a1f95943864556f9f2bbe41580e50eae916eb8235bf0954cd806fc6c157"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/find_missing.py",
+      "to": "enzyme-kinetics/scripts/data/find_missing.py",
+      "bytes": 1158,
+      "sha256_before": "c989ac3347627eaccc3f1415781de27243c9bcecc3952edb3579100d159566c3"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/generate_urls.py",
+      "to": "enzyme-kinetics/scripts/data/generate_urls.py",
+      "bytes": 1484,
+      "sha256_before": "808f0a382e862c2b916cb51a6042ec5a3f878e15a84becca9ec5fd697d9c65fd"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/normalize_pdb_names.py",
+      "to": "enzyme-kinetics/scripts/data/normalize_pdb_names.py",
+      "bytes": 1032,
+      "sha256_before": "9edc4fcaa2759c0aaa162a7949d9d498795a3c5a9a4f0afcb73b21cdb49eec0b"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/run_p2rank.py",
+      "to": "enzyme-kinetics/scripts/structure/run_p2rank.py",
+      "bytes": 1632,
+      "sha256_before": "768c8ff614b42ad62583c9e9d7099f63d5c48628aa74faadd1a9245a5fde3e74"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/train_baseline_pls.py",
+      "to": "enzyme-kinetics/scripts/training/train_baseline_pls.py",
+      "bytes": 11846,
+      "sha256_before": "bc59a056e7be74074ac1061d2c8ff48c0d041a0afb9179906b608fed325f475d"
+    },
+    {
+      "action": "move",
+      "from": "scripts/check_environment.py",
+      "to": "enzyme-kinetics/scripts/diagnostics/check_environment.py",
+      "bytes": 1851,
+      "sha256_before": "44b472f3a480c8b447617211feb5480885e8069feeb2b15985d5eced11db8a27"
+    },
+    {
+      "action": "move",
+      "from": "scripts/generate_catalysis_animation.py",
+      "to": "enzyme-kinetics/scripts/visualization/generate_catalysis_animation.py",
+      "bytes": 6597,
+      "sha256_before": "fbbecd395c044f2c52fa7cc914417b4d5791254085de10189896cbea801433a5"
+    },
+    {
+      "action": "move",
+      "from": "tests/test_environment.py",
+      "to": "enzyme-kinetics/tests/test_environment.py",
+      "bytes": 1325,
+      "sha256_before": "cd284de89ff0ed50916372d9d28d41efbd5df659bdd2826b6d7c0c814b7ed713"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/prank",
+      "to": "enzyme-kinetics/vendor/p2rank"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/archive",
+      "to": "archive/visualizations"
+    },
+    {
+      "action": "move",
+      "from": "Теория переходного состояния",
+      "to": "archive/transition_state"
+    },
+    {
+      "action": "move",
+      "from": "archive/transition_state/tmp22_sicz4",
+      "to": "archive/transition_state/checkpoints/tmp22_sicz4",
+      "bytes": 18048,
+      "sha256_before": "a25f850f63fbbef112eec55729c2314470d2ae3497113f51020fa74db4d7eb8d"
+    },
+    {
+      "action": "move",
+      "from": "archive/transition_state/tmp9k2ntyu1",
+      "to": "archive/transition_state/checkpoints/tmp9k2ntyu1",
+      "bytes": 18960,
+      "sha256_before": "5fe3c61e38045810416fb3991192d20670fef873be38237873da836726d2812c"
+    },
+    {
+      "action": "move",
+      "from": "archive/transition_state/tmpcjf43qu7",
+      "to": "archive/transition_state/checkpoints/tmpcjf43qu7",
+      "bytes": 18960,
+      "sha256_before": "10ad996a576107dc628c734b73cb0056c2a5139699cabd272ac9d0084aa40448"
+    },
+    {
+      "action": "move",
+      "from": "archive/transition_state/tmpkb8f19vj",
+      "to": "archive/transition_state/checkpoints/tmpkb8f19vj",
+      "bytes": 18960,
+      "sha256_before": "3f56f8c0e232c6dd0ac26d3e00619f282a22228dfd08a6ccad3ada156b4c2fec"
+    },
+    {
+      "action": "move",
+      "from": "archive/transition_state/tmpkstcir8_",
+      "to": "archive/transition_state/checkpoints/tmpkstcir8_",
+      "bytes": 18048,
+      "sha256_before": "c7b3ab74c2c8e2b3d87d4185cb3c03b941432cfacc07efd97e80a8838a434bc7"
+    },
+    {
+      "action": "move",
+      "from": "archive/transition_state/tmpn87wxlab",
+      "to": "archive/transition_state/checkpoints/tmpn87wxlab",
+      "bytes": 18960,
+      "sha256_before": "93293f9d50fd838081aba6a66428f5e352c57aabffb9bd26dfa66c81c4d57a33"
+    },
+    {
+      "action": "move",
+      "from": "archive/transition_state/tmpoedxxtbh",
+      "to": "archive/transition_state/checkpoints/tmpoedxxtbh",
+      "bytes": 18056,
+      "sha256_before": "2f7fe4ac91d316ddf60a4d14343c1fa7e1ca4cd900e53c1529fd9e733f2960cf"
+    },
+    {
+      "action": "move",
+      "from": "archive/transition_state/tmpyja_oaa5",
+      "to": "archive/transition_state/checkpoints/tmpyja_oaa5",
+      "bytes": 18056,
+      "sha256_before": "a77d5e84a0ca42d79ed6f3f253d7181b4263bf2612e126ffffa2e1657971480b"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/capsule_data_update.tar.gz",
+      "to": "archive/downloads/capsule_data_update.tar.gz",
+      "bytes": 10207582747,
+      "sha256_before": "38d4f30215adc3538a10e7baee4df7be6c77dfe16db99f3c202c0497b985349b"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/audit_out",
+      "to": "enzyme-kinetics/outputs/audit"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/logs",
+      "to": "enzyme-kinetics/outputs/logs"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/project_report.md",
+      "to": "enzyme-kinetics/outputs/reports/project_report.md",
+      "bytes": 31771,
+      "sha256_before": "e1af40e844d7f758ffdbc838f84748551beb99791b9457b19e91c28d72f9d4f9"
+    },
+    {
+      "action": "move",
+      "from": "data/enzyme_catalysis.gif",
+      "to": "enzyme-kinetics/outputs/animations/enzyme_catalysis.gif",
+      "bytes": 1080910,
+      "sha256_before": "d29a349082b253a307bcf2b5b8c5396ff3c14dc110c1a72a29aa195afc924209"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/missing_uids.txt",
+      "to": "enzyme-kinetics/data/manifests/missing_uids.txt",
+      "bytes": 34720,
+      "sha256_before": "59ea6781d8877cbb678e5f4589152051ef2c7e8f49b3850f7d0f4001f5010f81"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/urls.txt",
+      "to": "enzyme-kinetics/data/manifests/urls.txt",
+      "bytes": 561525,
+      "sha256_before": "36597a72b5a1828f60c8e65e865d80f88be87ee09c4fa4eee89c92ac4003792a"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/pdb.ds",
+      "to": "enzyme-kinetics/data/manifests/pdb.ds",
+      "bytes": 349584,
+      "sha256_before": "417b160cf3b519052710d7e8b7f3f000f61048cb36cd43ffd247fa11f49eda1b"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/.git",
+      "to": "archive/git-metadata/enzyme-kinetics.git"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/README.md",
+      "to": "archive/docs/legacy_README.md",
+      "bytes": 15938,
+      "sha256_before": "9af8cc0abdbe57d72539ff328ec55d6990207f7f20aca2cba058cb651064238e"
+    },
+    {
+      "action": "delete",
+      "path": "enzyme-kinetics/p2rank_2.4.2.tar.gz",
+      "reason": "all 588 regular files match the unpacked vendor distribution by SHA-256",
+      "bytes": 351679906,
+      "sha256_before": "2b836137a826a3d8a2ae5ab317923c90c525df4bed8eedefb93902364f5ce824"
+    },
+    {
+      "action": "delete",
+      "path": "enzyme-kinetics/p2rank_2.4.2.tar.gz.1",
+      "reason": "SHA-256 identical to the other archive; unpacked distribution verified",
+      "bytes": 351679906,
+      "sha256_before": "2b836137a826a3d8a2ae5ab317923c90c525df4bed8eedefb93902364f5ce824"
+    },
+    {
+      "action": "delete",
+      "path": "enzyme-kinetics/Miniforge3-Linux-x86_64.sh",
+      "reason": "unused installer; project uses uv",
+      "bytes": 126183281,
+      "sha256_before": "cf0df84220e1c83a1cb2f447056594ca458fa4c6a353430c498f281ec21bd187"
+    },
+    {
+      "action": "delete",
+      "path": "enzyme-kinetics/pyproject.toml",
+      "reason": "replaced by unified root manifest",
+      "bytes": 413,
+      "sha256_before": "332f7b54e7e781b5ea8b4601574254dd09d8e755aaae4f42716b43829051d91f"
+    },
+    {
+      "action": "delete",
+      "path": "enzyme-kinetics/uv.lock",
+      "reason": "replaced by unified root lock",
+      "bytes": 485221,
+      "sha256_before": "685d163d72aad160cd7cb251bf3081c71d489bfb54d8ade86cc7a4b880bac59e"
+    },
+    {
+      "action": "delete",
+      "path": "enzyme-kinetics/.python-version",
+      "reason": "replaced by unified root Python selection",
+      "bytes": 5,
+      "sha256_before": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
+    },
+    {
+      "action": "delete",
+      "path": "enzyme-kinetics/.gitignore",
+      "reason": "replaced by unified root ignore rules",
+      "bytes": 109,
+      "sha256_before": "ed7b84e816359d17276a801802de5c362c2c572ce3e50a8670c8362b08351380"
+    },
+    {
+      "action": "delete",
+      "path": "enzyme-kinetics/.vscode/settings.json",
+      "reason": "replaced by unified root IDE settings",
+      "bytes": 38,
+      "sha256_before": "048f53e6ca01ac583b48784cd2f6f7d248e0534849955b144e75f017f73188a3"
+    },
+    {
+      "action": "delete",
+      "path": "requirements.txt",
+      "reason": "duplicate dependency entry point; uv is the single source",
+      "bytes": 187,
+      "sha256_before": "af6939d6feca0618bc08398bcd353958efb0909abeb8c21913e2eabad28dd23a"
+    },
+    {
+      "action": "delete",
+      "path": "config.yaml",
+      "reason": "empty unused placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "scripts/run_pipeline.py",
+      "reason": "empty unused placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "tests/test_pipeline.py",
+      "reason": "empty unused placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/__init__.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/structure/p2rank_utils.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/structure/relax.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/structure/__init__.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/dynamics/md_analysis.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/dynamics/docking.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/dynamics/__init__.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/chemometrics/mb_pls.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/chemometrics/opls_models.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/chemometrics/__init__.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/quantum/psi4_interface.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/quantum/rdkit_utils.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/quantum/__init__.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/tunneling/eckart_model.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/tunneling/__init__.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/tunneling/bell_model.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/electrostatics/__init__.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/electrostatics/apbs_runner.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": "modules/electrostatics/pdb2pqr_utils.py",
+      "reason": "empty unused module placeholder",
+      "bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "delete",
+      "path": ".venv.previous-20261031",
+      "reason": "obsolete or broken environment; replaced by tested root .venv",
+      "bytes": 342041906
+    },
+    {
+      "action": "delete",
+      "path": ".venv.python312",
+      "reason": "obsolete or broken environment; replaced by tested root .venv",
+      "bytes": 1046049189
+    },
+    {
+      "action": "replace",
+      "path": "enzyme-kinetics/scripts/training/train_baseline_pls.py",
+      "sha256_before": "4ff5422ae5af4084613db9d615342b30369fa0f9fd8aeb144c0946c29de01d69",
+      "reason": "integrated Ridge/PLS into validation-selected benchmark; remove old test-selected duplicated implementation"
+    },
+    {
+      "action": "move",
+      "from": "enzyme-kinetics/scripts/demos/graph_network.py",
+      "to": "archive/legacy/graph_network_demo.py",
+      "reason": "original untrained pose demo preserved; supervised kinetic adaptation integrated in learning/models.py"
+    },
+    {
+      "action": "delete",
+      "path": "enzyme-kinetics/data/CatPred-DB/catpred_progres_embeds_dict.pt",
+      "reason": "byte-identical embedding duplicate; canonical copy in CatPred-DB/data",
+      "sha256_before": "9c04a52c2b0fb7f66f5dd7b05e63cd3b36cd7b9f8ed4f0bcac9612de089d47d0",
+      "bytes": 4792363
+    },
+    {
+      "action": "symlink",
+      "path": "enzyme-kinetics/data/CatPred-DB/catpred_progres_embeds_dict.pt",
+      "target": "data/catpred_progres_embeds_dict.pt",
+      "reason": "preserve reference-provider path without duplicating embeddings"
+    },
+    {
+      "action": "delete",
+      "path": "archive/downloads/capsule_data_update.tar.gz",
+      "bytes": 10207582747,
+      "reason": "All 3324 archive files byte-identical by SHA-256 to local data; full archive stream validated"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "provider": "ESM-2",
+  "model_id": "facebook/esm2_t6_8M_UR50D",
+  "revision": "c731040fcd8d73dceaa04b0a8e6329b345b0f5df",
+  "pooling": "residue mean excluding special/padding tokens",
+  "sequences": 2,
+  "dimension": 320,
+  "sha256": "819637344fa7930df03a18c92d9f0c96a444aa2535a8cdee0935f252f6c7249e",
+  "long_sequence_policy": "reject, no silent truncation",
+  "sequence_keys": "exact sequence strings",
+  "versions": {
+    "torch": "2.15.0+cpu",
+    "transformers": "5.22.1",
+    "huggingface-hub": "2.4.0"
+  }
+}

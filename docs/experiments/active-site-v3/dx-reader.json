@@ -1,0 +1,11 @@
+{
+  "file_sha256": "8bb43569f36283d7740c57d93299cfa3f53583f3b419b305b0f0b0114b1f12d1",
+  "grid": [
+    129,
+    129,
+    129
+  ],
+  "seconds_single_read_and_gradients": 0.5954608800020651,
+  "method": "numpy.fromstring over numeric section, with explicit count and finite checks",
+  "scope": "Single warm-cache read, concurrent campaign running; not a statistically controlled speedup estimate"
+}

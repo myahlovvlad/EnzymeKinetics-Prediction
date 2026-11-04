@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "block": "pocket",
+  "join_on": [
+    "uniprot"
+  ],
+  "feature_columns": [
+    "pocket_score",
+    "pocket_residue_count",
+    "pocket_radius_gyration_A",
+    "pocket_freq_HIS",
+    "pocket_freq_ASP",
+    "pocket_freq_GLU",
+    "pocket_freq_SER",
+    "pocket_freq_CYS",
+    "pocket_freq_TYR",
+    "pocket_freq_LYS",
+    "pocket_freq_ARG",
+    "pocket_charge_proxy",
+    "pocket_hydrophobic_fraction",
+    "pocket_residue_mapping_fraction"
+  ],
+  "units": {
+    "pocket_score": "P2Rank_score",
+    "pocket_residue_count": "count",
+    "pocket_radius_gyration_A": "Angstrom",
+    "pocket_freq_HIS": "fraction",
+    "pocket_freq_ASP": "fraction",
+    "pocket_freq_GLU": "fraction",
+    "pocket_freq_SER": "fraction",
+    "pocket_freq_CYS": "fraction",
+    "pocket_freq_TYR": "fraction",
+    "pocket_freq_LYS": "fraction",
+    "pocket_freq_ARG": "fraction",
+    "pocket_charge_proxy": "residue_type_proxy",
+    "pocket_hydrophobic_fraction": "fraction",
+    "pocket_residue_mapping_fraction": "fraction"
+  },
+  "csv_sha256": "a8d70344ed3f277ed6394c9373e4d6ea0e5e394a0997623b4cdcf262f46482c7",
+  "generated_without_labels": true,
+  "provenance": {
+    "failures": [
+      {
+        "uniprot": "A0A0H3LLR0",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A0A0K8P6T7",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A0A1W6MAW2",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A0A286Y2Y5",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A0A2X3F2F1",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A0A5N7Y8W0",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A0A6G2DWN3",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A0A7L8YPW5",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A0A832T4H4",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A1XAB3",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A2SL37",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A2VA34",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A6T926",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A7WLJ1",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A8IYH1",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A9CJ26",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "A9W9U6",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "B1Y2E4",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "B2NI94",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "B3FYT9",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "B6RDZ5",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "C0HJY2",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "C0M9W4",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "C4N9P8",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "E0AD94",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "E3PY96",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "H1AAN5",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "H2JEN2",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "J9XT07",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "O00298",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "O23346",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "O29588",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "O58049",
+        "error": "No binding pockets predicted"
+      },
+      {
+        "uniprot": "O69777",
+        "error": "No binding pockets predicted"
+      }
+    ],
+    "duplicates_resolved_by_highest_version": 0,
+    "source_count": 3841
+  }
+}

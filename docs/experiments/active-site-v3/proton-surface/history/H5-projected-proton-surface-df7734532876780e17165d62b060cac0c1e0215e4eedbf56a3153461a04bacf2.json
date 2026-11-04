@@ -1,0 +1,56 @@
+{
+  "preparation": {
+    "CA_alignment_rmsd_A": 0.29924014187093007,
+    "source_analog": "ASD in 3NHX-asymmetric.pdb; template ligand is not the target Delta5 substrate",
+    "target_SMILES": "C[C@]12CCC(=O)CC1=CC[C@@H]1[C@@H]2CC[C@]2(C)C(=O)CC[C@@H]12",
+    "C4_index": 13,
+    "C6_index": 15,
+    "Asp38_oxygen_index": 66,
+    "transferred_proton_index": 40,
+    "charge_e": -1,
+    "fragments": [
+      "substrate",
+      "p-cresol Tyr14 cap",
+      "acetate Asp38 cap",
+      "acetic acid Asp99 cap"
+    ]
+  },
+  "evaluations": 109,
+  "successful_grid_points": 81,
+  "stationary_candidates": [
+    {
+      "candidate": "ES_EI_midpoint",
+      "status": "unresolved",
+      "error": "Stationary search left declared surface domain"
+    },
+    {
+      "candidate": "EI_EP_midpoint",
+      "coordinates_A": [
+        0.8596756734842416,
+        1.4940551291108108
+      ],
+      "energy_eV": -3099.0402752716604,
+      "solver_success": true,
+      "full_frozen_cluster_gradient_max_eV_per_A": 5.1332900224691915,
+      "classification": "index_1_saddle",
+      "stationary": true,
+      "negative_modes": 1,
+      "eigenvalues": [
+        -2.491207646610653,
+        6.904114936698509
+      ],
+      "gradient_max_abs": 8.022986441869051e-11,
+      "limitation": "Classification applies only to supplied coordinates/subspace; TS path connectivity requires separate verification"
+    }
+  ],
+  "full_TS_validated": false,
+  "kcat_computed": false,
+  "limitations": [
+    "Modelled substrate placement from bound ASD product template; binding pose not experimentally validated",
+    "Capped cluster with ALPB water, no full protein QM/MM embedding or ensemble",
+    "All coordinates except two proton-position coordinates frozen; subspace saddles are not full 3N transition states",
+    "Electronic potential surface is not a potential of mean force or activation free energy",
+    "No KIE, kcat or chemical barrier accepted from this exploratory surface",
+    "Transferred C4 hydrogen chosen by proximity to Asp38; prochiral proton assignment requires separate validation"
+  ]
+}

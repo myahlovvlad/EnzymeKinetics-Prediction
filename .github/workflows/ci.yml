@@ -1,0 +1,28 @@
+name: Checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        profile: [core, physics]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          version: "0.13.6"
+          python-version: "3.13"
+          enable-cache: true
+      - if: matrix.profile == 'core'
+        run: uv sync --locked
+      - if: matrix.profile == 'physics'
+        run: uv sync --locked --extra physics
+      - run: uv run --no-sync ruff check enzyme-kinetics
+      - run: uv run --no-sync ruff format --check enzyme-kinetics
+      - run: uv run --no-sync pytest -q
+        env:
+          OMP_NUM_THREADS: '2'
+          OPENBLAS_NUM_THREADS: '2'
+      - run: uv build

@@ -1,0 +1,24 @@
+# Local Python environments and generated build/cache files
+.venv/
+.venv.*/
+__pycache__/
+*.py[oc]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Large local inputs, results and third-party binaries
+/enzyme-kinetics/data/
+/enzyme-kinetics/outputs/
+/enzyme-kinetics/vendor/
+/archive/downloads/
+/archive/git-metadata/
+/archive/transition_state/checkpoints/
+/archive/visualizations/*.gif
+/archive/visualizations/*.html

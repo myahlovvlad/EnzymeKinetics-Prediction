@@ -1,0 +1,8 @@
+{
+  "version": "3.5.0",
+  "source": "https://github.com/Electrostatics/apbs/releases/download/v3.5.0/APBS-3.5.0.Linux.zip",
+  "archive_sha256": "b92f6a1bc05c9d4278d85a68072ab6b1ce5aed8d4bb53870746104635b923ca3",
+  "executable": "APBS-3.5.0.Linux/bin/apbs",
+  "executable_sha256": "c9060942967d9db1b8933e3969ca963020f45974cb5e0ab19b5609f59d0c2675",
+  "license": "Retained in official extracted distribution; see share/apbs"
+}

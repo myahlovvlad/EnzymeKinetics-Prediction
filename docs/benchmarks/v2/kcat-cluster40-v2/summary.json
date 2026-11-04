@@ -1,0 +1,124 @@
+{
+  "target": "kcat",
+  "target_unit": "s^-1",
+  "selected_model": "mlp",
+  "seed": 42,
+  "rows": {
+    "train": 14571,
+    "validation": 4182,
+    "test": 4398
+  },
+  "split_scheme": "grouped-three-way",
+  "group_by": "sequence_40cluster",
+  "ec_level": 2,
+  "test_group_overlap_rows": 0,
+  "canonical_pair_overlap_test_rows": 0,
+  "feature_version": 2,
+  "feature_blocks": {
+    "sequence": [
+      0,
+      22
+    ],
+    "substrate": [
+      22,
+      285
+    ],
+    "conditions": [
+      285,
+      289
+    ],
+    "embedding": [
+      289,
+      418
+    ],
+    "geometry": [
+      418,
+      422
+    ],
+    "EC": [
+      422,
+      489
+    ],
+    "pocket_0": [
+      489,
+      504
+    ],
+    "qm_1": [
+      504,
+      512
+    ]
+  },
+  "physical_coverage": {
+    "train": {
+      "enzyme-kinetics/data/physical/pockets.csv": 0.23457552673117832,
+      "enzyme-kinetics/data/physical/quantum.csv": 0.015716148514172024
+    },
+    "validation": {
+      "enzyme-kinetics/data/physical/pockets.csv": 0.27450980392156865,
+      "enzyme-kinetics/data/physical/quantum.csv": 0.020086083213773365
+    },
+    "test": {
+      "enzyme-kinetics/data/physical/pockets.csv": 0.2310140973169622,
+      "enzyme-kinetics/data/physical/quantum.csv": 0.018417462482946845
+    }
+  },
+  "coverage": {
+    "train": {
+      "invalid_smiles_fraction": 0.008235536515712738,
+      "missing_embedding_fraction": 0.0,
+      "missing_structure_fraction": 0.4963969588279724
+    },
+    "validation": {
+      "invalid_smiles_fraction": 0.007412721402943134,
+      "missing_embedding_fraction": 0.0,
+      "missing_structure_fraction": 0.4720229506492615
+    },
+    "test": {
+      "invalid_smiles_fraction": 0.010914051905274391,
+      "missing_embedding_fraction": 0.0,
+      "missing_structure_fraction": 0.4954524636268616
+    }
+  },
+  "versions": {
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "rdkit": "2026.9.1",
+    "scikit-learn": "1.9.1"
+  },
+  "embeddings": {
+    "status": "loaded",
+    "path": "/home/vladmyahlov/Документы/GitHub/EnzymeKinetics-Prediction/enzyme-kinetics/data/CatPred-DB/data/catpred_progres_embeds_dict.pt",
+    "sha256": "9c04a52c2b0fb7f66f5dd7b05e63cd3b36cd7b9f8ed4f0bcac9612de089d47d0",
+    "entries": 13376,
+    "dimension": 128,
+    "duplicate_uniprot_representations": 1,
+    "id_policy": "parse AF-/ESMFold- filename; prefer AF when both exist"
+  },
+  "trainval_sha256": "99d6a214242dc709a5ab50475116386e1a204215565acf35888dce3621d8f44b",
+  "test_sha256": "c531ef2d38b1eb7c02f956d7f9ce5e47c58123eca0bb36d965cecd13dcc6cae2",
+  "limitations": [
+    "Single-seed exploratory benchmark",
+    "Exact-sequence novelty is not sequence-cluster OOD",
+    "Radial geometry is not a molecular interaction graph or a QM barrier",
+    "No empirical claim of reaction-mechanism simulation",
+    "Products and target-derived barriers excluded"
+  ],
+  "elapsed_seconds": 69.60063173800154,
+  "code_sha256_at_start": {
+    "embeddings.py": "1f8cff964c5690a28f0c65e1c545232dd2fc9c263f82f05d2eaecae6b73f54ee",
+    "predict.py": "da7694e5ed91a7c40ab5fbd4d3966c39c301df33989d8481973936e2472424b7",
+    "__init__.py": "ab5d863bfdcaf9af4eca82be66e4c6e6438f2118ecc64d9e99a694817f63e46c",
+    "features.py": "f8b4ddd6f425fb59046ef373225f7b658b2d1b3788f1aa9bdf16345a153bf55e",
+    "training.py": "31973880b5671620c8c3d75916ab60701861470f4967d56cc4328e1280d011d3",
+    "models.py": "8d375b4ab01f36297f33f40bc71c03062f4e78971afb0fd992402e7bda74a19e",
+    "chemometrics.py": "fdc290e01f8820b4e31a46128a25df3a941ee641fca4f3a61d3e12e19661f0ce"
+  },
+  "artifact_checksums": {
+    "metadata.json": "030a6589a8b1f28383764109c66244cf72baa8506c8c23e48a89eeea1c17895f",
+    "metrics.json": "9524d560f66f4d779351b610f8488d7338813eaa281151c028e110110898912e",
+    "predictions.csv": "a178422624892dd51e01eb830f661b58290c32768ae458f1d0fe57388a683fb7",
+    "preprocessing.joblib": "dcdc20845dfaef1b27587c721b5873fbe61f1ef816848d970ec401f923a775d9",
+    "split.csv": "f84fc4e3407ecaa303476c9d802c939304219ab00ac581bc8a82d68a3762c551"
+  }
+}

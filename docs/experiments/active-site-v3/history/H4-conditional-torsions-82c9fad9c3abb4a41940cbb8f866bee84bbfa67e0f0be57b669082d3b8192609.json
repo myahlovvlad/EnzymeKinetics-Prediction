@@ -1,0 +1,9 @@
+{
+  "max_abs_coupling_kj_mol": 4.568886011838913,
+  "reference_energy_kj_mol": -767667.0502987935,
+  "limitations": [
+    "Conditional fixed-environment potential; no relaxation, not PMF or free energy",
+    "Large clash energies are retained and indicate inaccessible frozen configurations, not physical barriers",
+    "Only side-chain chi1 scanned; biochemical mutations and constant-pH coupling are not simulated"
+  ]
+}

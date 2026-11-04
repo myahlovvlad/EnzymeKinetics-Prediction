@@ -1,0 +1,223 @@
+{
+  "purpose": "Retained exploratory structural templates; selected sources distinguished in each experiment",
+  "structures": [
+    {
+      "file": "8CHO-assembly.pdb",
+      "sha256": "934adb04180d5dbc93ae88aafbb0d0967f307c11d9f51feb269110f2432164e3",
+      "sequence_annotations": [],
+      "ligand_names": [
+        "HETNAM     P4C O-ACETALDEHYDYL-HEXAETHYLENE GLYCOL                              "
+      ]
+    },
+    {
+      "file": "3MKI-asymmetric.pdb",
+      "sha256": "1a386478bcf5fed47b95733333d8ff96d53bd1c555f026d5942820d8b13721a0",
+      "sequence_annotations": [
+        "SEQADV 3MKI GLU A   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 3MKI ASN A   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            ",
+        "SEQADV 3MKI GLU B   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 3MKI ASN B   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            ",
+        "SEQADV 3MKI GLU C   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 3MKI ASN C   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            ",
+        "SEQADV 3MKI GLU D   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 3MKI ASN D   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            "
+      ],
+      "ligand_names": [
+        "HETNAM     SO4 SULFATE ION                                                      ",
+        "HETNAM     GOL GLYCEROL                                                         "
+      ]
+    },
+    {
+      "file": "1QJG-assembly.pdb",
+      "sha256": "913feb5fb9c289d1ec3640538804cabc0d26def6ff1183d95f5722d6628728b4",
+      "sequence_annotations": [],
+      "ligand_names": [
+        "HETNAM     EQU EQUILENIN                                                        ",
+        "HETNAM     SO4 SULFATE ION                                                      "
+      ]
+    },
+    {
+      "file": "8CHO-asymmetric.pdb",
+      "sha256": "784b31534c22c240f4836382a431cc3932dc8ba0a8b4f59dec974165b3717dc1",
+      "sequence_annotations": [
+        "SEQADV 8CHO ILE A   83  UNP  P00947    THR    83 CONFLICT                       "
+      ],
+      "ligand_names": [
+        "HETNAM     P4C O-ACETALDEHYDYL-HEXAETHYLENE GLYCOL                              "
+      ]
+    },
+    {
+      "file": "6UAD-asymmetric.pdb",
+      "sha256": "f4a634791a2a4a267bd42190a8881b9cc3d0089d8afdff9e4b20665bb38589ba",
+      "sequence_annotations": [],
+      "ligand_names": [
+        "HETNAM     DXC (3ALPHA,5BETA,12ALPHA)-3,12-DIHYDROXYCHOLAN-24-OIC ACID          ",
+        "HETNAM     PO4 PHOSPHATE ION                                                    "
+      ]
+    },
+    {
+      "file": "5DRE-asymmetric.pdb",
+      "sha256": "159faaa959c9d9315bb415a69f2f066aa44e1aafcd8e0ea8624ee03ca4990a4f",
+      "sequence_annotations": [
+        "SEQADV 5DRE GLY A   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 5DRE GLY A   39  UNP  P00947    PRO    39 ENGINEERED MUTATION            ",
+        "SEQADV 5DRE ASN A   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            "
+      ],
+      "ligand_names": []
+    },
+    {
+      "file": "3M8C-asymmetric.pdb",
+      "sha256": "67d80e5e47ef68bef23d09c73c44995a73bfdd536354a6dcb28175d5f75cc258",
+      "sequence_annotations": [
+        "SEQADV 3M8C ASN A   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            ",
+        "SEQADV 3M8C ASN B   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            ",
+        "SEQADV 3M8C ASN C   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            ",
+        "SEQADV 3M8C ASN D   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            "
+      ],
+      "ligand_names": [
+        "HETNAM     GOL GLYCEROL                                                         ",
+        "HETNAM     SO4 SULFATE ION                                                      ",
+        "HETNAM     EQU EQUILENIN                                                        "
+      ]
+    },
+    {
+      "file": "1QJG-asymmetric.pdb",
+      "sha256": "e543a1d9a99c58f5bd68215805ad84ab30171fd7869e971cf3bfa5da07820123",
+      "sequence_annotations": [
+        "SEQADV 1QJG ASN A   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1QJG ILE A   83  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1QJG ASN B   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1QJG ILE B   83  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1QJG ASN C   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1QJG ILE C   83  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1QJG ASN D   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1QJG ILE D   83  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1QJG ASN E   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1QJG ILE E   83  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1QJG ASN F   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1QJG ILE F   83  UNP  P00947    THR    83 CONFLICT                       "
+      ],
+      "ligand_names": [
+        "HETNAM     EQU EQUILENIN                                                        ",
+        "HETNAM     SO4 SULFATE ION                                                      "
+      ]
+    },
+    {
+      "file": "3NM2-asymmetric.pdb",
+      "sha256": "4d47f45f67ff4e8474c7a37d831de2dbea79da0fdac2376e8bcd7e7f80e93f79",
+      "sequence_annotations": [
+        "SEQADV 3NM2 GLU A   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 3NM2 GLY A   39  UNP  P00947    PRO    39 ENGINEERED MUTATION            ",
+        "SEQADV 3NM2 GLY A   40  UNP  P00947    VAL    40 ENGINEERED MUTATION            ",
+        "SEQADV 3NM2 GLY A   42  UNP  P00947    SER    42 ENGINEERED MUTATION            "
+      ],
+      "ligand_names": [
+        "HETNAM     SO4 SULFATE ION                                                      "
+      ]
+    },
+    {
+      "file": "3NHX-asymmetric.pdb",
+      "sha256": "76cc10d1641569b45a48e7acfeab6455f23347c44103f0e2ee2f0eb8c082be5d",
+      "sequence_annotations": [
+        "SEQADV 3NHX ASN A   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            "
+      ],
+      "ligand_names": [
+        "HETNAM     ASD 4-ANDROSTENE-3-17-DIONE                                          ",
+        "HETNAM     SO4 SULFATE ION                                                      "
+      ]
+    },
+    {
+      "file": "1OHS-asymmetric.pdb",
+      "sha256": "768bec02692bd3dd9b0886577d58e56818688e7bd290369409ddf21541e968e1",
+      "sequence_annotations": [
+        "SEQADV 1OHS PHE A   14  UNP  P00947    TYR    14 ENGINEERED MUTATION            ",
+        "SEQADV 1OHS ASN A   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1OHS ILE A   83  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1OHS PHE B  214  UNP  P00947    TYR    14 ENGINEERED MUTATION            ",
+        "SEQADV 1OHS ASN B  238  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1OHS ILE B  283  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1OHS PHE C   14  UNP  P00947    TYR    14 ENGINEERED MUTATION            ",
+        "SEQADV 1OHS ASN C   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1OHS ILE C   83  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1OHS PHE D  214  UNP  P00947    TYR    14 ENGINEERED MUTATION            ",
+        "SEQADV 1OHS ASN D  238  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 1OHS ILE D  283  UNP  P00947    THR    83 CONFLICT                       "
+      ],
+      "ligand_names": [
+        "HETNAM     5SD 5ALPHA-ANDROSTAN-3,17-DIONE                                      "
+      ]
+    },
+    {
+      "file": "6UAE-asymmetric.pdb",
+      "sha256": "cbd1be61de6d7f8651a48dfdfae36f9b63bfc7cd544d1d3b939346bf697fbde3",
+      "sequence_annotations": [],
+      "ligand_names": [
+        "HETNAM     SO4 SULFATE ION                                                      ",
+        "HETNAM     DXC (3ALPHA,5BETA,12ALPHA)-3,12-DIHYDROXYCHOLAN-24-OIC ACID          ",
+        "HETNAM     EQU EQUILENIN                                                        "
+      ]
+    },
+    {
+      "file": "1OGZ-asymmetric.pdb",
+      "sha256": "8bac306974318ae1a76d4ecbe987fad0f9441d1f7c2adfb8b082e32e66be5073",
+      "sequence_annotations": [
+        "SEQADV 1OGZ ALA A   39  UNP  P00947    PRO    39 ENGINEERED MUTATION            ",
+        "SEQADV 1OGZ ILE A   83  UNP  P00947    THR    83 CONFLICT                       "
+      ],
+      "ligand_names": [
+        "HETNAM     EQU EQUILENIN                                                        "
+      ]
+    },
+    {
+      "file": "3NBR-asymmetric.pdb",
+      "sha256": "fa8ab44ff285a8901679566f08a09979cd5025ba94847e6d346607ca4daff2ef",
+      "sequence_annotations": [
+        "SEQADV 3NBR ASN A   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 3NBR GLY A   39  UNP  P00947    PRO    39 ENGINEERED MUTATION            ",
+        "SEQADV 3NBR ASN A   99  UNP  P00947    ASP    99 ENGINEERED MUTATION            "
+      ],
+      "ligand_names": [
+        "HETNAM     SO4 SULFATE ION                                                      ",
+        "HETNAM     ASD 4-ANDROSTENE-3-17-DIONE                                          "
+      ]
+    },
+    {
+      "file": "3MHE-asymmetric.pdb",
+      "sha256": "f0237f38957e75edf684bb07c8eb443ada03b1b4be910328919921d1738295a2",
+      "sequence_annotations": [
+        "SEQADV 3MHE ALA A   39  UNP  P00947    PRO    39 ENGINEERED MUTATION            ",
+        "SEQADV 3MHE ALA B   39  UNP  P00947    PRO    39 ENGINEERED MUTATION            "
+      ],
+      "ligand_names": [
+        "HETNAM     SO4 SULFATE ION                                                      ",
+        "HETNAM     POL N-PROPANOL                                                       "
+      ]
+    },
+    {
+      "file": "1OCV-asymmetric.pdb",
+      "sha256": "a1137cb59a02d4f1455a411d54c43ac39ae190abb2e625971ea4517cffadb897",
+      "sequence_annotations": [
+        "SEQADV 1OCV ILE A   83  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1OCV ILE B  283  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1OCV ILE C  483  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1OCV ILE D  683  UNP  P00947    THR    83 CONFLICT                       ",
+        "SEQADV 1OCV TRP A  116  UNP  P00947    PHE   116 ENGINEERED MUTATION            ",
+        "SEQADV 1OCV TRP B  316  UNP  P00947    PHE   116 ENGINEERED MUTATION            ",
+        "SEQADV 1OCV TRP C  516  UNP  P00947    PHE   116 ENGINEERED MUTATION            ",
+        "SEQADV 1OCV TRP D  716  UNP  P00947    PHE   116 ENGINEERED MUTATION            "
+      ],
+      "ligand_names": []
+    },
+    {
+      "file": "5UGI-asymmetric.pdb",
+      "sha256": "ed8aa06a01073b9b80391d40fbd6dd5f377f133558367025e00c90e88249527a",
+      "sequence_annotations": [
+        "SEQADV 5UGI GLY A   38  UNP  P00947    ASP    38 ENGINEERED MUTATION            ",
+        "SEQADV 5UGI ALA A   54  UNP  P00947    PHE    54 ENGINEERED MUTATION            "
+      ],
+      "ligand_names": [
+        "HETNAM     EQU EQUILENIN                                                        "
+      ]
+    }
+  ]
+}

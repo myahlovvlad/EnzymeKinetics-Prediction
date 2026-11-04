@@ -1,0 +1,7 @@
+{
+  "backend": "OpenCL",
+  "implementation_warning": "Rusticl is reported unsupported by installed OpenMM; experimental validation only",
+  "status": "failed",
+  "error_type": "OpenMMException",
+  "error": "No compatible OpenCL platform is available"
+}

@@ -1,0 +1,20 @@
+{
+  "frames": 50,
+  "rmsd_autocorrelation": {
+    "tau_integrated_frames": 10.645038861300591,
+    "effective_samples": 4.697023717007934,
+    "status": "exploratory_short_series_estimate"
+  },
+  "temperature_mean_K": 298.92090510785346,
+  "temperature_second_half_K": 298.60053272612015,
+  "rmsd_first_half_mean_nm": 0.05499831796408314,
+  "rmsd_second_half_mean_nm": 0.07295177040946844,
+  "catalytic_minus_scaffold_rmsf_nm": -0.002974266440926625,
+  "positioning_minus_scaffold_rmsf_nm": 0.0010873854499567695,
+  "trajectory_sha256": "894ce934da6f52b7df8b9c8f5497746dffdc9936127161459c0d2cb9a7ec1da7",
+  "limitations": [
+    "Fixed-protonation apo WT dimer, not ES or constant-pH reaction dynamics",
+    "Short exploratory sampling; equal initial structure, independent velocity/thermostat seeds",
+    "DCCM is correlation, not causal influence or a force constant"
+  ]
+}

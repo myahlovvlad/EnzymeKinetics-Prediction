@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "backend": "OpenMM",
+  "status": "complete",
+  "inputs": {
+    "pdb": "/home/vladmyahlov/Документы/GitHub/EnzymeKinetics-Prediction/enzyme-kinetics/outputs/experiments/active-site-v3/prepared-wt-dimer/topology.pdb",
+    "pdb_sha256": "e7b504cc4a275f64d4829420d9e8cf9a770c0019eb4e068dc40ecf7b20cd9ff3",
+    "system_xml_sha256": "7ca214a7f12b3f7edb447fd2fdd1cbd37fd85bae5495497b8efbc60e320ee299"
+  },
+  "settings": {
+    "temperature_K": 298.15,
+    "ph": 7.0,
+    "ionic_strength_M": 0.15,
+    "step_fs": 2.0,
+    "equilibration_steps": 5000,
+    "production_steps": 5000,
+    "report_interval": 100,
+    "seed": 303,
+    "threads": 8,
+    "padding_nm": 1.0,
+    "protonation_variants": {
+      "A:99": "ASH",
+      "B:99": "ASH"
+    },
+    "parameterization": "user-supplied System XML; original atom order required",
+    "openmm_version": "8.6.1",
+    "mdtraj_version": "1.11.2",
+    "trajectory_sha256": "894ce934da6f52b7df8b9c8f5497746dffdc9936127161459c0d2cb9a7ec1da7",
+    "observable_selection": "protein CA",
+    "distance_pairs_CA_indices": [],
+    "productive_upper_nm": null
+  },
+  "cache_key": "92bedbf48b8763777a2f36413516d161625e807103fe00527eaebc39741ea06c",
+  "values": {
+    "rmsd_mean_nm": 0.06397504599775819,
+    "rmsd_std_nm": 0.013367604749511739,
+    "radius_gyration_mean_nm": 1.8752005834550116,
+    "dccm_abs_offdiagonal_mean": 0.15921632037828948,
+    "production_time_ps": 10.0,
+    "frames": 50
+  },
+  "units": {
+    "rmsd_mean_nm": "nm",
+    "rmsd_std_nm": "nm",
+    "radius_gyration_mean_nm": "nm",
+    "dccm_abs_offdiagonal_mean": "dimensionless",
+    "production_time_ps": "ps",
+    "frames": "count"
+  },
+  "limitations": [
+    "Classical fixed-topology MD does not simulate the chemical reaction",
+    "Default preparation is an apo standard-residue protein; ES ligands require a supplied parameterized System",
+    "Hydrogen assignment at nominal pH is not constant-pH sampling or a validated catalytic protonation state",
+    "Reported moments and DCCM do not establish convergence; short runs are backend checks"
+  ]
+}

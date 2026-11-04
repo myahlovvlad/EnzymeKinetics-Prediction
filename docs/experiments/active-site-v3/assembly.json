@@ -1,0 +1,19 @@
+{
+  "source_sha256": "934adb04180d5dbc93ae88aafbb0d0967f307c11d9f51feb269110f2432164e3",
+  "normalized_sha256": "2a7379e2297a97b6ebef3c81d49c2f5bcd636be5cac40080bbba83dc91b5ee13",
+  "chain_mapping": [
+    {
+      "model": 0,
+      "chain": "A",
+      "new_chain": "A",
+      "residues": 125
+    },
+    {
+      "model": 1,
+      "chain": "A",
+      "new_chain": "B",
+      "residues": 125
+    }
+  ],
+  "selection": "protein heavy atoms only; hydrogens reassigned for stated pH; crystal waters/additives excluded explicitly"
+}

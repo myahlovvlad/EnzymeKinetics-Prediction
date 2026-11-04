@@ -1,0 +1,72 @@
+{
+  "runs": 27,
+  "probe_A": [
+    22.33100128173828,
+    78.08949279785156,
+    13.656000137329102
+  ],
+  "grid_comparison": [
+    {
+      "grid": 65,
+      "potential_V": -1.0143409974020945,
+      "field_V_per_A": [
+        -0.08487916123312987,
+        -0.01378677305081843,
+        0.09956148458125148
+      ]
+    },
+    {
+      "grid": 97,
+      "potential_V": -0.9454952285113156,
+      "field_V_per_A": [
+        -0.11268598928922147,
+        0.01701908900920236,
+        0.14301712099572744
+      ]
+    },
+    {
+      "grid": 129,
+      "potential_V": -0.9261305787116519,
+      "field_V_per_A": [
+        -0.09021657742959155,
+        0.015241374154205461,
+        0.15275968079807214
+      ]
+    }
+  ],
+  "relative_field_difference_97_to_129": 0.13790019940891649,
+  "grid_converged_at_10percent": false,
+  "site_pka_predictions": [
+    {
+      "resname": "ASP",
+      "resid": 38,
+      "chain": "A",
+      "pka_predicted": 6.31,
+      "model_pka": 3.8,
+      "deprotonated_fraction_ph7": 0.8304449113532373
+    },
+    {
+      "resname": "ASP",
+      "resid": 99,
+      "chain": "A",
+      "pka_predicted": 9.03,
+      "model_pka": 3.8,
+      "deprotonated_fraction_ph7": 0.009246251963854724
+    },
+    {
+      "resname": "TYR",
+      "resid": 14,
+      "chain": "A",
+      "pka_predicted": 18.39,
+      "model_pka": 10.0,
+      "deprotonated_fraction_ph7": 4.073802778024526e-12
+    }
+  ],
+  "folded_pi": 5.83,
+  "limitations": [
+    "Deterministic sensitivity, not statistical replicates; no p-values",
+    "No ligand at probe and no inferred activation barrier",
+    "pKa not temperature corrected; static protonation at nominal pH, not constant-pH ensemble",
+    "Dielectric solvent fixed to 78.5; temperature-dependent solvent response not fitted"
+  ]
+}

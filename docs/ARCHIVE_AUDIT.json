@@ -1,0 +1,14 @@
+{
+  "archive": "archive/downloads/capsule_data_update.tar.gz",
+  "bytes": 10207582747,
+  "regular_files": 3324,
+  "identical_by_sha256": 3324,
+  "missing_count": 0,
+  "different_count": 0,
+  "unsupported_count": 0,
+  "missing_examples": [],
+  "different_examples": [],
+  "unsupported_examples": [],
+  "elapsed_seconds": 176.6894682159982,
+  "action": "deleted byte-identical redundant archive"
+}

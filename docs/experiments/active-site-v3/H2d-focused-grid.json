@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "grid": 65,
+      "potential_V": [
+        -0.8874470455202529
+      ],
+      "field_V_per_A": [
+        [
+          -0.08107349986428943,
+          0.030103286651465583,
+          0.19261502329841426
+        ]
+      ]
+    },
+    {
+      "grid": 97,
+      "potential_V": [
+        -0.8835303134045706
+      ],
+      "field_V_per_A": [
+        [
+          -0.0783049715999189,
+          0.03231071968783709,
+          0.19488908996837223
+        ]
+      ]
+    },
+    {
+      "grid": 129,
+      "potential_V": [
+        -0.8822863577408107
+      ],
+      "field_V_per_A": [
+        [
+          -0.07805900289335321,
+          0.03384824914575331,
+          0.1952476116945253
+        ]
+      ]
+    }
+  ],
+  "relative_field_change_97_to_129": 0.007502211275805966,
+  "meets_10percent_criterion": true,
+  "fine_spacing_129_A": 0.15625,
+  "limitation": "Numerical convergence at one probe/condition; no validation of pKa, dielectric model or apo-to-ES transfer"
+}

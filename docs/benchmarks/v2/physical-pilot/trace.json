@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "backend": "trajectory-screened-coulomb",
+  "status": "complete",
+  "inputs": {
+    "trajectory_sha256": "c93af3abc6f783397fab02f798034ed8293e6be43c832ade97eace936c9c5535",
+    "topology_sha256": "30758489814bb4ccef82f318c71d7bcf5f7cc94e5ad6b66174e7b82854a1e6f5",
+    "system_sha256": "574da4e0f7f15c62e04fbbce7d4af310aba33711928307428e1ab08bc5871d23",
+    "label": "Apo CA pair software check, not a catalytic bond"
+  },
+  "settings": {
+    "atom_pair_zero_based": [
+      4,
+      21
+    ],
+    "source_selection": "protein",
+    "excluded_probe_atoms": [
+      4,
+      21
+    ],
+    "source_atom_count": 1872,
+    "temperature_K": 298.15,
+    "ionic_strength_M": 0.15,
+    "dielectric": 78.5
+  },
+  "cache_key": "80223a858cfbb874d02da8c62c7693e8da319c2073b4a12df20afb7960f2e1b0",
+  "values": {
+    "frames": 5,
+    "distance_mean_nm": 0.38411294458009937,
+    "field_projection_mean_V_per_A": 0.2948656073669181,
+    "field_projection_std_V_per_A": 0.00468671486667655
+  },
+  "units": {
+    "frames": "count",
+    "distance_mean_nm": "nm",
+    "field_projection_mean_V_per_A": "Volt/Angstrom",
+    "field_projection_std_V_per_A": "Volt/Angstrom"
+  },
+  "limitations": [
+    "Homogeneous nonperiodic screened Coulomb from fixed partial charges; not PME, APBS or QM",
+    "Source selection and probe orientation must be justified for the reaction; no automatic TS assignment",
+    "No periodic minimum-image summation; boundary crossings require separately prepared unwrapped/aligned trajectories",
+    "No convergence or causal rate-acceleration claim follows from these moments"
+  ]
+}

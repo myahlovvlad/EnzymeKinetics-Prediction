@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "backend": "OpenMM",
+  "status": "complete",
+  "inputs": {
+    "pdb": "/home/vladmyahlov/Документы/GitHub/EnzymeKinetics-Prediction/enzyme-kinetics/data/alphafold_pdb/P00947.pdb",
+    "pdb_sha256": "614b421e41bbf9a3416e7bafdd3ceb2c9cc19be2f41055c168391d96c2b1e99d"
+  },
+  "settings": {
+    "temperature_K": 298.15,
+    "ph": 7.0,
+    "ionic_strength_M": 0.15,
+    "step_fs": 2.0,
+    "equilibration_steps": 20,
+    "production_steps": 100,
+    "report_interval": 20,
+    "seed": 42,
+    "threads": 2,
+    "padding_nm": 1.0,
+    "parameterization": "amber14-all.xml + amber14/tip3pfb.xml; standard residues only",
+    "openmm_version": "8.6.1",
+    "mdtraj_version": "1.11.2",
+    "trajectory_sha256": "c93af3abc6f783397fab02f798034ed8293e6be43c832ade97eace936c9c5535",
+    "observable_selection": "protein CA",
+    "distance_pairs_CA_indices": [],
+    "productive_upper_nm": null
+  },
+  "cache_key": "2c0f2fa75e97ce37194dd3f0fb1fb2849bf4939001429e5074c81fbd127b1b7e",
+  "values": {
+    "rmsd_mean_nm": 0.015242809295550528,
+    "rmsd_std_nm": 0.009172207038481614,
+    "radius_gyration_mean_nm": 1.3978247625267006,
+    "dccm_abs_offdiagonal_mean": 0.36140385835508276,
+    "production_time_ps": 0.2,
+    "frames": 5
+  },
+  "units": {
+    "rmsd_mean_nm": "nm",
+    "rmsd_std_nm": "nm",
+    "radius_gyration_mean_nm": "nm",
+    "dccm_abs_offdiagonal_mean": "dimensionless",
+    "production_time_ps": "ps",
+    "frames": "count"
+  },
+  "limitations": [
+    "Classical fixed-topology MD does not simulate the chemical reaction",
+    "Default preparation is an apo standard-residue protein; ES ligands require a supplied parameterized System",
+    "Hydrogen assignment at nominal pH is not constant-pH sampling or a validated catalytic protonation state",
+    "Reported moments and DCCM do not establish convergence; short runs are backend checks"
+  ]
+}

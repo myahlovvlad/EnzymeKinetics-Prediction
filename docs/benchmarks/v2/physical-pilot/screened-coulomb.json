@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "backend": "screened-coulomb",
+  "status": "complete",
+  "inputs": {
+    "pqr": "/home/vladmyahlov/Документы/GitHub/EnzymeKinetics-Prediction/enzyme-kinetics/outputs/backend_checks/p00947-integrated-v3/pqr/protein.pqr",
+    "pqr_sha256": "9609e9b3058f995dc36a9a86b91cf3fc8517110e43143b47fdf22612ef6f71a6"
+  },
+  "settings": {
+    "pH": 7.0,
+    "temperature_K": 298.15,
+    "ionic_strength_M": 0.15,
+    "dielectric": 78.5,
+    "query_A": [
+      [
+        -3.8591,
+        -0.4237,
+        6.9228
+      ]
+    ],
+    "pdb2pqr_version": "3.8.0"
+  },
+  "cache_key": "a3a3f18d732223518327564186665ec1f0b01a594fe88d7a60051350c2e97731",
+  "values": {
+    "potential_V": [
+      -0.024846375460766304
+    ],
+    "field_V_per_A": [
+      [
+        0.0027277346932238367,
+        0.0073235764834106145,
+        -8.915738459288454e-05
+      ]
+    ],
+    "net_charge_e": -2.9999999999999933
+  },
+  "units": {
+    "potential_V": "Volt",
+    "field_V_per_A": "Volt/Angstrom",
+    "net_charge_e": "elementary_charge"
+  },
+  "limitations": [
+    "Homogeneous screened Coulomb approximation; not APBS/Poisson-Boltzmann",
+    "Protein PQR does not include unknown ligand charges or a reaction transition state"
+  ]
+}

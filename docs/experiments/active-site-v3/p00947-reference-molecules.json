@@ -1,0 +1,19 @@
+{
+  "retrieval_date": "2026-11-01",
+  "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/160531,6128/property/IsomericSMILES,InChI,InChIKey,MolecularFormula/JSON",
+  "note": "Selected fields transcribed from PubChem PUG REST; not a vendor certificate or proof of the precise assay lot.",
+  "substrate": {
+    "cid": 160531,
+    "name": "androst-5-ene-3,17-dione",
+    "smiles": "C[C@]12CC[C@H]3[C@H]([C@@H]1CCC2=O)CC=C4[C@@]3(CCC(=O)C4)C",
+    "inchikey": "SQGZFRITSMYKRH-QAGGRKNESA-N",
+    "formula": "C19H26O2"
+  },
+  "product": {
+    "cid": 6128,
+    "name": "androst-4-ene-3,17-dione",
+    "smiles": "C[C@]12CCC(=O)C=C1CC[C@@H]3[C@@H]2CC[C@]4([C@H]3CCC4=O)C",
+    "inchikey": "AEMFNILZOJDQLW-QAGGRKNESA-N",
+    "formula": "C19H26O2"
+  }
+}

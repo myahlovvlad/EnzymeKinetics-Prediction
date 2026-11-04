@@ -1,0 +1,38 @@
+{
+  "replica-101": {
+    "site-dccm.csv": "0e4028fd9e0cfd173618d466f62ccc90537af3f89a66c530499a98eae4af8b7d",
+    "trajectory.dcd": "2a8b5fdf51804727b726803e48c58edea2e232325477e9a42e5277d1bad5d618",
+    "topology.pdb": "db4d3c954e51ea7067811b4774aea5fa52102399407998749c911ba1a641d10b",
+    "result.json": "6fc3c8e547f7fcc0839eaa5cb5b23d0d2f01b790b1b2fd477fd3da66b15d2dd5",
+    "state.csv": "529837ae8a07efd17a390a0cf5abc79fddf02797e7e7694b911ae99e6b3f4e2b",
+    "residue-rmsf.csv": "9c945b0eb40c73febfa99136cb6c2d79f05893e0410a64fd2da3c2d833c28fad",
+    "checkpoint.chk": "72a4c15a886a15f247ca8ce24741cf28d8a1d315367c801b0694ef3b66094ad6",
+    "sidechain-torsions.csv": "5590d82d900ac2ebd0be28d2c1edc011d47e6e4f5eacbc3ccbabaa8594377967",
+    "analysis.json": "fcf17293f1dd831b3905ef3bba4b592b40b5ad9bb8e1a367de681e9a0d70072c",
+    "system.xml": "7ca214a7f12b3f7edb447fd2fdd1cbd37fd85bae5495497b8efbc60e320ee299"
+  },
+  "replica-202": {
+    "site-dccm.csv": "1673cd5785cbcc4b98a4e016d8670ba3a1f1c673ead403a2a405602775cb06dc",
+    "trajectory.dcd": "f7f8f2a933ea229df33ff6f6bd8dc75979e5281e591c50f1355a6d24c4887ad6",
+    "topology.pdb": "0a7a9713527043fc67b45f0b19801e5420aacbe8a7b5edb49826a49d96bd64a9",
+    "result.json": "f7a21ecac977fe95748210b5ff8bb71afbcae21ecf4a66716a6f3678b641e0ba",
+    "state.csv": "c8e5a54fd6ea61437671cb5039b4c47038c366e187dd6c8148df9dcde1fb119c",
+    "residue-rmsf.csv": "55e523cc03c6d3f658a08ec5414a20baf7dd091b4b91d7d9e2bee64e0146d618",
+    "checkpoint.chk": "7cdee0b47ad2827bd8789732dcfed68c579d501dffd06f4e778d2f31127767b3",
+    "sidechain-torsions.csv": "28a8a93b036b1bba332d9f2b20d1df3a99665b46e99ee142fd275ccee0459ce3",
+    "analysis.json": "88aee1011e04a63252ba8a72dd769ea74b42b0a48ac7f3aa0fd107eecf2846a0",
+    "system.xml": "7ca214a7f12b3f7edb447fd2fdd1cbd37fd85bae5495497b8efbc60e320ee299"
+  },
+  "replica-303": {
+    "site-dccm.csv": "78f1420bd9b3313fa6969be66d833d9b0e0ca9197d64ec6fe4c71f2836ae6a8f",
+    "trajectory.dcd": "894ce934da6f52b7df8b9c8f5497746dffdc9936127161459c0d2cb9a7ec1da7",
+    "topology.pdb": "06469a912444b7dd6bf8ae6549db274623e41c6bd78b605a3bbeed2ef19d2283",
+    "result.json": "f9d2fd93b581c49bb2bfa51056edcfe4b43ec450efc15ef87b205e855252b490",
+    "state.csv": "3bc9fce7c62f9a61d34b99b7010407c5a3d5e70aea22288cc0d6614b21583fd1",
+    "residue-rmsf.csv": "47a62f9a2cb47e429e9a4e5bc83be5f3136c2b183aa0a78d3e84acc32654d4db",
+    "checkpoint.chk": "5ff82ca7580160ab0098d039cfd49796835edcc915a9868e7914180f3882942f",
+    "sidechain-torsions.csv": "82606da435b819df7b271dd585d28890edf49c9a3b185f50c7b8f5120cf34bc1",
+    "analysis.json": "6a8bb82c4f74032dd2185265a04cb5e4a74a7280650c0bbd223c80a00bf55e49",
+    "system.xml": "7ca214a7f12b3f7edb447fd2fdd1cbd37fd85bae5495497b8efbc60e320ee299"
+  }
+}

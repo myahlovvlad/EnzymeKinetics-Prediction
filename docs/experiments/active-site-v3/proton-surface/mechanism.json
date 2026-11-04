@@ -1,0 +1,80 @@
+{
+  "system": "Comamonas testosteroni P00947; author residue numbering",
+  "states": [
+    {
+      "id": "E_S",
+      "kind": "separated",
+      "description": "Free enzyme and Delta5 steroid"
+    },
+    {
+      "id": "ES",
+      "kind": "minimum",
+      "description": "Bound Delta5 steroid; Asp38 base, Tyr14/Asp99 oxyanion donors"
+    },
+    {
+      "id": "TS1",
+      "kind": "saddle_index_1",
+      "description": "C4-beta H abstraction by Asp38; C4-H breaking and Asp38 O-H formation"
+    },
+    {
+      "id": "EI",
+      "kind": "minimum",
+      "description": "Dienolate intermediate; Asp38 protonated; charge stabilized by Tyr14/Asp99"
+    },
+    {
+      "id": "TS2",
+      "kind": "saddle_index_1",
+      "description": "Asp38-H donation to C6; conjugated Delta4 product formation"
+    },
+    {
+      "id": "EP",
+      "kind": "minimum",
+      "description": "Bound Delta4 steroid; Asp38 returns to base state"
+    },
+    {
+      "id": "E_P",
+      "kind": "separated",
+      "description": "Product released, enzyme regenerated"
+    }
+  ],
+  "edges": [
+    [
+      "E_S",
+      "ES"
+    ],
+    [
+      "ES",
+      "TS1"
+    ],
+    [
+      "TS1",
+      "EI"
+    ],
+    [
+      "EI",
+      "TS2"
+    ],
+    [
+      "TS2",
+      "EP"
+    ],
+    [
+      "EP",
+      "E_P"
+    ]
+  ],
+  "coordinates": {
+    "q1": "r(C4,H_transfer)-r(O_Asp38,H_transfer)",
+    "q2": "r(O_Asp38,H_transfer)-r(C6,H_transfer)",
+    "additional": "O3--Tyr14/Asp99 distances, closure, solvent polarization and protonation microstates"
+  },
+  "required_checks": [
+    "Same atoms, total charge and spin along each path",
+    "Converged gradient for full unfrozen degrees of freedom",
+    "Exactly one relevant imaginary mode at each full TS; minima have no negative internal modes",
+    "Forward/backward path connectivity to specified minima, not Hessian index alone",
+    "Thermal/solvent/ensemble free-energy corrections before rate predictions"
+  ],
+  "source": "https://pubs.acs.org/doi/10.1021/jacs.6b04796",
+  "computed_full_TS": false
+}

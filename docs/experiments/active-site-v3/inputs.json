@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "url": "https://files.rcsb.org/download/8CHO.pdb1",
+      "file": "8CHO-assembly.pdb",
+      "sha256": "934adb04180d5dbc93ae88aafbb0d0967f307c11d9f51feb269110f2432164e3"
+    },
+    {
+      "url": "https://files.rcsb.org/download/1QJG.pdb1",
+      "file": "1QJG-assembly.pdb",
+      "sha256": "913feb5fb9c289d1ec3640538804cabc0d26def6ff1183d95f5722d6628728b4"
+    },
+    {
+      "url": "https://files.rcsb.org/download/1OHS.pdb",
+      "file": "1OHS-asymmetric.pdb",
+      "sha256": "768bec02692bd3dd9b0886577d58e56818688e7bd290369409ddf21541e968e1"
+    },
+    {
+      "url": "https://files.rcsb.org/download/3NHX.pdb",
+      "file": "3NHX-asymmetric.pdb",
+      "sha256": "76cc10d1641569b45a48e7acfeab6455f23347c44103f0e2ee2f0eb8c082be5d"
+    }
+  ],
+  "scope": "8CHO WT assembly; 1QJG D38N equilenin; 1OHS Y14F/D38N saturated analog, not native substrate"
+}

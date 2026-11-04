@@ -1,0 +1,121 @@
+{
+  "hardware": {
+    "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.42",
+    "machine": "x86_64",
+    "logical_cpus": 24,
+    "affinity_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "memory_total_bytes": 33546137600
+  },
+  "inputs": {
+    "system_sha256": "574da4e0f7f15c62e04fbbce7d4af310aba33711928307428e1ab08bc5871d23",
+    "topology_sha256": "30758489814bb4ccef82f318c71d7bcf5f7cc94e5ad6b66174e7b82854a1e6f5"
+  },
+  "steps_per_repeat": 50,
+  "repeats": 3,
+  "step_fs": 2,
+  "records": [
+    {
+      "threads": 1,
+      "seconds_per_repeat": [
+        6.295052770998154,
+        6.308808497997234,
+        6.503914484004781
+      ],
+      "steps_per_s": 7.925426808544399,
+      "ns_per_day": 1.3695137525164722,
+      "initial_energy_kj_mol": -382942.4941421418,
+      "energy_difference_from_1thread_kj_mol": 0.0
+    },
+    {
+      "threads": 2,
+      "seconds_per_repeat": [
+        3.4368187590007437,
+        3.5098480669985292,
+        3.531754103998537
+      ],
+      "steps_per_s": 14.245630877908013,
+      "ns_per_day": 2.461645015702505,
+      "initial_energy_kj_mol": -382942.49414214166,
+      "energy_difference_from_1thread_kj_mol": 1.1641532182693481e-10
+    },
+    {
+      "threads": 4,
+      "seconds_per_repeat": [
+        2.135715814998548,
+        2.1585427210011403,
+        2.201526714001375
+      ],
+      "steps_per_s": 23.16377596492962,
+      "ns_per_day": 4.002700486739839,
+      "initial_energy_kj_mol": -382942.49438628263,
+      "energy_difference_from_1thread_kj_mol": -0.00024414085783064365
+    },
+    {
+      "threads": 8,
+      "seconds_per_repeat": [
+        1.2620911300036823,
+        1.2340235879964894,
+        1.223556650998944
+      ],
+      "steps_per_s": 40.517864071932344,
+      "ns_per_day": 7.00148691162991,
+      "initial_energy_kj_mol": -382942.4941421419,
+      "energy_difference_from_1thread_kj_mol": -1.1641532182693481e-10
+    },
+    {
+      "threads": 12,
+      "seconds_per_repeat": [
+        0.9460834100027569,
+        0.9467344210061128,
+        1.0425542390003102
+      ],
+      "steps_per_s": 52.81312149490038,
+      "ns_per_day": 9.126107394318785,
+      "initial_energy_kj_mol": -382942.4941421419,
+      "energy_difference_from_1thread_kj_mol": -1.1641532182693481e-10
+    },
+    {
+      "threads": 24,
+      "seconds_per_repeat": [
+        0.737234273001377,
+        0.7268382929978543,
+        0.7315953590004938
+      ],
+      "steps_per_s": 68.34379057339845,
+      "ns_per_day": 11.809807011083253,
+      "initial_energy_kj_mol": -382942.4941421419,
+      "energy_difference_from_1thread_kj_mol": -1.1641532182693481e-10
+    }
+  ],
+  "best_threads": 24,
+  "speedup_over_1thread": 8.623357735095988,
+  "limitations": [
+    "Short single-system throughput benchmark; concurrent replicas require a separate throughput check",
+    "PME/FFT, memory bandwidth and SMT can limit scaling; maximum threads need not be fastest"
+  ]
+}

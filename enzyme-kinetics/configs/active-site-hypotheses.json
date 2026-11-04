@@ -1,0 +1,42 @@
+{
+  "registered_before_scientific_runs": true,
+  "system": "P00947 tKSI, author numbering explicitly checked",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "kind": "structural descriptive",
+      "claim": "Binding-contact residues and catalytic residues overlap but have distinct roles",
+      "method": "WT 8CHO vs D38N 1QJG EQU contacts, cutoff 4.5 A; report mutations; no p-value from atoms"
+    },
+    {
+      "id": "H2",
+      "kind": "deterministic sensitivity",
+      "claim": "pH changes local protonation/field; temperature and salt modify the electrostatic response",
+      "design": "pH5/7/9 x T288.15/298.15/310.15K x ionic strength0/.15/.30M; APBS65; shared structure; empirical pKa fixed with T",
+      "reject_approximation_if": "grid 65/97/129 changes probe field norm >10%; report rather than hide discrepancy"
+    },
+    {
+      "id": "H3",
+      "kind": "exploratory replicated MD",
+      "claim": "Catalytic-site RMSF differs from remaining protein; site residues show coupled fluctuations",
+      "unit": "independent seeded trajectory, not frames or atoms",
+      "design": "3 independent trajectories at nominal pH7 T298.15K from prepared WT biological dimer, burn-in and sampling explicitly recorded",
+      "test": "two-sided exact paired sign-flip on replicate RMSF difference; BH correction across tested role groups; n=3 has minimum p=.25"
+    },
+    {
+      "id": "H4",
+      "kind": "conditional potential",
+      "claim": "Coupled side-chain torsions have nonadditive frozen-environment potential energy",
+      "method": "OpenMM conditional torsion scan and double-difference energy; no claim of equilibrium free energy"
+    },
+    {
+      "id": "H5",
+      "kind": "mechanism",
+      "claim": "Stepwise proton abstraction and reprotonation require ES -> TS1 -> EI -> TS2 -> EP",
+      "method": "literature evidence and explicit state graph; projected electronic PES optional; full TS requires 3N stationary point/index1 and path connectivity",
+      "status_rule": "No inferred kcat without validated activation free energies; missing TS remains unresolved"
+    }
+  ],
+  "alpha": 0.05,
+  "uncertainty_policy": "No inferential p-values from a deterministic factorial scan; sparse trajectories yield exploratory inference only"
+}
